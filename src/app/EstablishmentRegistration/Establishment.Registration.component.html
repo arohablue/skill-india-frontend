@@ -1,0 +1,36 @@
+
+<div class="panel" >
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+<div  class="table-responsive">
+    
+    <form>
+        estId=<input type="text"[(ngModel)]="est.estId" name="estId"/>
+       estName=<input type="text"[(ngModel)]="est.estName" name="estName">
+    </form>
+
+        <button id="next-btn"  (click)="add(mform)" >submit</button>
+    <table class="table" >
+    <thead>
+        <tr>
+            <th>estId</th>
+            <th>estName</th>
+            
+            
+        </tr>
+    </thead>
+        <tbody>
+        <tr *ngFor="let est of est">
+            <td>{{est.estId}}</td>
+            <td>{{est.estName}}</td>
+           
+           
+          </tr>
+      </tbody>
+    </table>
+    
+        
+    </div>
+</div>
+
+</div>
