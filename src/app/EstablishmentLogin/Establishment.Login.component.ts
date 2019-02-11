@@ -1,11 +1,6 @@
 
 import {OnInit, Component} from '@angular/core';
 import { EstablishmentLoginService} from './Establishment.Login.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { EstablishmentLoginForm } from './EstablishmentLogin';
-
-
 
 @Component({
     selector : 'EstablishmentLogin',
@@ -15,14 +10,16 @@ import { EstablishmentLoginForm } from './EstablishmentLogin';
 })
 
 export class EstablishmentLogincomponent{
-    elf: EstablishmentLoginForm =new EstablishmentLoginForm();
-request:string;
+    request:string;
+    username : string;
+    password : string;
 
-     constructor( public ess:EstablishmentLoginService){
+    constructor( public ess:EstablishmentLoginService){
 
     }
-    add(mform){
-        this.ess.sendToServer(this.elf).subscribe(
+
+    login(){
+        this.ess.sendToServer(this.username, this.password).subscribe(
             data =>{
                 this.request=data['status']
             }
