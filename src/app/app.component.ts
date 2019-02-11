@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       </h1>
       <EstablishmentRegistration></EstablishmentRegistration>
       <CandidateRegistration></CandidateRegistration>
+      <EstablishmentLogin></EstablishmentLogin>
       <home-page></home-page>
     </div>
     

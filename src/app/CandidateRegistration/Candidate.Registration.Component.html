@@ -3,7 +3,11 @@
 <html lang="en">
 
 <head>
- 
+  <meta charset="utf-8">
+  <title>Candidate Registration</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 </head>
 
 <body>
@@ -40,17 +44,17 @@
             <input type="radio" [(ngModel)]="crc.candidateGender" id="inlineRadio1" value="male" name="gender" checked>
             <label for="inlineRadio1"> Male </label>
           </div>
-          <div class="radio radio-inline col-md-4">
+        </div>
+        <div class="radio radio-inline col-md-4">
             <input type="radio" [(ngModel)]="crc.candidateGender"
             id="inlineRadio2" value="female" name="gender">
             <label for="inlineRadio2">Female</label>
-          </div>
-          <div class="radio radio-inline col-md-4">
-            <input type="radio" [(ngModel)]="crc.candidateGender" id="inlineRadio3" value="others" name="gender"></input>
-            <label for="inlineRadio3">Others</label>
-          </div>
         </div>
-      </div>
+        <div class="radio radio-inline col-md-4">
+            <input type="radio" [(ngModel)]="crc.candidateGender" id="inlineRadio3" value="others" name="gender">
+            <label for="inlineRadio3">Others</label>
+        </div>
+      
 
    <!-- Date of birth -->
       <div class="form-group">

@@ -8,12 +8,12 @@ import { EstablishmentLoginService } from '../EstablishmentLogin/Establishment.L
 
 @Component({
     selector : 'CandidateLogin',
-    template: '',
+    templateUrl: './Candidate.Login.Component',
     //styleUrls:['./flights-list.component.css'],
    
 })
 
-export class CandidateLogincomponent{
+export class CandidateLoginComponent{
         username : string;
         password : string;
         request  : string;

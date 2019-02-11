@@ -9,7 +9,7 @@ import { EstablishmentLoginService} from './Establishment.Login.service';
    
 })
 
-export class EstablishmentLogincomponent{
+export class EstablishmentLoginComponent{
     request:string;
     username : string;
     password : string;
