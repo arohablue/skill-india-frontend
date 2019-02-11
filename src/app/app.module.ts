@@ -9,15 +9,19 @@ import { EstablishmentRegistrationService } from './EstablishmentRegistration/Es
 
 import { EstablishmentRegistrationComponent } from './EstablishmentRegistration/Establishment.Registration.Component';
 import { EstablishmentLogincomponent } from './EstablishmentLogin/Establishment.Login.component';
+import { CandidateRegistrationService } from './CandidateRegistration/Candidate.Registration.Service';
+import { CandidateRegistrationComponent } from './CandidateRegistration/Candidate.Registration.Component';
+import { CandidateLogincomponent } from './CandidateLogin/Candidate.Login.Component';
 import { Homepage } from './homepage/home.page.component';
 import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    EstablishmentRegistrationComponent,
+    AppComponent,EstablishmentRegistrationComponent,
     EstablishmentLogincomponent,
+    CandidateRegistrationComponent,
+    CandidateLogincomponent,
     Homepage
   ],
   imports: [
@@ -26,6 +30,7 @@ import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Lo
   ],
   providers: [EstablishmentRegistrationService,
     EstablishmentLoginService,
+    CandidateRegistrationService,
     HttpClient,
     AppRoutingModule],
   bootstrap: [AppComponent]
