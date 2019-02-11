@@ -9,12 +9,12 @@ import { Component } from '@angular/core';
         Welcome to {{title}}!
       </h1>
       <EstablishmentRegistration></EstablishmentRegistration>
-      
+      <CandidateRegistration></CandidateRegistration>
     </div>
     
   `,
   styles: []
 })
 export class AppComponent {
-  title = 'EstablishmentRegistration';
+  title = 'Hello';
 }
