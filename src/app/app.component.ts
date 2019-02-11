@@ -8,13 +8,12 @@ import { Component } from '@angular/core';
       <h1>
         Welcome to {{title}}!
       </h1>
-      <EstablishmentRegistration></EstablishmentRegistration>
-      
+      <home-page></home-page>
     </div>
     
   `,
   styles: []
 })
 export class AppComponent {
-  title = 'EstablishmentRegistration';
+  title = 'Skill India';
 }

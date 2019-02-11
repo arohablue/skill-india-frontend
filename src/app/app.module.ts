@@ -9,17 +9,25 @@ import { EstablishmentRegistrationService } from './EstablishmentRegistration/Es
 
 import { EstablishmentRegistrationComponent } from './EstablishmentRegistration/Establishment.Registration.Component';
 import { EstablishmentLogincomponent } from './EstablishmentLogin/Establishment.Login.component';
+import { Homepage } from './homepage/home.page.component';
+import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,EstablishmentRegistrationComponent,EstablishmentLogincomponent
+    AppComponent,
+    EstablishmentRegistrationComponent,
+    EstablishmentLogincomponent,
+    Homepage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule,FormsModule
   ],
-  providers: [EstablishmentRegistrationService,HttpClient,EstablishmentRegistrationService],
+  providers: [EstablishmentRegistrationService,
+    EstablishmentLoginService,
+    HttpClient,
+    AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
