@@ -1,6 +1,6 @@
 export class EstablishmentLoginForm{
-    constructor( estId?:string,
-                 estpassword?:string,
+    constructor( estUserId?:string,
+                 estPassword?:string,
                 )
                {
 
