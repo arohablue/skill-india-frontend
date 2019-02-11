@@ -3,16 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { EstablishmentRegistrationService } from './EstablishmentRegistration/Establishment.Registration.Service';
+
+import { EstablishmentRegistrationComponent } from './EstablishmentRegistration/Establishment.Registration.Component';
+import { EstablishmentLogincomponent } from './EstablishmentLogin/Establishment.Login.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,EstablishmentRegistrationComponent,EstablishmentLogincomponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, HttpClientModule,FormsModule
   ],
-  providers: [],
+  providers: [EstablishmentRegistrationService,HttpClient,EstablishmentRegistrationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
