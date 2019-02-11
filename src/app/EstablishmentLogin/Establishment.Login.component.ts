@@ -9,7 +9,7 @@ import { EstablishmentLoginForm } from './EstablishmentLogin';
 
 @Component({
     selector : 'EstablishmentLogin',
-    template: '',
+    templateUrl: './Establishment.Login.Component.html',
     //styleUrls:['./flights-list.component.css'],
    
 })

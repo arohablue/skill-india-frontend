@@ -12,17 +12,27 @@ import { EstablishmentLogincomponent } from './EstablishmentLogin/Establishment.
 import { CandidateRegistrationService } from './CandidateRegistration/Candidate.Registration.Service';
 import { CandidateRegistrationComponent } from './CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLogincomponent } from './CandidateLogin/Candidate.Login.Component';
+import { Homepage } from './homepage/home.page.component';
+import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.service';
 
 
 @NgModule({
   declarations: [
-    AppComponent,EstablishmentRegistrationComponent,EstablishmentLogincomponent,CandidateRegistrationComponent,CandidateLogincomponent
+    AppComponent,EstablishmentRegistrationComponent,
+    EstablishmentLogincomponent,
+    CandidateRegistrationComponent,
+    CandidateLogincomponent,
+    Homepage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, HttpClientModule,FormsModule
   ],
-  providers: [EstablishmentRegistrationService,HttpClient,CandidateRegistrationService],
+  providers: [EstablishmentRegistrationService,
+    EstablishmentLoginService,
+    CandidateRegistrationService,
+    HttpClient,
+    AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

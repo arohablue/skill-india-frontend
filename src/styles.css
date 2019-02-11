@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import "https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900";
+@import "./assets/Bootstrap/lib/font-awesome/css/font-awesome.min.css";
+@import "./assets/Bootstrap/lib/font-awesome/css/font-awesome.min.css";
+@import "./assets/Bootstrap/lib/jquery-ui/jquery-ui.css";
+@import "./assets/Bootstrap/lib/jquery-ui/jquery-ui.structure.css";
+@import "./assets/Bootstrap/lib/jquery-ui/jquery-ui.theme.css";
+@import "./assets/Bootstrap/lib/bootstrap/css/bootstrap.min.css";
+@import "./assets/Bootstrap/css/style.css";
+@import "./assets/Bootstrap/css/prettyrc.css";
