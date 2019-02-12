@@ -45,6 +45,7 @@
             <label for="inlineRadio1"> Male </label>
           </div>
         </div>
+        
         <div class="radio radio-inline col-md-4">
             <input type="radio" [(ngModel)]="crc.candidateGender"
             id="inlineRadio2" value="female" name="gender">
@@ -56,19 +57,19 @@
         </div>
       
 
-   <!-- Date of birth -->
-      <div class="form-group">
-        <label class="control-label">Date of birth</label><font style= "color:red;">*</font>
-        <div class="input-group" style="z-index: 0;">
-          <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-          <input id="dob" [(ngModel)]="crc.candidateDoB"
-          type="date" name="dob" title="The Age Limit Range is from 21 Years to 35 Years." required>
-          <p><font style= "color:red;">*Age Limit: 21 - 35 yrs.</font></p>
-      </div>
-      </div>
+        <!-- Date of birth -->
+        <div class="form-group">
+          <label class="control-label">Date of birth</label><font style= "color:red;">*</font>
+            <div class="input-group" style="z-index: 0;">
+              <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+              <input id="dob" [(ngModel)]="crc.candidateDoB"
+              type="date" name="dob" title="The Age Limit Range is from 21 Years to 35 Years." required>
+              <p><font style= "color:red;">*Age Limit: 21 - 35 yrs.</font></p>
+            </div>
+          </div>
       
-   <!-- Candidate Email -->
- 	<div class="form-group">
+            <!-- Candidate Email -->
+      <div class="form-group">
         <label class="control-label">Candidate Email</label><font style= "color:red;">*</font>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
@@ -100,6 +101,7 @@
           </div>
         </div> -->
       </div>
+      
 
    
 

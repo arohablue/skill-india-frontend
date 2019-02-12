@@ -114,10 +114,11 @@
 						<span class="input-group-addon"><i
 							class="fa fa-graduation-cap" aria-hidden="true"></i></span> 
 							<select name="estDomain" [(ngModel)]="est.estDomain" class="form-control">
-							<option>Manufacturing</option>
-							<option>Services</option>
-							<option>Trading</option>
-							<option>Other</option>
+									<option value="">--Select--</option>
+							<option value="Manufacturing">Manufacturing</option>
+							<option value="Services">Services</option>
+							<option value="Trading">Trading</option>
+							<option value="Other">Other</option>
 						</select>
 					</div>
 				</div>
@@ -326,7 +327,7 @@
 		<div class="form-group" style="padding:50;" >
 			<label class="control-label"></label>
 			<div>
-				<button type="submit" id="next-btn"  (click)="add(mform)"
+				<button type="submit" id="next-btn"  (click)="addEstablishment(mform)"
 					class="btn btn-primary form-control" style="border-radius: 10px;">
 					SUBMIT <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 				</button>

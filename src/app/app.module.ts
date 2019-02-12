@@ -15,6 +15,7 @@ import { CandidateLoginComponent } from './CandidateLogin/Candidate.Login.Compon
 import { Homepage } from './homepage/home.page.component';
 import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.Service';
 import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Service';
+import { HomepageBody } from './homepage-body/homepage-body.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Service'
     EstablishmentLoginComponent,
     CandidateRegistrationComponent,
     CandidateLoginComponent,
-    Homepage
+    Homepage,
+    HomepageBody
   ],
   imports: [
     BrowserModule,

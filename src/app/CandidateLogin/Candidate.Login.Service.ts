@@ -15,7 +15,7 @@ constructor(private http:HttpClient){
 }
 sendToServer(username, password){
   //our code to be communicated with the server will be here
-  let url="" + "?username="+username + "&password=" + password;
+  let url="http://localhost:8084/loginCandidate" + "?username="+username + "&password=" + password;
   return this.http.get(url)
 }
 

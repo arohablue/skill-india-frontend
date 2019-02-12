@@ -11,20 +11,12 @@ import { Component } from '@angular/core';
 
       <home-page></home-page>
       
-      
-      
     </div>
     
   `,
   styles: []
 })
-// <EstablishmentRegistration></EstablishmentRegistration>
-      
-      // <EstablishmentLogin></EstablishmentLogin>
 
-      // <CandidateLogin></CandidateLogin> 
-      
-      // <CandidateRegistration></CandidateRegistration>
       
 
 
