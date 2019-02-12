@@ -13,8 +13,8 @@ import { CandidateRegistrationService } from './CandidateRegistration/Candidate.
 import { CandidateRegistrationComponent } from './CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './CandidateLogin/Candidate.Login.Component';
 import { Homepage } from './homepage/home.page.component';
-import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.service';
-import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Component.service';
+import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.Service';
+import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Service';
 
 
 @NgModule({
@@ -32,7 +32,8 @@ import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Componen
     HttpClientModule,
     FormsModule
   ],
-  providers: [EstablishmentRegistrationService,
+  providers: [
+    EstablishmentRegistrationService,
     EstablishmentLoginService,
     CandidateRegistrationService,
     CandidateLoginService,

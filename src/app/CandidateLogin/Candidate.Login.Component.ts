@@ -1,14 +1,10 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentLoginService } from '../EstablishmentLogin/Establishment.Login.service';
-
-
-
-
+import { CandidateLoginService } from './Candidate.Login.Service';
 
 @Component({
     selector : 'CandidateLogin',
-    templateUrl: './Candidate.Login.Component',
+    templateUrl: './Candidate.Login.Component.html',
     //styleUrls:['./flights-list.component.css'],
    
 })
@@ -17,12 +13,12 @@ export class CandidateLoginComponent{
         username : string;
         password : string;
         request  : string;
-     constructor( public ess:EstablishmentLoginService){
+     constructor( public cls:CandidateLoginService){
 
     }
     
     login(){
-        this.ess.sendToServer(this.username, this.password).subscribe(
+        this.cls.sendToServer(this.username, this.password).subscribe(
             data =>{
                 this.request=data['status']
             }

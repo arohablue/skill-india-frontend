@@ -18,5 +18,6 @@ sendToServer(username, password){
   let url="" + "?username="+username + "&password=" + password;
   return this.http.get(url)
 }
-    }
+
+}
     

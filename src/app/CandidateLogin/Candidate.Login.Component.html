@@ -1,0 +1,180 @@
+
+<!DOCTYPE html >
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+  <!-- Favicon -->
+  
+
+</head>
+
+<body>
+ 
+    <!-- Form Heading -->
+        <h1><b><mark>Candidate Login</mark></b></h1><br>
+
+   <!-- Header -->
+  
+  <section class="bcg" class="container" style="padding-top: 20px;">
+    <form action="candidatelogin" class="container" method="post" >
+  <div  align="center">
+      <!-- Form Fields -->
+      
+      <!-- Candidate -->
+      <div class="form-group col-md-4" >
+        <label class="control-label">User Name</label> 
+        <div class="input-group" style="z-index: 0;">
+          <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <input name="username" [(ngModel)]="username"
+          placeholder="User Name" class="form-control" required="required" type="text" title="">
+        </div>
+      </div>
+
+      <!-- Password  -->
+      
+        <div class="form-group col-md-4">
+          <label class="control-label" >Password</label> 
+          <div class="input-group" style="z-index: 0;">
+            <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+            <input id="password" name="pass" [(ngModel)]="password"
+            placeholder="Password" class="form-control"  required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.">
+          </div>
+        </div>
+       
+
+     <!--  <div class="form-group col-md-4">
+          <label class="control-label">Login as:</label> 
+          <div class="input-group" style="z-index: 0;">
+            <span class="input-group-addon"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+            <select name="loginAs" class="form-control">
+              <option value="candidate">Candidate</option>
+              <option value="Establishment">Establishment</option>
+            </select>
+          </div>
+        </div> -->
+	  <a href="ForgotPsCan.html">Forgot Password</a>
+	  <br/>
+	  <p style="text-align: center;">New User?</p>
+      <p style="text-align: center;"><a href="CandidateRegister.html">Register as a Candidate</a></p>
+<!--       <p style="text-align: center"><a href="EstablishmentRegistration.html">Register as an Establishment</a></p>
+ -->      
+        <!-- Submit button -->
+       <div class="form-group col-md-4" style="padding: 0;">
+          <label class="control-label"></label>
+          <div>
+            <button type="submit" class="btn btn-primary form-control" (click)="add(mform)" style="border-radius:10px; ">
+            SUBMIT <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+          </div>
+        </div>
+</div>
+
+    </form>
+  </section>
+
+  
+   <!-- @component: footer -->
+  <section id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h2 class="section-title">Contact Us</h2>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <p>NAPS<br> Mumbai</p>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope"></i>
+              <p>skillindia.co.in</p>
+            </div>
+
+            <div>
+              <i class="fa fa-phone"></i>
+              <p>+91 12345 67890</p>
+            </div>
+
+          </div>
+        </div>
+
+  
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="bottom">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-xs-12 text-lg-left text-center">
+            <p class="copyright-text">
+              � Skill India
+            </p>
+            <div class="credits">
+              <abbr title="National Aprrenticeship Promotion Scheme">NAPS</abbr>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-xs-12 text-lg-right text-center">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <a href="index.html">Home</a>
+              </li>
+			  <li class="list-inline-item">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
+
+
+  <!-- Template Specisifc Custom Javascript File -->
+  <!-- <script src="Bootstrap/js/custom.js"></script>
+
+  <script src="Bootstrap/contactform/contactform.js"></script>
+   -->
+ <!-- State Drop Down List Scripts -->
+    <!-- <script type="text/JavaScript" src='js/state.js'></script>
+   <script>
+    updateList = function() {
+      var input = document.getElementById('file');
+      var output = document.getElementById('fileList');
+
+      output.innerHTML = '<ul>';
+      for (var i = 0; i < input.files.length; ++i) {
+        output.innerHTML += '<li>' + input.files.item(i).name + '</li>';
+      }
+      output.innerHTML += '</ul>';
+    }
+    $( document ).ready(function() {
+        console.log( "document loaded" );
+         $( "#datepicker" ).datepicker();
+    });
+    
+    window.setTimeout(function() {
+	    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+	        $(this).remove(); 
+	    });
+	}, 4000);
+      
+  </script> -->
+
+</body>
+</html>
