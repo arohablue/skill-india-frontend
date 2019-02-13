@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Candidate } from './Candidate';
 import { CandidateRegistrationService } from './Candidate.Registration.Service';
+import { createChangeDetectorRef } from '@angular/core/src/view/refs';
 
 
 @Component({
@@ -21,12 +22,16 @@ export class CandidateRegistrationComponent{
      constructor( public ess:CandidateRegistrationService){
 
     }
-    addCandidate(mform){
+    addCandidate(){
         this.ess.sendToServer(this.crc).subscribe(
             data =>{
                 this.response=data['Progress']
             }
         );
+    }
+
+    validate() {
+            
     }
    
 }

@@ -1,6 +1,6 @@
 import {OnInit, Component} from '@angular/core';
-import { courses } from './courses';
-import { CourseService } from './course.Service';
+import { Course } from './Course';
+import { CourseService } from './Course.Service';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { Router } from '@angular/router';
 
@@ -8,20 +8,20 @@ import { CourseService } from './course.Service';
 
 
 @Component({
-    selector : 'Course-Forms',
-    templateUrl: './course.Component.html'
+    selector : 'Course-Form',
+    templateUrl: './Course.Component.html'
 })
 
 export class CourseComponent{
-    cc: courses = new courses();
+    course: Course = new Course();
     response:string;
 
-     constructor( public es:CourseService){
+     constructor( public cs:CourseService){
 
     }
-    addCandidate(){
+    addCourse(){
         
-        this.es.sendToServer(this.cc).subscribe(
+        this.cs.sendToServer(this.course).subscribe(
             data =>{
                 this.response=data['Progress']
             }

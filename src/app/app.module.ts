@@ -15,6 +15,8 @@ import { EstablishmentRegistrationService } from './Establishment/EstablishmentR
 import { EstablishmentLoginService } from './Establishment/EstablishmentLogin/Establishment.Login.Service';
 import { CandidateRegistrationService } from './Candidate/CandidateRegistration/Candidate.Registration.Service';
 import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Login.Service';
+import { CourseService } from './Course/Course.Service';
+
 
 
 
@@ -26,8 +28,8 @@ import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Logi
     CandidateRegistrationComponent,
     CandidateLoginComponent,
     Homepage,
-    HomepageBody
- 
+    HomepageBody,
+    CourseService
   ],
   imports: [
     BrowserModule,

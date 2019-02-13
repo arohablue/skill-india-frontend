@@ -6,7 +6,7 @@ export class Candidate{
                  candidateGender?:string,
                  candidateEmailId?:string,
                  candidateContactNumber?:number,
-                 candidateAdharNumber?:number,
+                 candidateAadharNumber?:number,
                  candidateEducationDetails?:string,
                  candidateDoB?:number,
                  candidateRequestStatus?:string,
