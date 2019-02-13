@@ -13,10 +13,10 @@ export class CandidateLoginService {
 constructor(private http:HttpClient){
 
 }
-sendToServer(username, password){
+sendToServer(username : string, password : string){
   //our code to be communicated with the server will be here
-  let url="" + "?username="+username + "&password=" + password;
+  let url="http://localhost:8084/loginCandidate" + "?username="+username + "&password=" + password;
   return this.http.get(url)
+  }
 }
-    }
     

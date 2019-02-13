@@ -8,31 +8,42 @@ import { FormsModule } from '@angular/forms';
 import { EstablishmentRegistrationService } from './EstablishmentRegistration/Establishment.Registration.Service';
 
 import { EstablishmentRegistrationComponent } from './EstablishmentRegistration/Establishment.Registration.Component';
-import { EstablishmentLogincomponent } from './EstablishmentLogin/Establishment.Login.component';
+import { EstablishmentLoginComponent } from './EstablishmentLogin/Establishment.Login.Component';
 import { CandidateRegistrationService } from './CandidateRegistration/Candidate.Registration.Service';
 import { CandidateRegistrationComponent } from './CandidateRegistration/Candidate.Registration.Component';
-import { CandidateLogincomponent } from './CandidateLogin/Candidate.Login.Component';
+import { CandidateLoginComponent } from './CandidateLogin/Candidate.Login.Component';
 import { Homepage } from './homepage/home.page.component';
-import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.service';
+import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.Service';
+import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Service';
+import { HomepageBody } from './HomepageBody/homepage-body.component';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent,EstablishmentRegistrationComponent,
-    EstablishmentLogincomponent,
+    AppComponent,
+    EstablishmentRegistrationComponent,
+    EstablishmentLoginComponent,
     CandidateRegistrationComponent,
-    CandidateLogincomponent,
-    Homepage
+    CandidateLoginComponent,
+    Homepage,
+    HomepageBody
+ 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, HttpClientModule,FormsModule
+    AppRoutingModule, 
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [EstablishmentRegistrationService,
+  providers: [
+    EstablishmentRegistrationService,
     EstablishmentLoginService,
     CandidateRegistrationService,
+    CandidateLoginService,
     HttpClient,
-    AppRoutingModule],
+    AppRoutingModule
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
