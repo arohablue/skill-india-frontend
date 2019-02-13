@@ -15,7 +15,8 @@ constructor(private http:HttpClient){
 }
 sendToServer(est){
         //our code to be communicated with the server will be here
-        let url="https://localhost:8084/addEstablishment";
+        console.log(est);
+        let url="http://localhost:8084/addEstablishment";
         return this.http.post(url,est);
       }
 

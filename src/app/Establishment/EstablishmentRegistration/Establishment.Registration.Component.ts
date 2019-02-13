@@ -7,7 +7,7 @@ import { Establishment } from './Establishment';
 
 @Component({
     selector : 'EstablishmentRegistration',
-    templateUrl: './Establishment.Registration.component.html',
+    templateUrl: './Establishment.Registration.Component.html',
    // styleUrls:['./flights-list.component.css'],
    
 })
@@ -19,7 +19,7 @@ export class EstablishmentRegistrationComponent{
      constructor( public ess:EstablishmentRegistrationService){
 
     }
-    addEstablishment(mform){
+    addEstablishment(){
         this.ess.sendToServer(this.est).subscribe(
             data =>{
                 this.response=data['status']

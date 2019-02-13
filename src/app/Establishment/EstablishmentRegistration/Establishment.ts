@@ -6,7 +6,7 @@ export class Establishment{
                  estContactNumber?:number,
                  estType?:string,
                  estRegNo?:number,
-                 estEmailId?:string,
+                 estEmail?:string,
                  estWorkingDays?:string,
                  domain?:string,
                  estAppStatus?:string,

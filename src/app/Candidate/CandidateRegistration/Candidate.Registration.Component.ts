@@ -9,7 +9,7 @@ import { CandidateRegistrationService } from './Candidate.Registration.Service';
 
 @Component({
     selector : 'CandidateRegistration',
-    templateUrl: './Candidate.Registration.component.html',
+    templateUrl: './Candidate.Registration.Component.html',
   
    
 })

@@ -1,9 +1,8 @@
 export class Candidate{
     constructor( candidateUserId?:string,
                  candidateName?:string,
-                 candidateNewPassword?:string,
-                 candidateCorrectPassword?:string,
-                 candidateFathersName?:string,
+                 candidatePassword?:string,
+                 candidateFatherName?:string,
                  candidateGender?:string,
                  candidateEmailId?:string,
                  candidateContactNumber?:number,

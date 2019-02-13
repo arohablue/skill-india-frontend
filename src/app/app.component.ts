@@ -8,9 +8,7 @@ import { Component } from '@angular/core';
       <h1>
         Welcome to {{title}}!
       </h1>
-      <EstablishmentRegistration></EstablishmentRegistration>
-      <CandidateRegistration></CandidateRegistration>
-      <EstablishmentLogin></EstablishmentLogin>
+
       <home-page></home-page>
       <Course-Form></Course-Form>
     
@@ -19,6 +17,10 @@ import { Component } from '@angular/core';
   `,
   styles: []
 })
+
+      
+
+
 export class AppComponent {
   title = 'Skill India';
 }
