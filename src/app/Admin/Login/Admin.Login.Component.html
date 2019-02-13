@@ -1,0 +1,36 @@
+
+<div class="panel" >
+    <div class="panel-heading">{{title}}</div>
+    <div class="panel-body">
+<div  class="table-responsive">
+    
+    <form>
+        username=<input type="text"[(ngModel)]="username" name="username"/>
+        password=<input type="text"[(ngModel)]="password" name="password"/>
+    </form>
+
+        <button id="next-btn"  (click)="login()" >login</button>
+    <table class="table" >
+    <thead>
+        <tr>
+            <th>username</th>
+            <th>password</th>
+           
+            
+        </tr>
+    </thead>
+        <tbody>
+        <tr *ngFor="let log of login">
+            <td>{{log.username}}</td>
+            <td>{{log.password}}</td>
+          
+           
+          </tr>
+      </tbody>
+    </table>
+    
+        
+    </div>
+</div>
+
+</div>

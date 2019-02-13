@@ -1,6 +1,6 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentLoginService } from '../EstablishmentLogin/Establishment.Login.service';
+import { CandidateLoginService } from './Candidate.Login.Service';
 
 
 
@@ -17,12 +17,12 @@ export class CandidateLoginComponent{
         username : string;
         password : string;
         request  : string;
-     constructor( public ess:EstablishmentLoginService){
+     constructor( public cls:CandidateLoginService){
 
     }
     
     login(){
-        this.ess.sendToServer(this.username, this.password).subscribe(
+        this.cls.sendToServer(this.username, this.password).subscribe(
             data =>{
                 this.request=data['status']
             }

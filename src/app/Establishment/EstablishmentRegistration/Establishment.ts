@@ -1,5 +1,5 @@
 export class Establishment{
-    constructor( estId?:string,
+    constructor( estId?:number,
                 estUserId?:string,
                  estUserPassword?:string,
                  estName?:string,

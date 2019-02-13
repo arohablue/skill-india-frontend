@@ -12,6 +12,8 @@ import { Component } from '@angular/core';
       <CandidateRegistration></CandidateRegistration>
       <EstablishmentLogin></EstablishmentLogin>
       <home-page></home-page>
+      <Course-Form></Course-Form>
+    
     </div>
     
   `,
