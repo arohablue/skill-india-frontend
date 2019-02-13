@@ -10,7 +10,6 @@ import { Component } from '@angular/core';
       </h1>
 
       <home-page></home-page>
-      <Course-Form></Course-Form>
     
     </div>
     
