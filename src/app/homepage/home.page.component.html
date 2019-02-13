@@ -1,42 +1,49 @@
+
 	<!-- Header -->
 	<header id="header">
 		<div class="container">
 
 			<div id="logo" class="pull-left">
 				<a href="index.html"><img src="./assets/Bootstrap/img/National.png"
-					width="200" height="150" alt="" title="" /></a>
+					width="200" height="150" alt="" title=""></a>
 
 			</div>
 
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
-					<li><a href="#about">About Us</a></li>
+					<li><a routerLink="/homepagebody">Home</a></li>
 
-					<li class="menu-has-children"><a href="#">Candidate</a>
+					<li class="menu-has-children"><a href=" ">Candidate</a>
 						<ul>
-							<li><a routerLink="/candidateregister">Candidate Register</a></li>
+							<li><a routerLink="/candidateregistration">Candidate Register</a></li>
 							<li><a routerLink="/candidatelogin">Candidate Login</a></li>
 						</ul></li>
 
 					<li class="menu-has-children"><a href="">Establishment</a>
 						<ul>
-							<li><a routerLink="/establishmentregistration">Establishment
-									Register</a></li>
-							<li><a routerLink="/establishmentLogin">Establishment Login</a></li>
+							<li><a routerLink="/establishmentregistration">Establishment Register</a></li>
+							<li><a routerLink="/establishmentlogin">Establishment Login</a></li>
 						</ul></li>
 				</ul>
+				
 				<ul class="nav-menu">
-					<li><a routerLink="/searchestablishment">Search</a></li>
+					<li><a href="">Course Form</a></li>
 				</ul>
 				<ul class="nav-menu">
-					<li><a href="courseApply.html">Course Form</a></li>
+					<li><a href="search.html">Search</a></li>
 				</ul>
+					 
+				<ul class="nav-menu"> <li><span class="icon help"></span>
+					 <a id="linkFAQ" href="http://www.apprenticeship.gov.in/Material/NCVT_MIS_FAQ.pdf" target="_blank">FAQ</a>
+						   </li>
+					</ul>
 			</nav>
 			<!-- #nav-menu-container -->
 
 			<nav class="nav social-nav pull-right d-none d-lg-inline">
-				<!-- <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a> <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a> <a href="https://www.outlook.com"><i class="fa fa-envelope"></i></a> -->
+				<a href="https://twitter.com/MSDESkillIndia"><i class="fa fa-twitter"></i></a> <a href="https://www.facebook.com/SkillIndiaOfficial/"><i class="fa fa-facebook"></i></a> <a href="https://in.linkedin.com/company/skill-development-india"><i class="fa fa-linkedin"></i></a> <a href="https://www.outlook.com"><i class="fa fa-envelope"></i></a>
 			</nav>
 		</div>
-    </header>
+	</header>
+	
     <router-outlet></router-outlet>

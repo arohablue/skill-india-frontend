@@ -1,28 +1,29 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentLoginService } from '../EstablishmentLogin/Establishment.Login.service';
+
+import { AdminLoginService } from './Admin.Login.Service';
 
 
 
 
 
 @Component({
-    selector : 'CandidateLogin',
-    template: '',
+    selector : 'AdminLogin',
+    templateUrl: './Admin.Login.Component.html',
     //styleUrls:['./flights-list.component.css'],
    
 })
 
-export class CandidateLogincomponent{
+export class AdminLoginComponent{
         username : string;
         password : string;
         request  : string;
-     constructor( public ess:EstablishmentLoginService){
+     constructor( public als:AdminLoginService){
 
     }
     
     login(){
-        this.ess.sendToServer(this.username, this.password).subscribe(
+        this.als.sendToServer(this.username, this.password).subscribe(
             data =>{
                 this.request=data['status']
             }

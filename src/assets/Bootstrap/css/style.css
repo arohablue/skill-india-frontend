@@ -822,7 +822,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin-bottom: 15px;
 }
 
-#contact .form #.show, #contact .form #errormessage.show, #contact .form .show {
+#contact .form #show, #contact .form #errormessage.show, #contact .form .show {
   display: block;
 }
 
