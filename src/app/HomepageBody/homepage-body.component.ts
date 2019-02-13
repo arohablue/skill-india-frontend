@@ -8,7 +8,9 @@ import {OnInit, Component} from '@angular/core';
 })
 
 export class HomepageBody{
-
+    private homepageMain=require("src/assets/Bootstrap/img/Skill_India.png");
+    private homepageNational=require("src/assets/Bootstrap/img/National.png");
+    private homepageEmblem=require("src/assets/Bootstrap/img/emblem.jpg");
      constructor(){
 
     }
