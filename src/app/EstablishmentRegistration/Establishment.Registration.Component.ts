@@ -19,7 +19,7 @@ export class EstablishmentRegistrationComponent{
      constructor( public ess:EstablishmentRegistrationService){
 
     }
-    addEstablishment(mform){
+    addEstablishment(){
         this.ess.sendToServer(this.est).subscribe(
             data =>{
                 this.response=data['status']

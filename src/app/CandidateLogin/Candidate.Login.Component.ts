@@ -20,7 +20,17 @@ export class CandidateLoginComponent{
     login(){
         this.cls.sendToServer(this.username, this.password).subscribe(
             data =>{
-                this.request=data['status']
+                this.request=data.toString();
+                if(!+this.request){
+                    alert("login failed");
+                    this.username = "";
+                    this.password = "";
+                }
+                else {
+                    alert("login Success");
+                    // route to dashboard
+                }
+                
             }
         );
     }
