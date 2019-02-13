@@ -5,17 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { EstablishmentRegistrationService } from './EstablishmentRegistration/Establishment.Registration.Service';
-
-import { EstablishmentRegistrationComponent } from './EstablishmentRegistration/Establishment.Registration.Component';
-import { EstablishmentLoginComponent } from './EstablishmentLogin/Establishment.Login.Component';
-import { CandidateRegistrationService } from './CandidateRegistration/Candidate.Registration.Service';
-import { CandidateRegistrationComponent } from './CandidateRegistration/Candidate.Registration.Component';
-import { CandidateLoginComponent } from './CandidateLogin/Candidate.Login.Component';
-import { Homepage } from './homepage/home.page.component';
-import { EstablishmentLoginService } from './EstablishmentLogin/Establishment.Login.Service';
-import { CandidateLoginService } from './CandidateLogin/Candidate.Login.Service';
 import { HomepageBody } from './HomepageBody/homepage-body.component';
+import { EstablishmentRegistrationComponent } from './Establishment/EstablishmentRegistration/Establishment.Registration.Component';
+import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/Establishment.Login.component';
+import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
+import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
+import { Homepage } from './homepage/home.page.component';
+import { EstablishmentRegistrationService } from './Establishment/EstablishmentRegistration/Establishment.Registration.Service';
+import { EstablishmentLoginService } from './Establishment/EstablishmentLogin/Establishment.Login.Service';
+import { CandidateRegistrationService } from './Candidate/CandidateRegistration/Candidate.Registration.Service';
+import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Login.Service';
 
 
 
