@@ -2,6 +2,10 @@
 import {OnInit, Component} from '@angular/core';
 import { CandidateLoginService } from './Candidate.Login.Service';
 
+
+
+
+
 @Component({
     selector : 'CandidateLogin',
     templateUrl: './Candidate.Login.Component.html',

@@ -7,16 +7,17 @@ import { Observable } from 'rxjs';
 @Injectable()// Dependencies injectable
 //no need of new keyword to create obj
 
-export class CandidateLoginService {
+export class BankService {
    
     //injecting Angular's Httpclient API
 constructor(private http:HttpClient){
 
 }
-sendToServer(username : string, password : string){
-  //our code to be communicated with the server will be here
-  let url="http://localhost:8084/loginCandidate" + "?username="+username + "&password=" + password;
-  return this.http.get(url)
-  }
-}
+sendToServer(bs){
+        //our code to be communicated with the server will be here
+        let url="http://localhost:8084//addBankDetails";
+        return this.http.post(url,bs)
+      }
+
+    }
     
