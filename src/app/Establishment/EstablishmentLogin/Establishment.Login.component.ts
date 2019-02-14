@@ -1,6 +1,7 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentLoginService} from './Establishment.Login.Service';
+import { EstablishmentLoginService} from '../../_services/Establishment.Login.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector : 'EstablishmentLogin',
@@ -14,7 +15,7 @@ export class EstablishmentLoginComponent{
     username : string;
     password : string;
 
-    constructor( public ess:EstablishmentLoginService){
+    constructor( public ess:EstablishmentLoginService, private router :Router){
 
     }
 
@@ -28,8 +29,8 @@ export class EstablishmentLoginComponent{
                     this.password = "";
                 }
                 else {
-                    alert("login Success");
-                    // route to dashboard
+                    this.router.navigate(['/establishment/dashboard']);
+                
                 }
                 
             }

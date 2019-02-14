@@ -1,37 +1,21 @@
 
-<!DOCTYPE html >
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Candidate Registration</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
-</head>
-
-<body>
-<br>
-
   <section class="bcg" class="container" style="padding-top: 20px;">
-  
-    <form class="container" action="registerCandidate" method="post" enctype="multipart/form-data">
+
+    <form class="container"  [formGroup]="CandidateRegistrationForm" (ngSubmit)="onSubmit(CandidateRegistrationForm)" >
       <!-- Form Heading -->
 
       <!-- Form Fields -->
       <!-- Candidate -->
-      
+
          <!-- Full Name-->
-      <div class="form-row">
-        <div class="col-md-6 form-group">
-          <label class="control-label" >Candidate Name</label> <font style= "color:red;">*</font>
-          <div class="input-group" style="z-index: 0;">
-            <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-            <input name="candidateName" 
-            [(ngModel)]="crc.candidateName"   
-              maxlength="30" placeholder="Full Name" required="required" class="form-control"  type="text"
-              title="Enter Full Name">
-          </div>
+      <div class="form-group col-md-4" >
+        <label class="control-label" for="candidateName">Candidate Name</label>
+        <div class="input-group" style="z-index: 0;">
+          <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+          <input type="text" formControlName="candidateName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
+          <div *ngIf="submitted && f.candidateName.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateName.errors.required">candidate Name is required</div>
+        </div>
         </div>
       </div>
 
@@ -40,103 +24,119 @@
       <div class="form-group">
         <label class="control-label">Gender</label><font style= "color:red;">*</font>
         <div class="form-row col-md-6" style="border: 1px solid #ddd; border-radius: 5px; padding: 0; padding-top: 8px;">
+
           <div class="radio radio-inline col-md-4">
-            <input type="radio" [(ngModel)]="crc.candidateGender" id="inlineRadio1" value="male" name="gender" checked>
-            <label for="inlineRadio1"> Male </label>
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+          <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateGender.errors.required">Male</div>
           </div>
         </div>
-        
+
         <div class="radio radio-inline col-md-4">
-            <input type="radio" [(ngModel)]="crc.candidateGender"
-            id="inlineRadio2" value="female" name="gender">
-            <label for="inlineRadio2">Female</label>
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+          <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateGender.errors.required">Male</div>
+          </div>
         </div>
+
         <div class="radio radio-inline col-md-4">
-            <input type="radio" [(ngModel)]="crc.candidateGender" id="inlineRadio3" value="others" name="gender">
-            <label for="inlineRadio3">Others</label>
+            <input type="radio"  value="other" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+          <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateGender.errors.required">Other</div>
+          </div>
         </div>
-      
+
+          </div>
+      </div>
 
         <!-- Date of birth -->
         <div class="form-group">
           <label class="control-label">Date of birth</label><font style= "color:red;">*</font>
             <div class="input-group" style="z-index: 0;">
               <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-              <input id="dob" [(ngModel)]="crc.candidateDoB"
+              <input id="dob" formControlName="candidateDoB" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateDoB.errors }"
               type="date" name="dob" title="The Age Limit Range is from 21 Years to 35 Years." required>
+              <div *ngIf="submitted && f.candidateDoB.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateDoB.errors.required">Date Of Birth</div>
+          </div>
               <p><font style= "color:red;">*Age Limit: 21 - 35 yrs.</font></p>
             </div>
           </div>
-      
+
             <!-- Candidate Email -->
       <div class="form-group">
         <label class="control-label">Candidate Email</label><font style= "color:red;">*</font>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-          <input [(ngModel)]="crc.candidateEmailId"  maxlength="30" name="username" placeholder="email"
-           class="form-control" required="required" type="email" 
-           title="Enter an e-Mail address of a valid format including the domain name.	">
+          <input type="text" formControlName="candidateEmailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmailId.errors }" />
+          <div *ngIf="submitted && f.candidateEmailId.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateEmailId.errors.required">candidate Name is required</div>
+            <div *ngIf="f.candidateEmailId.errors.pattern">
+              Email not valid.
+          </div>
+        </div>
+
         </div>
       </div>
-      
+
       <!-- Password & Confirm Password (on the same row) -->
-      <div class="form-row">
-      <font size="0.2px" color="grey">&nbsp (Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font>
+      <div class="form-group">
+      <font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font>
         <div class="col-md-6 form-group">
           <label class="control-label" >Password</label><font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-            <input maxlength="30" id="password" name="pass"
-             [(ngModel)]="crc.candidatePassword"
-            placeholder="Password" class="form-control"  required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-            title="Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.">
+            <input type="password" formControlName="candidatePassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidatePassword.errors }" />
+          <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
+            <div *ngIf="f.candidatePassword.errors.required">candidate Password is required</div>
+        </div>
           </div>
+        </div>
         </div>
 <!--         <div class="col-md-6 form-group">
           <label class="control-label" >Confirm Password</label><font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-            <input maxlength="30" id="confirmPassword" name="password" placeholder="Confirm Password" class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()" 
+            <input maxlength="30" id="confirmPassword" name="password" placeholder="Confirm Password" class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()"
                 title="Password Should be at least 8 characters long and must start with an Upper Case character, then Lower Case characters, spacial characters and numbers.">
           </div>
         </div> -->
-      </div>
-    
-      <div class="form-row">
+
         <!-- Contact number -->
         <div class="form-group col-md-6">
           <label class="control-label">Contact Number</label> <font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-            <input name="contactNo" [(ngModel)]="crc.candidateContactNumber"
-             maxlength="10" placeholder="Contact Number" class="form-control" pattern="(7|8|9)\d{9}"
-             type="number" pattern="[789][0-9]{9}" title="Enter Contact Number starting with either 7, 8, or 9.">
+            <input type="text" formControlName="candidateContactNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateContactNumber.errors }" />
+          <div *ngIf="submitted && f.candidateContactNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateContactNumber.errors.required">contact number is required</div>
           </div>
         </div>
+      </div>
 
         <!-- Aadhar No -->
         <div class="form-group col-md-6">
           <label class="control-label">Aadhar Number</label> <font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-            <input name="aadharNo" [(ngModel)]="crc.candidateAadharNumber"
-            maxlength="12" placeholder="Aadhar Number" class="form-control" required="required" 
-            type="text" pattern="[1-9][0-9]{11}" title="Enter Aadhaar Number containing 12 digits.">
+            <input type="text" formControlName="candidateAdharNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateAdharNumber.errors }" />
+          <div *ngIf="submitted && f.candidateAdharNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateAdharNumber.errors.required">candidate Password is required</div>
+        </div>
           </div>
         </div>
-      </div>
 
 		<!-- Father Name -->
 		<div class="form-group">
           <label class="control-label" >Father's Name</label><font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
-            <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
-            <input name="fatherName" [(ngModel)]="crc.candidateFathersName"
-            maxlength="30" placeholder="Father's Name" class="form-control"
-             required="required" type="text" >
+          <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
+          <input type="text" formControlName="candidateFatherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateFatherName.errors }" />
+            <div *ngIf="submitted && f.candidateFatherName.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateFatherName.errors.required">candidate Password is required</div>
           </div>
-        </div>
-
+    </div>
+    </div>
                                     <!-- Education details-Pending -->
 <!-- Qualification details -->
       <!-- <div class="form-row">
@@ -171,11 +171,10 @@
             <input maxlength="4" name="marks" placeholder="Obtained Marks" class="form-control" min="0" type="number" step="0.1" required >
           </div>
         </div> -->
-        
-      </div>
+
 
       <!-- <hr style="margin: 50px 0px;"> -->
-      
+
       <!-- <div class="form-group">
           <label class="control-label" >Street Name</label><font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
@@ -186,14 +185,14 @@
 
 
       <!-- <div class="form-row"> -->
-               
+
         <!-- State -->
         <!-- <div class="form-group col-md-4">
           <label class="control-label">State</label> <font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             <select name="addr.state" class="form-control" id="state-select" required>
-    			
+
             </select>
           </div> -->
         <!-- </div> -->
@@ -204,7 +203,7 @@
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
 			<select name="addr.city" class="form-control" id="city-select" required>
-    			
+
             </select>
           </div>
         </div> -->
@@ -219,7 +218,7 @@
           </div>
         </div>
       </div>   -->
-      
+
       <!--Document Upload -->
             <!-- <div class="form-group">
           <label class="control-label">Photo Upload</label> <font style= "color:red;">*</font>
@@ -249,8 +248,8 @@
         </div> -->
 
                             <!-- Request Status -->
-                                
-                            
+
+
                             <!-- Pending -->
 
                             <!-- Course Status -->
@@ -259,8 +258,9 @@
         <div class="form-group col-md-4" style="padding: 0;">
           <label class="control-label"></label>
           <div>
-            <button id="submit-button" type="submit" (click)="addCandidate()" name="CandidateRegistration" class="btn btn-primary form-control" style="border-radius:10px;">
+            <button [disabled]="loading" class="btn btn-primary form-control" style="border-radius:10px; ">
             SUBMIT <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
           </div>
         </div>
 
@@ -268,7 +268,7 @@
     </form>
   </section>
 
-  
+
    <!-- @component: footer -->
 
   <section id="contact">
@@ -300,7 +300,7 @@
           </div>
         </div>
 
-     
+
 
       </div>
     </div>
@@ -338,8 +338,8 @@
   <a class="scrolltop" href="#"><span class="fa fa-angle-up"></span></a>
 
 
- 
-<!-- 
+
+<!--
 <script>
 
 function validate_fileupload(fileName)
@@ -358,6 +358,3 @@ function validate_fileupload(fileName)
     return false;
 }
 	</script> -->
-
-</body>
-</html>

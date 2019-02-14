@@ -5,18 +5,22 @@ import { EstablishmentRegistrationComponent } from './Establishment/Establishmen
 import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/Establishment.Login.component';
 import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
+import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 
 import { CourseComponent } from "./Course/CourseComponent";
 
 
 const routes: Routes = [
-  { path: 'establishmentregistration', component: EstablishmentRegistrationComponent},
-  { path: 'establishmentlogin', component: EstablishmentLoginComponent },
-  { path: 'candidateregistration',component: CandidateRegistrationComponent},
-  { path: 'candidatelogin',component: CandidateLoginComponent},
+  { path: 'establishment/registration', component: EstablishmentRegistrationComponent},
+  { path: 'establishment/login', component: EstablishmentLoginComponent },
+  { path: 'candidate/registration',component: CandidateRegistrationComponent},
+  { path: 'candidate/login',component: CandidateLoginComponent},
   { path: 'homepagebody',component: HomepageBody},
-  { path: 'courseadd',component: CourseComponent},
-  { path: '',component: HomepageBody}
+  { path: '',component: HomepageBody},
+  { path: 'admin/login',component: AdminLoginComponent},
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
@@ -24,3 +28,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routing = RouterModule.forRoot(routes);
