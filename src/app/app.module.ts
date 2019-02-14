@@ -21,8 +21,8 @@ import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
-import { CourseComponent } from './Courses/course.Component';
-import { CourseService } from './_services/course.Service';
+import { CourseComponent } from './Course/Course.Component';
+import { CourseService } from './_services/Course.Service';
 
 
 
