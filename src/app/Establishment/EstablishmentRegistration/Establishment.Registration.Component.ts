@@ -2,7 +2,7 @@
 import {OnInit, Component} from '@angular/core';
 import { EstablishmentRegistrationService } from '../../_services/Establishment.Registration.Service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Establishment } from '../../_models/Establishment';
 
 @Component({
@@ -16,13 +16,19 @@ export class EstablishmentRegistrationComponent{
     est: Establishment = new Establishment(); 
     response:string;
 
-     constructor( public ess:EstablishmentRegistrationService){
+     constructor(   public ess:EstablishmentRegistrationService,
+                    private route: ActivatedRoute,
+                    private router: Router,){
 
     }
     addEstablishment(){
         this.ess.sendToServer(this.est).subscribe(
             data =>{
-                this.response=data['status']
+                this.response=data['message']
+                if(!this.response) {
+                    this.router.navigate(['/establishment/login']);
+                }
+                
             }
         );
     }

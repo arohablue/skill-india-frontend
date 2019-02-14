@@ -62,14 +62,14 @@ export class CandidateLoginComponent {
         this.cls.sendToServer(this.username, this.password).subscribe(
             data =>{
                 this.request=data.toString();
+                this.request=data.toString();
                 if(!+this.request){
                     alert("login failed");
                     this.username = "";
                     this.password = "";
                 }
                 else {
-                    alert("login Success");
-                    // route to dashboard
+                    this.router.navigate(['/candidate/login']);
                 }
 
             }

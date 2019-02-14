@@ -8,10 +8,10 @@ import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Lo
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 
 const routes: Routes = [
-  { path: 'establishmentregistration', component: EstablishmentRegistrationComponent},
-  { path: 'establishmentlogin', component: EstablishmentLoginComponent },
-  { path: 'candidateregistration',component: CandidateRegistrationComponent},
-  { path: 'candidatelogin',component: CandidateLoginComponent},
+  { path: 'establishment/registration', component: EstablishmentRegistrationComponent},
+  { path: 'establishment/login', component: EstablishmentLoginComponent },
+  { path: 'candidate/registration',component: CandidateRegistrationComponent},
+  { path: 'candidate/login',component: CandidateLoginComponent},
   { path: 'homepagebody',component: HomepageBody},
   { path: '',component: HomepageBody},
   { path: 'admin/login',component: AdminLoginComponent},
