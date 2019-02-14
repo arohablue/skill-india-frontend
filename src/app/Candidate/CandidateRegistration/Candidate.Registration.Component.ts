@@ -38,18 +38,18 @@ export class CandidateRegistrationComponent {
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
-        candidateName:     [this.model.candidateName, Validators.required],
-        candidateAdharNumber: [this.model.candidateAdharNumber, Validators.required],
-        candidateEmailId:    [this.model.candidateEmailId, [Validators.required]],
-        candidateContactNumber:    [this.model.candidateContactNumber, Validators.required],
-        candidateCourseStatus:    [this.model.candidateCourseStatus, Validators.required],
-        candidateDoB:    [this.model.candidateDoB, Validators.required],
-        candidateFatherName:    [this.model.candidateFatherName, Validators.required],
-        candidateEducationDetails:    [this.model.candidateEducationDetails, Validators.required],
-        candidateRequestStatus:    [this.model.candidateRequestStatus, Validators.required],
-        candidateGender:    [this.model.candidateGender, Validators.required],
-        candidateUserId:    [this.model.candidateUserId, Validators.required],
-        candidatePassword:    [this.model.candidatePassword, Validators.required],
+        candidateName:     [this.model.candidateName],
+        candidateAdharNumber: [this.model.candidateAdharNumber],
+        candidateEmailId:    [this.model.candidateEmailId],
+        candidateContactNumber:    [this.model.candidateContactNumber],
+        candidateCourseStatus:    [this.model.candidateCourseStatus],
+        candidateDoB:    [this.model.candidateDoB],
+        candidateFatherName:    [this.model.candidateFatherName],
+        candidateEducationDetails:    [this.model.candidateEducationDetails],
+        candidateRequestStatus:    [this.model.candidateRequestStatus],
+        candidateGender:    [this.model.candidateGender],
+        candidateUserId:    [this.model.candidateUserId],
+        candidatePassword:    [this.model.candidatePassword],
 
       });
 
@@ -64,16 +64,10 @@ export class CandidateRegistrationComponent {
           // convenience getter for easy access to form fields
     get f() { return this.CandidateRegistrationForm.controls; }
 
-    onSubmit() {
+    onSubmit({ value, valid }: { value: Candidate, valid: boolean }) {
 
-      this.submitted = true;
-
-        // stop here if form is invalid
-        if (this.CandidateRegistrationForm.invalid) {
-            return;
-        }
-
-        this.loading = true;
+        this.submittedModel = value;
+        console.log(this.submittedModel)
 
         this.crs.sendToServer(this.model).subscribe(
             data =>{

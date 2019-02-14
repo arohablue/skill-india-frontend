@@ -8,16 +8,16 @@ import { Observable } from 'rxjs';
 //no need of new keyword to create obj
 
 export class CandidateRegistrationService {
-   
+
     //injecting Angular's Httpclient API
 constructor(private http:HttpClient){
 
 }
 sendToServer(crs){
+        console.log(crs)
         //our code to be communicated with the server will be here
         let url="http://localhost:8084/addCandidate";
         return this.http.post(url,crs)
       }
 
     }
-    
