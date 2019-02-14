@@ -71,7 +71,11 @@
           <input type="text" formControlName="candidateEmailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmailId.errors }" />
           <div *ngIf="submitted && f.candidateEmailId.errors" class="invalid-feedback">
             <div *ngIf="f.candidateEmailId.errors.required">candidate Name is required</div>
+            <div *ngIf="f.candidateEmailId.errors.pattern">
+              Email not valid.
+          </div>
         </div>
+
         </div>
       </div>
 

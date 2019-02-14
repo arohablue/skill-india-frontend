@@ -1,11 +1,10 @@
 
-import {OnInit, Component} from '@angular/core';
+import { Component} from '@angular/core';
 import { AuthenticationService, AlertService } from 'src/app/_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Candidate } from 'src/app/_models/Candidate';
 import { CandidateRegistrationService } from 'src/app/_services/Candidate.Registration.Service';
-import { ValidationService } from 'src/app/_services/ValidationService';
 
 
 
@@ -27,6 +26,7 @@ export class CandidateRegistrationComponent {
         loading = false;
         submitted = false;
         returnUrl: string;
+
      constructor( public crs: CandidateRegistrationService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
@@ -38,18 +38,18 @@ export class CandidateRegistrationComponent {
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
-        candidateName:     [this.model.candidateName, Validators.required],
-        candidateAdharNumber: [this.model.candidateAdharNumber,Validators.required],
-        candidateEmailId:    [this.model.candidateEmailId, Validators.required],
-        candidateContactNumber:    [this.model.candidateContactNumber, Validators.required],
-        candidateCourseStatus:    [this.model.candidateCourseStatus, Validators.required],
+        candidateName:     [this.model.candidateName, [ Validators.required, Validators.max(15)]],
+        candidateAdharNumber: [this.model.candidateAdharNumber,[ Validators.required, Validators.max(15)]],
+        candidateEmailId:    [this.model.candidateEmailId, [ Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+        candidateContactNumber:    [this.model.candidateContactNumber, [ Validators.required, Validators.max(10)]],
+        candidateCourseStatus:    [this.model.candidateCourseStatus, [ Validators.required, Validators.max(15)]],
         candidateDoB:    [this.model.candidateDoB, Validators.required],
-        candidateFatherName:    [this.model.candidateFatherName, Validators.required],
-        candidateEducationDetails:    [this.model.candidateEducationDetails, Validators.required],
-        candidateRequestStatus:    [this.model.candidateRequestStatus, Validators.required],
+        candidateFatherName:    [this.model.candidateFatherName, [ Validators.required, Validators.max(15)]],
+        candidateEducationDetails:    [this.model.candidateEducationDetails, [ Validators.required, Validators.max(15)]],
+        candidateRequestStatus:    [this.model.candidateRequestStatus, [ Validators.required, Validators.max(15)]],
         candidateGender:    [this.model.candidateGender, Validators.required],
-        candidateUserId:    [this.model.candidateUserId, Validators.required],
-        candidatePassword:    [this.model.candidatePassword, Validators.required],
+        candidateUserId:    [this.model.candidateUserId, [ Validators.required, Validators.max(15)]],
+        candidatePassword:    [this.model.candidatePassword, [ Validators.required, Validators.max(15)]],
 
       });
 
@@ -65,6 +65,16 @@ export class CandidateRegistrationComponent {
     get f() { return this.CandidateRegistrationForm.controls; }
 
     onSubmit({ value, valid }: { value: Candidate, valid: boolean }) {
+
+        this.submitted = true;
+
+        // stop here if form is invalid
+        if (this.CandidateRegistrationForm.invalid) {
+            return;
+        }
+
+        this.loading = true;
+
 
         this.submittedModel = value;
         console.log(this.submittedModel)
