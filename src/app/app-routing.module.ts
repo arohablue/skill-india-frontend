@@ -6,8 +6,8 @@ import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/
 import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
+import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 
-import { CourseComponent } from "./Course/CourseComponent";
 
 
 const routes: Routes = [
@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'homepagebody',component: HomepageBody},
   { path: '',component: HomepageBody},
   { path: 'admin/login',component: AdminLoginComponent},
+  { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
+  
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

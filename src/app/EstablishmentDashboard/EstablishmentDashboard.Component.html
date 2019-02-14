@@ -3,11 +3,7 @@
 	<header id="header">
 		<div class="container">
 
-			<div id="logo" class="pull-left">
-				<a href="index.html"><img src="Bootstrap/img/National.png"
-					width="200" height="150" alt="" title="" /></img></a>
-
-			</div>
+			
 
 		<nav id="nav-menu-container">
 			<ul class="nav-menu">
@@ -39,9 +35,9 @@
 				 <label class="control-label"></label><br>  <!-- ${est.name} -->
  <label class="control-label">Profile Status: </label><br>				<!--${est.status} -->
 					
-				<c:if test="${ est.estRegNo !=0}">
+				
 				 <label class="control-label">Registration Number:  </label>  	<!--${est.estRegNo} -->
-				</c:if>
+				
 			</div>
 
 			<p>Application Status:</p>
@@ -92,13 +88,6 @@
 							</tr>
 						</thead>
 						<tbody>
-								<!-- <tr *ngFor="let pr of products">
-										<td >{{pr.id}}</td>   
-										<td>{{pr.name}}</td>
-										<td>{{pr.price}}</td>   
-										<td>{{pr.quantity}}</td>
-									</tr>
-								</tbody> -->
 
 								<tr *ngFor="let est of establishment">
 									<td>{{establishment.estId}}</td>
@@ -114,11 +103,7 @@
 									<td>{{establishment.estAppStatus}}</td>
 									<td>{{establishment.estBankDetails}}</td>
 									<td>{{establishment.estAddress}}</td>
-								
-								<!-- <c:if test="${drm.contract.status eq 'Applied'}">   	 requires contract form -->
-										<!-- <td><a href="fillOffer/${drm.contract.letterNo}">Fill Offer letter</a></td> requires contract form -->
-										<!-- Reject</a></td> requi<td><a href="reject/${drm.contract.letterNo}">res contract form -->
-									<!-- </c:if> requires contract form -->
+					
 								</tr>
 
 						</tbody>
