@@ -5,7 +5,8 @@ import { EstablishmentRegistrationComponent } from './Establishment/Establishmen
 import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/Establishment.Login.component';
 import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
-import { CourseService } from './Course/Course.Service';
+
+import { CourseComponent } from "./Course/CourseComponent";
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   { path: 'candidateregistration',component: CandidateRegistrationComponent},
   { path: 'candidatelogin',component: CandidateLoginComponent},
   { path: 'homepagebody',component: HomepageBody},
-  { path: 'courseadd',component: CourseService},
+  { path: 'courseadd',component: CourseComponent},
   { path: '',component: HomepageBody}
 ];
 
