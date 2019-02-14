@@ -1,20 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { routing }  from './app-routing.module';
+import { AlertComponent } from './_directives';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomepageBody } from './HomepageBody/homepage-body.component';
 import { EstablishmentRegistrationComponent } from './Establishment/EstablishmentRegistration/Establishment.Registration.Component';
 import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/Establishment.Login.component';
 import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
 import { Homepage } from './homepage/home.page.component';
-import { EstablishmentRegistrationService } from './Establishment/EstablishmentRegistration/Establishment.Registration.Service';
-import { EstablishmentLoginService } from './Establishment/EstablishmentLogin/Establishment.Login.Service';
-import { CandidateRegistrationService } from './Candidate/CandidateRegistration/Candidate.Registration.Service';
-import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Login.Service';
+import { EstablishmentRegistrationService } from './_services/Establishment.Registration.Service';
+import { EstablishmentLoginService } from './_services/Establishment.Login.service';
+import { CandidateRegistrationService } from './_services/Candidate.Registration.Service';
+import { CandidateLoginService } from './_services/Candidate.Login.Service';
+import { ValidationService } from './_services/ValidationService';
+import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
+import { AuthenticationService, AlertService } from './_services';
 
 
 
@@ -26,14 +31,18 @@ import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Logi
     CandidateRegistrationComponent,
     CandidateLoginComponent,
     Homepage,
-    HomepageBody
- 
+    HomepageBody,
+    AlertComponent,
+    AdminLoginComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
+    AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    routing,
+    ReactiveFormsModule
   ],
   providers: [
     EstablishmentRegistrationService,
@@ -41,7 +50,9 @@ import { CandidateLoginService } from './Candidate/CandidateLogin/Candidate.Logi
     CandidateRegistrationService,
     CandidateLoginService,
     HttpClient,
-    AppRoutingModule
+    AppRoutingModule,AuthenticationService,
+    AlertService,
+    ValidationService,
   ],
   bootstrap: [AppComponent]
 })

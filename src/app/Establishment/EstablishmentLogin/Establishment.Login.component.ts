@@ -1,6 +1,6 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentLoginService} from './Establishment.Login.Service';
+import { EstablishmentLoginService} from '../../_services/Establishment.Login.service';
 
 @Component({
     selector : 'EstablishmentLogin',

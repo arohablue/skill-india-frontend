@@ -1,6 +1,6 @@
 import {OnInit, Component} from '@angular/core';
-import { courses } from './courses';
-import { CourseService } from './course.Service';
+import { courses } from '../_models/courses';
+import { CourseService } from '../_services/course.Service';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { Router } from '@angular/router';
 

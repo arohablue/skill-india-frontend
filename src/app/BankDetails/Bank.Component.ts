@@ -4,8 +4,8 @@ import {OnInit, Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Bank } from './Bank';
-import { BankService } from './Bank.Service';
+import { Bank } from '../_models/Bank';
+import { BankService } from '../_services/Bank.Service';
 
 
 @Component({

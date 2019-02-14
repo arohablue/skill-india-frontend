@@ -1,0 +1,13 @@
+﻿import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Injectable()
+export class UserService {
+    constructor(private http: HttpClient) { }
+
+
+    register() {
+        return this.http.post(`/users/register`, '');
+    }
+
+}

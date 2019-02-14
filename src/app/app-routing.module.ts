@@ -5,6 +5,7 @@ import { EstablishmentRegistrationComponent } from './Establishment/Establishmen
 import { EstablishmentLoginComponent } from './Establishment/EstablishmentLogin/Establishment.Login.component';
 import { CandidateRegistrationComponent } from './Candidate/CandidateRegistration/Candidate.Registration.Component';
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
+import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 
 const routes: Routes = [
   { path: 'establishmentregistration', component: EstablishmentRegistrationComponent},
@@ -12,7 +13,11 @@ const routes: Routes = [
   { path: 'candidateregistration',component: CandidateRegistrationComponent},
   { path: 'candidatelogin',component: CandidateLoginComponent},
   { path: 'homepagebody',component: HomepageBody},
-  { path: '',component: HomepageBody}
+  { path: '',component: HomepageBody},
+  { path: 'admin/login',component: AdminLoginComponent},
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
@@ -20,3 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routing = RouterModule.forRoot(routes);

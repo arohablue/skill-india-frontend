@@ -1,9 +1,9 @@
 
 import {OnInit, Component} from '@angular/core';
-import { EstablishmentRegistrationService } from './Establishment.Registration.Service';
+import { EstablishmentRegistrationService } from '../../_services/Establishment.Registration.Service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Establishment } from './Establishment';
+import { Establishment } from '../../_models/Establishment';
 
 @Component({
     selector : 'EstablishmentRegistration',
