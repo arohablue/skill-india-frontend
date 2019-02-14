@@ -10,11 +10,9 @@
 
 	
 	<!-- Form Heading -->
-	<center>
 		<h2>
 			<b><mark>Enter Course details</mark></b>
 		</h2>
-	</center>
 	<br>
 
 	<section class="bcg" class="container" style="padding-top: 20px;">
@@ -85,8 +83,8 @@
 			<div class="input-group" style="z-index: 0;">
 				<span class="input-group-addon"><i
 					class="fa fa-location-arrow" aria-hidden="true"></i></span> <input
-					name="estRegno" placeholder="Est Reg No" class="form-control"
-					type="number" value = "${est.estRegNo }" readonly >
+					name="estRegNo" placeholder="Establishment Registration No" class="form-control" 
+					type="number" value = "${est.estRegNo }" readonly > <!--Fetch est reg no from db-->
 			</div>
 		</div>
 
@@ -98,7 +96,7 @@
 			<div class="input-group" style="z-index: 0;">
 				<span class="input-group-addon"><i class="fa fa-university"
 					aria-hidden="true"></i></span> <input name="estName"
-					placeholder="Establishment Name" class="form-control" type="text" value="${est.name}" readonly>
+					placeholder="Establishment Name" class="form-control" type="text" value="" readonly> <!-- Fetch establihment name from db -->
 			</div>
 		</div>
 
@@ -106,7 +104,7 @@
 		<div class="form-group col-md-4" style="padding: 0;">
 			<label class="control-label"></label>
 			<div>
-				<button id="submit-button" type="submit" name="Course Apply"
+				<button id="submit-button" type="submit" name="Course Apply" (click)="addCourse(mform)"
 					class="btn btn-primary form-control" style="border-radius: 10px;">
 					SUBMIT <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
 				</button>

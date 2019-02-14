@@ -10,6 +10,7 @@ import { Component } from '@angular/core';
       </h1>
 
       <home-page></home-page>
+      <home-page-footer></home-page-footer>
     
     </div>
     

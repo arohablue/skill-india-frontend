@@ -7,6 +7,9 @@ import { CandidateRegistrationComponent } from './Candidate/CandidateRegistratio
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 
+import { CourseComponent } from "./Course/CourseComponent";
+
+
 const routes: Routes = [
   { path: 'establishment/registration', component: EstablishmentRegistrationComponent},
   { path: 'establishment/login', component: EstablishmentLoginComponent },

@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 //no need of new keyword to create obj
 
 export class EstablishmentRegistrationService {
-
     //injecting Angular's Httpclient API
 constructor(private http:HttpClient){
 

@@ -20,6 +20,9 @@ import { CandidateLoginService } from './_services/Candidate.Login.Service';
 import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
+import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
+import { CourseComponent } from './Courses/course.Component';
+import { CourseService } from './_services/course.Service';
 
 
 
@@ -32,6 +35,8 @@ import { AuthenticationService, AlertService } from './_services';
     CandidateLoginComponent,
     Homepage,
     HomepageBody,
+    HomepageFooter,
+    CourseComponent,
     AlertComponent,
     AdminLoginComponent,
 
@@ -49,6 +54,7 @@ import { AuthenticationService, AlertService } from './_services';
     EstablishmentLoginService,
     CandidateRegistrationService,
     CandidateLoginService,
+    CourseService,
     HttpClient,
     AppRoutingModule,AuthenticationService,
     AlertService,
