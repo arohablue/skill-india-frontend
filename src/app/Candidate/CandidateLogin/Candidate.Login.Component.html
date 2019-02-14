@@ -14,7 +14,7 @@
         <label class="control-label" for="username">User Name</label>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <input type="text" formControlName="username"  maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
@@ -27,7 +27,7 @@
         <label class="control-label" for="password">Password</label>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-          <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+          <input type="password" formControlName="password"  maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Password is required</div>
         </div>
@@ -48,7 +48,7 @@
 	  <a href="ForgotPsCan.html">Forgot Password</a>
 	  <br/>
 	  <p style="text-align: center;">New User?</p>
-      <p style="text-align: center;"><a routerLink="/candidateregistration">Register as a Candidate</a></p>
+      <p style="text-align: center;"><a routerLink="/candidate/registration">Register as a Candidate</a></p>
 <!--       <p style="text-align: center"><a href="EstablishmentRegistration.html">Register as an Establishment</a></p>
  -->
         <!-- Submit button -->

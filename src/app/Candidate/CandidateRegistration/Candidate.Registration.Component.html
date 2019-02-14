@@ -1,5 +1,5 @@
 
-  <section class="bcg" class="container" style="padding-top: 20px;">
+  <section class="bcg" class="container text-left" style="padding-top: 20px;">
 
     <form class="container"  [formGroup]="CandidateRegistrationForm" (ngSubmit)="onSubmit(CandidateRegistrationForm)" >
       <!-- Form Heading -->
@@ -25,22 +25,22 @@
         <label class="control-label">Gender</label><font style= "color:red;">*</font>
         <div class="form-row col-md-6" style="border: 1px solid #ddd; border-radius: 5px; padding: 0; padding-top: 8px;">
 
-          <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+          <div class="col-md-4">
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />Male
           <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
             <div *ngIf="f.candidateGender.errors.required">Male</div>
           </div>
         </div>
 
-        <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+        <div class="col-md-4">
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />Female
           <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
-            <div *ngIf="f.candidateGender.errors.required">Male</div>
+            <div *ngIf="f.candidateGender.errors.required">Female</div>
           </div>
         </div>
 
-        <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="other" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+        <div class="col-md-4">
+            <input type="radio"  value="other" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />Other
           <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
             <div *ngIf="f.candidateGender.errors.required">Other</div>
           </div>

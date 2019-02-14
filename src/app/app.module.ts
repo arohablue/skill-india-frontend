@@ -21,8 +21,8 @@ import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
-import { CourseComponent } from './Course/Course.Component';
 import { CourseService } from './_services/Course.Service';
+import { CourseComponent } from './Course/Course.Component';
 
 
 
@@ -36,9 +36,9 @@ import { CourseService } from './_services/Course.Service';
     Homepage,
     HomepageBody,
     HomepageFooter,
-    CourseComponent,
     AlertComponent,
     AdminLoginComponent,
+    CourseComponent
 
   ],
   imports: [
@@ -59,6 +59,7 @@ import { CourseService } from './_services/Course.Service';
     AppRoutingModule,AuthenticationService,
     AlertService,
     ValidationService,
+    CourseService
   ],
   bootstrap: [AppComponent]
 })

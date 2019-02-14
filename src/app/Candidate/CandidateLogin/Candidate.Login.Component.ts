@@ -34,8 +34,8 @@ export class CandidateLoginComponent {
 
     ngOnInit() {
       this.candidateLoginForm = this.formBuilder.group({
-          username: ['', Validators.required],
-          password: ['', Validators.required]
+          username: ['', [ Validators.required, Validators.max(15)]],
+          password: ['', [ Validators.required, Validators.max(15)]]
       });
 
       // reset login status
@@ -57,7 +57,8 @@ export class CandidateLoginComponent {
             return;
         }
 
-        this.loading = true;
+        //this.loading = true;
+        this.router.navigate(['/candidate/dashboard']);
 
         this.cls.sendToServer(this.username, this.password).subscribe(
             data =>{
