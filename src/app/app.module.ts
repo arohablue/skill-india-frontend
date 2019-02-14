@@ -28,8 +28,8 @@ import { CourseService } from './Course/Course.Service';
     CandidateRegistrationComponent,
     CandidateLoginComponent,
     Homepage,
-    HomepageBody,
-    CourseService
+    HomepageBody
+    // CourseService
   ],
   imports: [
     BrowserModule,
