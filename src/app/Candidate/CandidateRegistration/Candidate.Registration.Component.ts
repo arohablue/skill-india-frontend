@@ -39,13 +39,12 @@ export class CandidateRegistrationComponent {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
         candidateName:     [this.model.candidateName, [ Validators.required, Validators.max(15)]],
-        candidateAdharNumber: [this.model.candidateAdharNumber,[ Validators.required, Validators.max(15)]],
-        candidateEmailId:    [this.model.candidateEmailId, [ Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+        candidateAdharNumber: [this.model.candidateAadhaarNumber,[ Validators.required, Validators.max(15)]],
+        candidateEmailId:    [this.model.candidateEmail, [ Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
         candidateContactNumber:    [this.model.candidateContactNumber, [ Validators.required, Validators.max(10)]],
         candidateCourseStatus:    [this.model.candidateCourseStatus, [ Validators.required, Validators.max(15)]],
         candidateDoB:    [this.model.candidateDoB, Validators.required],
         candidateFatherName:    [this.model.candidateFatherName, [ Validators.required, Validators.max(15)]],
-        candidateEducationDetails:    [this.model.candidateEducationDetails, [ Validators.required, Validators.max(15)]],
         candidateRequestStatus:    [this.model.candidateRequestStatus, [ Validators.required, Validators.max(15)]],
         candidateGender:    [this.model.candidateGender, Validators.required],
         candidateUserId:    [this.model.candidateUserId, [ Validators.required, Validators.max(15)]],
