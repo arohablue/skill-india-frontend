@@ -1,17 +1,28 @@
+import { Bank } from './Bank';
+import { Address } from './Address';
+
 export class Establishment{
-    constructor( public estId?:number,
-                 public  estUserId?:string,
-                 public estUserPassword?:string,
-                 public estName?:string,
-                 public estContactNumber?:number,
-                 public estType?:string,
-                 public estRegNo?:number,
-                 public estEmail?:string,
-                 public estWorkingDays?:string,
-                 public domain?:string,
-                 public estAppStatus?:string,
-                 public estBankDetails?:string,
-                 public estAddress?:string,
+    constructor( estId?:number,
+                 estName?:string,
+                 estEmail?:string,
+                 estUserPassword?:string,
+                 estType?:string,
+                 domain?:string,
+                 estWorkingDays?:number,
+                 estContactNumber?:number,
+                 estTotalEmp?:number,
+                //  estAppStatus?:string
+                bank?:Bank,
+                // bankId?:number,
+                // bankName?:string,
+                // bankBranch?:string,
+                // bankIFSC?:number,
+                // accountNumber?:number
+                address?:Address
+                // addressId?:number,
+                // localAddress?:string,
+                // city?:string,
+                // state?:string,
                 )
                {
      }

@@ -1,3 +1,5 @@
+import { Establishment } from './Establishment';
+
 export class Course{
     constructor(
         public courseId?:number,

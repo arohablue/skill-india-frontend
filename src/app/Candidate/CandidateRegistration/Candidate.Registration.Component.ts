@@ -38,15 +38,13 @@ export class CandidateRegistrationComponent {
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
-        candidateName:     [this.model.candidateName, Validators.required],
-        candidateAdharNumber: [this.model.candidateAdharNumber,Validators.required],
-        candidateEmailId:    [this.model.candidateEmailId, Validators.required],
-        candidateContactNumber:    [this.model.candidateContactNumber, Validators.required],
-        //candidateCourseStatus:    [this.model.candidateCourseStatus, Validators.required],
+        candidateName:     [this.model.candidateName, [ Validators.required, Validators.max(15)]],
+        candidateAdharNumber: [this.model.candidateAadhaarNumber,[ Validators.required, Validators.max(15)]],
+        candidateEmailId:    [this.model.candidateEmail, [ Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+        candidateContactNumber:    [this.model.candidateContactNumber, [ Validators.required, Validators.max(10)]],
         candidateDoB:    [this.model.candidateDoB, Validators.required],
-        candidateFatherName:    [this.model.candidateFatherName, Validators.required],
-        //candidateEducationDetails:    [this.model.candidateEducationDetails, Validators.required],
-        //candidateRequestStatus:    [this.model.candidateRequestStatus, Validators.required],
+        candidateFatherName:    [this.model.candidateFatherName, [ Validators.required, Validators.max(15)]],
+        candidateRequestStatus:    [this.model.candidateRequestStatus, [ Validators.required, Validators.max(15)]],
         candidateGender:    [this.model.candidateGender, Validators.required],
         candidateUserId:    [this.model.candidateUserId, Validators.required],
         candidatePassword:    [this.model.candidatePassword, Validators.required]
