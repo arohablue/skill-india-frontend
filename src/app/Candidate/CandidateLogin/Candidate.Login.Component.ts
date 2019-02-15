@@ -20,6 +20,9 @@ export class CandidateLoginComponent {
         usermodel: User = new User();
         submittedModel:User =  new User();
         request: string;
+        response : string;
+        usercheck : string;
+
 
         candidateLoginForm: FormGroup;
         loading = false;
@@ -29,6 +32,7 @@ export class CandidateLoginComponent {
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
                   private authenticationService: AuthenticationService,
+                  private router: Router
                   ) {
     }
 
@@ -52,8 +56,6 @@ export class CandidateLoginComponent {
     onSubmit({ value, valid }: { value: User, valid: boolean }) {
 
         this.submitted = true;
-        
-        console.log("true")
 
         // stop here if form is invalid
         if (this.candidateLoginForm.invalid) {
@@ -68,10 +70,20 @@ export class CandidateLoginComponent {
 
         this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-                console.log("i am not here")
-                console.log(data)
+                console.log(data);
             }
         );
+    }
+
+    check(value) {
+
+        this.cls.checkUser(value).subscribe(
+            data =>{
+                this.usercheck = data['message'];
+                console.log(this.usercheck)
+            }
+        );
+        
     }
 
 }

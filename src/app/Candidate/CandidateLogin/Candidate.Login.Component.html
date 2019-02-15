@@ -14,10 +14,11 @@
         <label class="control-label" for="username">User Name</label>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-          <input type="text" formControlName="username"  maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+          <input  [ngModel]="username" class="form-control" (ngModelChange)="check($event)" type="text" formControlName="username"  maxlength="10" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Username is required</div>
         </div>
+         <div *ngIf="!usercheck">Username already present</div>
         </div>
       </div>
 

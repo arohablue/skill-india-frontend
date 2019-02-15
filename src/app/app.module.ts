@@ -40,7 +40,8 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     HomepageFooter,
     AlertComponent,
     AdminLoginComponent,
-    CourseComponent
+    CourseComponent,
+    EstablishmentDashboardComponent
 
   ],
   imports: [
