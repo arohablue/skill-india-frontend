@@ -1,5 +1,5 @@
 
-  <section class="bcg" class="container" style="padding-top: 20px;">
+  <section class="bcg" class="container text-left" style="padding-top: 20px;">
 
     <form class="container"  [formGroup]="CandidateRegistrationForm" (ngSubmit)="onSubmit(CandidateRegistrationForm)" >
       <!-- Form Heading -->
@@ -44,33 +44,35 @@
     </div>
 
       <!-- Gender Radio Buttons -->
+<<<<<<< HEAD
       <!-- <div class="form-group">
+=======
+      <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }">
+>>>>>>> develop
         <label class="control-label">Gender</label><font style= "color:red;">*</font>
-        <div class="form-row col-md-6" style="border: 1px solid #ddd; border-radius: 5px; padding: 0; padding-top: 8px;">
+      
 
-          <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
-          <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
-            <div *ngIf="f.candidateGender.errors.required">Male</div>
-          </div>
+          <div class="col-md-4">
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" />Male
         </div>
 
-        <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
-          <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
-            <div *ngIf="f.candidateGender.errors.required">Male</div>
-          </div>
+        <div class="col-md-4">
+            <input type="radio"  value="male" formControlName="candidateGender" class="form-control" />Female
         </div>
 
-        <div class="radio radio-inline col-md-4">
-            <input type="radio"  value="other" formControlName="candidateGender" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }" />
+        <div class="col-md-4">
+            <input type="radio"  value="other" formControlName="candidateGender" class="form-control"/>Other
           <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
-            <div *ngIf="f.candidateGender.errors.required">Other</div>
+            <div *ngIf="f.candidateGender.errors.required">Gender is required</div>
           </div>
         </div>
+<<<<<<< HEAD
 
           </div>
       </div> -->
+=======
+      </div>
+>>>>>>> develop
 
         <!-- Date of birth -->
         <div class="form-row">
@@ -81,11 +83,29 @@
               <input id="dob" formControlName="candidateDoB" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateDoB.errors }"
               type="date" name="dob" title="The Age Limit Range is from 21 Years to 35 Years." required>
               <div *ngIf="submitted && f.candidateDoB.errors" class="invalid-feedback">
+<<<<<<< HEAD
             <div *ngIf="f.candidateDoB.errors.required">The Age Limit Range is from 21 Years to 35 Years.</div>
+=======
+            <div *ngIf="f.candidateDoB.errors.required">Date Of Birth required</div>
+>>>>>>> develop
           </div>
               <p><font style= "color:red;">*Age Limit: 21 - 35 yrs.</font></p>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+
+            <!-- Candidate Email -->
+      <div class="form-group">
+        <label class="control-label">Candidate Email</label><font style= "color:red;">*</font>
+        <div class="input-group" style="z-index: 0;">
+          <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+          <input type="text" formControlName="candidateEmailId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmailId.errors }" />
+          <div *ngIf="submitted && f.candidateEmailId.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateEmailId.errors.required">Email is required</div>
+            <div *ngIf="f.candidateEmailId.errors.pattern">
+              Email not valid.
+>>>>>>> develop
           </div>
 
               <!-- Father Name -->
@@ -138,11 +158,18 @@
             <div align="left"><label class="control-label" >Password</label><font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+<<<<<<< HEAD
             <input type="password" placeholder="Password" formControlName="candidatePassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidatePassword.errors }" />
             <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
             <div *ngIf="f.candidatePassword.errors.required">candidate Password is required</div>
             </div>
         <!-- <font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font> -->
+=======
+            <input type="password" formControlName="candidatePassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidatePassword.errors }" />
+          <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
+            <div *ngIf="f.candidatePassword.errors.required">Password is required</div>
+        </div>
+>>>>>>> develop
           </div>
         </div>
         
@@ -192,9 +219,15 @@
             <div align="left"><label class="control-label">Aadhaar Number</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
+<<<<<<< HEAD
             <input type="text" formControlName="candidateAadhaarNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateAadhaarNumber.errors }" />
           <div *ngIf="submitted && f.candidateAadhaarNumber.errors" class="invalid-feedback">
             <div *ngIf="f.candidateAdahaarNumber.errors.required">candidate Aadhaar number is required</div>
+=======
+            <input type="text" formControlName="candidateAdharNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateAdharNumber.errors }" />
+          <div *ngIf="submitted && f.candidateAdharNumber.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateAdharNumber.errors.required">Aadhar Password is required</div>
+>>>>>>> develop
         </div>
           </div>
         </div>
@@ -203,9 +236,20 @@
         <hr style="margin: 25px 0px;"> 
         
 
+<<<<<<< HEAD
 
         <div align="left">
             <h3>Qualification details:</h3>
+=======
+		<!-- Father Name -->
+		<div class="form-group">
+          <label class="control-label" >Father's Name</label><font style= "color:red;">*</font>
+          <div class="input-group" style="z-index: 0;">
+          <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
+          <input type="text" formControlName="candidateFatherName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateFatherName.errors }" />
+            <div *ngIf="submitted && f.candidateFatherName.errors" class="invalid-feedback">
+            <div *ngIf="f.candidateFatherName.errors.required">fathers name is required</div>
+>>>>>>> develop
           </div>
 
                                                       <!-- Qualification details -->

@@ -4,6 +4,7 @@ import { CandidateLoginService } from '../../_services/Candidate.Login.Service';
 import { AuthenticationService, AlertService } from 'src/app/_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/_models/User';
 
 
 
@@ -16,8 +17,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class CandidateLoginComponent {
-        username: string;
-        password: string;
+        usermodel: User = new User();
+        submittedModel:User =  new User();
         request: string;
 
         candidateLoginForm: FormGroup;
@@ -27,51 +28,48 @@ export class CandidateLoginComponent {
      constructor( public cls: CandidateLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
-                  private router: Router,
                   private authenticationService: AuthenticationService,
-                  private alertService: AlertService) {
+                  ) {
     }
 
     ngOnInit() {
+
       this.candidateLoginForm = this.formBuilder.group({
-          username: ['', Validators.required],
-          password: ['', Validators.required]
+          username:     [this.usermodel.username, Validators.required],
+          password:     [this.usermodel.password, Validators.required],
       });
 
       // reset login status
-      this.authenticationService.logout();
+      //this.authenticationService.logout();
 
       // get return url from route parameters or default to '/'
-      this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+      //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
           // convenience getter for easy access to form fields
     get f() { return this.candidateLoginForm.controls; }
 
-    onSubmit() {
+    onSubmit({ value, valid }: { value: User, valid: boolean }) {
 
-      this.submitted = true;
+        this.submitted = true;
+        
+        console.log("true")
 
         // stop here if form is invalid
         if (this.candidateLoginForm.invalid) {
             return;
         }
+        //this.loading = true;
 
-        this.loading = true;
 
-        this.cls.sendToServer(this.username, this.password).subscribe(
+        this.submittedModel = value;
+
+        console.log(this.submittedModel)
+
+        this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-                this.request=data.toString();
-                this.request=data.toString();
-                if(!+this.request){
-                    alert("login failed");
-                    this.username = "";
-                    this.password = "";
-                }
-                else {
-                    this.router.navigate(['/candidate/login']);
-                }
-
+                console.log("i am not here")
+                console.log(data)
             }
         );
     }

@@ -8,6 +8,7 @@ import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Lo
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 
+import { CourseComponent } from './Course/Course.Component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'admin/login',component: AdminLoginComponent},
   { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
   
+  { path: 'add/course',component: CourseComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

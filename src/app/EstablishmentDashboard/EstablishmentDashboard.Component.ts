@@ -1,6 +1,6 @@
 import {OnInit, Component} from '@angular/core';
 import { Establishment } from '../_models/Establishment';
-import { EstablishmentDashboardService } from './EstablishmentComponent.Service';
+import { EstablishmentDashboardService } from '../_services/EstablishmentComponent.Service';
 
 
 @Component({

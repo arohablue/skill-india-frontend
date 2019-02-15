@@ -1,7 +1,7 @@
 import {OnInit, Component} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CandidateDashboardService } from './CandidateDashboard.Service';
+import { CandidateDashboardService } from '../_services/CandidateDashboard.Service';
 import { Candidate } from '../_models/Candidate';
 
 
