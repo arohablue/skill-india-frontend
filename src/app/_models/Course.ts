@@ -1,10 +1,10 @@
 export class Course{
     constructor(
-        courseId?:number,
-        courseName?:string,
-        courseDescription?:string,
-        courseDuration?:number,
-        traineeName?:string,
-        courseAmount?:number,
+        public courseId?:number,
+        public courseName?:string,
+        public courseDescription?:string,
+        public courseDuration?:number,
+        public traineeName?:string,
+        public courseAmount?:number,
     ){}
 }
