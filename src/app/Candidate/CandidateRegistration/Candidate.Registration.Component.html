@@ -3,13 +3,13 @@
 
     <form class="container"  [formGroup]="CandidateRegistrationForm" (ngSubmit)="onSubmit(CandidateRegistrationForm)" >
       <!-- Form Heading -->
-
-      <!-- Form Fields -->
-      <!-- Candidate -->
-
+      <h1><b><mark>Candidate Registration Form</mark></b></h1>
+<br>
+<div align="left">
+      <h3>Personal Details:</h3>
+    </div>
          <!-- Full Name-->
-         
-        <div class="form-group col-md-6">
+ <div class="form-row">
         <label class="control-label" for="candidateName">Name<font
 					style="color: red;">*</font></label>
         <div class="input-group" style="z-index: 0;">
@@ -19,27 +19,29 @@
           <div *ngIf="submitted && f.candidateName.errors" class="invalid-feedback">
             <div *ngIf="f.candidateName.errors.required">candidate Name is required</div>
         </div>
-        </div>
+      </div>
       </div>
 
       <!-- Gender -->
       
-			<div class="form-group">
-        <label class="control-label">Gender</label><font style= "color:red;">*</font>
+			<div class="form-row">
+      <div class="form-group col-md-6">
+        <div align="left"><label class="control-label">Gender</label><font style= "color:red;">*</font></div>
 				<div class="input-group" style="z-index: 0;">
 					<span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
 						<select name="candidateGender" class="form-control" 
             [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }">
-              <option value="">--Select--</option>
+              <option value="" disabled selected>--Select--</option>
 						  <option value="Male">Male</option>
 						  <option value="Female">Female</option>
 						  <option value="Others">Others</option>
             </select>
           <div *ngIf="submitted && f.candidateGender.errors" class="invalid-feedback">
           <div *ngIf="f.candidateGender.errors.required">candidate Gender is required</div>
-				  </div>
+          </div>
+          </div>
 			</div>
-
+    </div>
 
       <!-- Gender Radio Buttons -->
       <!-- <div class="form-group">
@@ -71,8 +73,9 @@
       </div> -->
 
         <!-- Date of birth -->
-        <div class="form-group col-md-4">
-          <label class="control-label">Date of birth</label><font style= "color:red;">*</font>
+        <div class="form-row">
+        <div class="form-group col-md-6">
+            <div align="left"><label class="control-label">Date of birth</label><font style= "color:red;">*</font> </div>
             <div class="input-group" style="z-index: 0;">
               <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
               <input id="dob" formControlName="candidateDoB" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateDoB.errors }"
@@ -83,10 +86,12 @@
               <p><font style= "color:red;">*Age Limit: 21 - 35 yrs.</font></p>
             </div>
           </div>
+          </div>
 
-          		<!-- Father Name -->
-		<div class="form-group">
-      <label class="control-label" >Father's Name</label><font style= "color:red;">*</font>
+              <!-- Father Name -->
+    <div class="form-row">
+		<div class="form-group col-md-6">
+        <div align="left"><label class="control-label" >Father's Name</label><font style= "color:red;">*</font></div>
       <div class="input-group" style="z-index: 0;">
       <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
       <input type="text" formControlName="candidateFatherName" placeholder="Father's Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateFatherName.errors }" />
@@ -96,8 +101,8 @@
 </div>
 </div>
 <!-- Mother Name -->
-<div class="form-group">
-  <label class="control-label" >Mother's Name</label><font style= "color:red;">*</font>
+<div class="form-group col-md-6">
+    <div align="left"><label class="control-label" >Mother's Name</label><font style= "color:red;">*</font></div>
     <div class="input-group" style="z-index: 0;">
       <span class="input-group-addon"><i class="fa fa-male" aria-hidden="true"></i></span>
       <input type="text" formControlName="candidateMotherName" placeholder="Mother's Name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateMotherName.errors }" />
@@ -106,49 +111,73 @@
     </div>
 </div>
 </div>
+</div>
 
+<div class="form-row">
             <!-- Candidate Email -->
-      <div class="form-group">
-        <label class="control-label">Candidate Email</label><font style= "color:red;">*</font>
-        <div class="input-group" style="z-index: 0;">
-          <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-          <input type="text" placeholder="Full Name" formControlName="candidateEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmail.errors }" />
-          <div *ngIf="submitted && f.candidateEmail.errors" class="invalid-feedback">
-            <div *ngIf="f.candidateEmail.errors.required">candidate Name is required</div>
-            <div *ngIf="f.candidateEmail.errors.pattern">
-              Email not valid.
-          </div>
-        </div>
+      <div class="form-group col-md-6">
+          <div align="left"><label class="control-label">Candidate Email</label><font style= "color:red;">*</font></div>
+            <div class="input-group" style="z-index: 0;">
+            <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+            <input type="text" placeholder="Full Name" formControlName="candidateEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmail.errors }" />
+              <div *ngIf="submitted && f.candidateEmail.errors" class="invalid-feedback">
+              <div *ngIf="f.candidateEmail.errors.required">candidate Name is required</div>
+              <div *ngIf="f.candidateEmail.errors.pattern">
+              Email not valid
+              </div>
+              </div>
 
-        </div>
+             </div>
       </div>
+</div>
 
       <!-- Password & Confirm Password (on the same row) -->
-      <div class="form-group">
-      <font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font>
-        <div class="col-md-6 form-group">
-          <label class="control-label" >Password</label><font style= "color:red;">*</font>
+
+      <div class="form-row">
+        <div class="form-group col-md-6 ">
+            <div align="left"><label class="control-label" >Password</label><font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             <input type="password" placeholder="Password" formControlName="candidatePassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidatePassword.errors }" />
-          <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
+            <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
             <div *ngIf="f.candidatePassword.errors.required">candidate Password is required</div>
-        </div>
+            </div>
+        <!-- <font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font> -->
           </div>
         </div>
-        </div>
-<!--         <div class="col-md-6 form-group">
+        
+       
+        <div class="form-group col-md-6 ">
+                <div align="left"><label class="control-label" >Confirm Password</label><font style= "color:red;">*</font></div>
+              <div class="input-group" style="z-index: 0;">
+                <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                <input type="password" placeholder="Confirm Password" formControlName="candidatePassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidatePassword.errors }" />
+              <div *ngIf="submitted && f.candidatePassword.errors" class="invalid-feedback">
+                <div *ngIf="f.candidatePassword.errors.required">candidate Password is required</div>
+            </div>
+            
+              </div>
+            </div>
+            <div align="left"><font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font></div>
+
+          </div>
+
+          <br>
+          
+
+        <!-- <div class="col-md-6 form-group">
           <label class="control-label" >Confirm Password</label><font style= "color:red;">*</font>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             <input maxlength="30" id="confirmPassword" name="password" placeholder="Confirm Password" class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()"
                 title="Password Should be at least 8 characters long and must start with an Upper Case character, then Lower Case characters, spacial characters and numbers.">
           </div>
-        </div> -->
+        </div>  -->
 
         <!-- Contact number -->
+        <div class="form-row">
         <div class="form-group col-md-6">
-          <label class="control-label">Contact Number</label> <font style= "color:red;">*</font>
+            <div align="left"><label class="control-label">Contact Number</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
             <input type="text" formControlName="candidateContactNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateContactNumber.errors }" />
@@ -160,7 +189,7 @@
 
         <!-- Aaadhaar No -->
         <div class="form-group col-md-6">
-          <label class="control-label">Aadhaar Number</label> <font style= "color:red;">*</font>
+            <div align="left"><label class="control-label">Aadhaar Number</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
             <input type="text" formControlName="candidateAadhaarNumber" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateAadhaarNumber.errors }" />
@@ -169,89 +198,105 @@
         </div>
           </div>
         </div>
+        </div>
+        
+        <hr style="margin: 25px 0px;"> 
+        
 
 
-                                    <!-- Education details-Pending -->
-<!-- Qualification details -->
-      <!-- <div class="form-row">
+        <div align="left">
+            <h3>Qualification details:</h3>
+          </div>
+
+                                                      <!-- Qualification details -->
+       <div class="form-row">
         <div class="form-group col-md-6">
-          <label class="control-label">Highest Qualification</label> <font style= "color:red;">*</font>
+            <div align="left"><label class="control-label">Highest Qualification</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
             <select name="qualification" class="form-control"  >
-              <option value=" " >--Select--</option> -->
+                <option value="" disabled selected>--Select--</option>
                 <!-- Insert code for validation in --Select-- later -->
-		          <!-- <option value="High School Dropout" >High School Dropout</option>
+		          <option value="High School Dropout" >High School Dropout</option>
               <option value="10th(SSC)" >10th(SSC)</option>
               <option value="12th(HSC)">12th(HSC)</option>
               <option value="Graduate">Graduate</option>
               <option value="Post Graduate">Post Graduate</option>
             </select>
           </div>
-        </div> -->
+        </div>
 
-        <!-- <div class="form-group col-md-6">
-          <label class="control-label" >Institute Name</label> <font style= "color:red;">*</font>
+        <div class="form-group col-md-6">
+          <div align="left"><label class="control-label" >Institute Name</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-university" aria-hidden="true"></i></span>
             <input maxlength="50" name="collegeName" placeholder="Institute Name" class="form-control"  type="text" required>
           </div>
-        </div> -->
+        </div>
+      </div>
 
-         <!-- <div class="form-group col-md-6">
-          <label class="control-label" >Percentage</label> <font style= "color:red;">*</font>
+
+      <div class="form-row">
+         <div class="form-group col-md-6">
+            <div align="left"><label class="control-label" >Percentage</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-            <input maxlength="4" name="marks" placeholder="Obtained Marks" class="form-control" min="0" type="number" step="0.1" required >
+            <input maxlength="4" name="marks" placeholder="Percentage Obtained " class="form-control" min="0" type="number" step="0.1" required >
           </div>
-        </div> -->
+          </div>
+      </div>
+       
 
+    
+    <hr style="margin: 25px 0px;"> 
 
-      <!-- <hr style="margin: 50px 0px;"> -->
+    <div align="left">
+        <h3>Contact details:</h3>
+      </div>
 
-      <!-- <div class="form-group">
-          <label class="control-label" >Street Name</label><font style= "color:red;">*</font>
+      <div class="form-group">
+          <div align="left"><label class="control-label" >Street Name</label><font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-location-arrow" aria-hidden="true"></i></span>
             <input name="addr.addr" maxlength="30" placeholder="Street Name" class="form-control"  type="text" title="Enter Street Name with a minimum of 10 words." required>
           </div>
-        </div> -->
+        </div>
 
 
-      <!-- <div class="form-row"> -->
+      <div class="form-row">
 
         <!-- State -->
-        <!-- <div class="form-group col-md-4">
-          <label class="control-label">State</label> <font style= "color:red;">*</font>
+        <div class="form-group col-md-4">
+            <div align="left"><label class="control-label">State</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
             <select name="addr.state" class="form-control" id="state-select" required>
 
             </select>
-          </div> -->
-        <!-- </div> -->
+          </div>
+        </div>
 
         <!-- City -->
-        <!-- <div class="form-group col-md-4">
-          <label class="control-label">City</label> <font style= "color:red;">*</font>
+        <div class="form-group col-md-4">
+            <div align="left"> <label class="control-label">City</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
 			<select name="addr.city" class="form-control" id="city-select" required>
 
             </select>
           </div>
-        </div> -->
+        </div>
 
 
         <!-- Zip -->
-        <!-- <div class="form-group col-md-4">
-          <label class="control-label">Pincode</label> <font style= "color:red;">*</font>
+        <div class="form-group col-md-4">
+            <div align="left"><label class="control-label">Pincode</label> <font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
             <input name="addr.pincode" maxlength="6" placeholder="Pincode" class="form-control" pattern="[1-9][0-9]{5}" type="tel" required="required" title="Pincode of 6 digits">
           </div>
         </div>
-      </div>   -->
+      </div>  
 
       <!--Document Upload -->
             <!-- <div class="form-group">
@@ -292,7 +337,7 @@
         <div class="form-group col-md-4" style="padding: 0;">
           <label class="control-label"></label>
           <div>
-            <button [disabled]="loading" class="btn btn-primary form-control" style="border-radius:10px; ">
+            <button [disabled]="loading" class="btn-primary form-control" style="border-radius:10px; ">
             SUBMIT <i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
             <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
           </div>

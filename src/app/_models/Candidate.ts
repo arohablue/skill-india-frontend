@@ -18,7 +18,7 @@ export class Candidate{
                 public instituteName?:string,
                 public percentage?:number,
                  
-                //  public candidateRequestStatus?:string,
+                public candidateRequestStatus?:string,
                 //  public candidateCourseStatus?:string
 
                 address?:Address

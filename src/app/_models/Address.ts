@@ -4,6 +4,7 @@ export class Address{
         localAddress?:string,
         city?:string,
         state?:string,
+        pincode?:number
         
     ){
 
