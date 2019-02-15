@@ -25,6 +25,9 @@ import { CourseComponent } from './Course/Course.Component';
 import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 import { EstablishmentDashboardService } from './EstablishmentDashboard/EstablishmentComponent.Service';
+import { SearchPageComponent } from './Search/search.component';
+import { SearchPageService } from './Search/search.service';
+
 
 
 
@@ -41,7 +44,8 @@ import { EstablishmentDashboardService } from './EstablishmentDashboard/Establis
     CourseComponent,
     AlertComponent,
     AdminLoginComponent,
-    EstablishmentDashboardComponent
+    EstablishmentDashboardComponent,
+    SearchPageComponent
 
   ],
   imports: [
@@ -62,7 +66,8 @@ import { EstablishmentDashboardService } from './EstablishmentDashboard/Establis
     AppRoutingModule,AuthenticationService,
     AlertService,
     ValidationService,
-    EstablishmentDashboardService
+    EstablishmentDashboardService,
+    SearchPageService
   ],
   bootstrap: [AppComponent]
 })

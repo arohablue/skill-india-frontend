@@ -7,6 +7,8 @@ import { CandidateRegistrationComponent } from './Candidate/CandidateRegistratio
 import { CandidateLoginComponent } from './Candidate/CandidateLogin/Candidate.Login.Component';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
+import { SearchPageComponent } from './Search/search.component';
+
 
 
 
@@ -19,7 +21,7 @@ const routes: Routes = [
   { path: '',component: HomepageBody},
   { path: 'admin/login',component: AdminLoginComponent},
   { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
-  
+  { path: 'search/Establishment',component: SearchPageComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
