@@ -16,7 +16,7 @@ constructor(private http:HttpClient){
 sendToServer(user){
   //our code to be communicated with the server will be here
   let url="http://localhost:8084/account/login";
-  return this.http.post(url,user)
+  return this.http.post<String>(url,user)
+  }
 }
-    }
     

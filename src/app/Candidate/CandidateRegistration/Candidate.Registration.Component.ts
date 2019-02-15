@@ -47,9 +47,9 @@ export class CandidateRegistrationComponent {
         candidateFatherName:    [this.model.candidateFatherName, Validators.required],
         //candidateEducationDetails:    [this.model.candidateEducationDetails, Validators.required],
         //candidateRequestStatus:    [this.model.candidateRequestStatus, Validators.required],
-        //candidateGender:    [this.model.candidateGender, Validators.required],
+        candidateGender:    [this.model.candidateGender, Validators.required],
         candidateUserId:    [this.model.candidateUserId, Validators.required],
-        candidatePassword:    [this.model.candidatePassword, Validators.required],
+        candidatePassword:    [this.model.candidatePassword, Validators.required]
 
       });
 

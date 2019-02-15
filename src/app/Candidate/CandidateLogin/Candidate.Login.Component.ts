@@ -17,8 +17,8 @@ import { User } from 'src/app/_models/User';
 })
 
 export class CandidateLoginComponent {
-        model: User = new User();
-        submittedModel: User;
+        usermodel: User = new User();
+        submittedModel:User =  new User();
         request: string;
 
         candidateLoginForm: FormGroup;
@@ -35,8 +35,8 @@ export class CandidateLoginComponent {
     ngOnInit() {
 
       this.candidateLoginForm = this.formBuilder.group({
-          username:     [this.model.username, Validators.required],
-          password:     [this.model.password, Validators.required],
+          username:     [this.usermodel.username, Validators.required],
+          password:     [this.usermodel.password, Validators.required],
       });
 
       // reset login status
@@ -53,6 +53,8 @@ export class CandidateLoginComponent {
 
         this.submitted = true;
         
+        console.log("true")
+
         // stop here if form is invalid
         if (this.candidateLoginForm.invalid) {
             return;
@@ -61,11 +63,13 @@ export class CandidateLoginComponent {
 
 
         this.submittedModel = value;
+
         console.log(this.submittedModel)
 
-        this.cls.sendToServer(this.model).subscribe(
+        this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-
+                console.log("i am not here")
+                console.log(data)
             }
         );
     }
