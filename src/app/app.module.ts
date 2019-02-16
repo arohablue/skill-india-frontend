@@ -23,11 +23,12 @@ import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
 import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
-import { EstablishmentDashboardService } from './EstablishmentDashboard/EstablishmentComponent.Service';
+
 import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
 import { CourseComponent } from './Course/Course.Component';
 import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
+
 
 
 
@@ -44,8 +45,8 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     AlertComponent,
     AdminLoginComponent,
     EstablishmentDashboardComponent,
-    SearchPageComponent
-    CourseComponent,
+    SearchPageComponent,
+    CourseComponent
 
   ],
   imports: [
@@ -57,16 +58,20 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     ReactiveFormsModule
   ],
   providers: [
-    EstablishmentRegistrationService,
-    EstablishmentLoginService,
+    AppRoutingModule,
+    AuthenticationService,
+    AlertService,
     CandidateRegistrationService,
     CandidateLoginService,
     CourseService,
-    HttpClient,
-    AppRoutingModule,AuthenticationService,
-    AlertService,
-    ValidationService,
+    EstablishmentRegistrationService,
+    EstablishmentLoginService,
     EstablishmentDashboardService,
+    
+    HttpClient,
+    
+    ValidationService,
+    
     SearchPageService
   ],
   bootstrap: [AppComponent]

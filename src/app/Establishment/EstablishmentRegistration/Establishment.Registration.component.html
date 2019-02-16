@@ -10,11 +10,11 @@
 		<form class="container" action="registerEstablishment" method="post" enctype="multipart/form-data">
 
 			<div align="left"><b><h5>Establishment Details:</h5></b></div>
-
+			<hr style="margin: 10px 0px;">
 			<!--Establishment Name -->
 			<div class="form-group">
-				<label class="control-label">Establishment Name</label><font
-					style="color: red;">*</font>
+				<div align="left"><label class="control-label">Establishment Name</label>
+					<font style="color: red;">*</font></div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-university"
 						aria-hidden="true"></i></span> <input name="estName"
@@ -26,23 +26,26 @@
 			</div>
 
 			<!-- Email Id -->
-			<div class="form-group">
-				<label class="control-label">e-Mail ID</label><font
-					style="color: red;">*</font>
+			<div class="form-row">
+			<div class="form-group col-md-6">
+				<div align="left"><label class="control-label">E-Mail ID</label><font
+					style="color: red;">*</font></div>
 				<div class="input-group">
 					<span class="input-group-addon"><i
 						class="fa fa-paper-plane-o" aria-hidden="true"></i></span> <input
 						name="estEmailId" [(ngModel)]="est.estEmail"
-						placeholder="e-Mail ID" class="form-control"
+						placeholder="Email ID" class="form-control"
 						type="email" title="Enter correct e-Mail ID" required >
 				</div>
+				<div align="left"><font size="0.2px" color="grey">(We'll occasionally send updates about your account to this inbox.We'll never share your email address with anyone.)</font></div>
 			</div>
+		</div>
 
 			<!-- Password & Confirm Password (on the same row) -->
 			<div class="form-row">
 				<div class="col-md-6 form-group">
-					<label class="control-label">Password</label><font
-						style="color: red;">*</font>
+					<div align="left"><label class="control-label">Password</label><font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-unlock-alt"
 							aria-hidden="true"></i></span> <input id="password" name="estUserPassword"
@@ -51,41 +54,46 @@
 							type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
 							title="Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.">
 					</div>
+					<div align="left"><font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font></div>
 				</div>
-				<!--    <div class="col-md-6 form-group">
-          <label class="control-label" >Confirm Password</label><font style= "color:red;">*</font>
+
+
+				   <div class="col-md-6 form-group">
+							<div align="left"><label class="control-label" >Confirm Password</label><font style= "color:red;">*</font></div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
             <input id="confirmPassword" name="Password" placeholder="Confirm Password" class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()" 
                 title="Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.">
-          </div>
-        </div> -->
+					</div>
+				
+				</div>
+				
 			</div>
 
+		<!-- Establishment type -->
 			<div class="form-row">
 				<div class="form-group col-md-6">
-					<label class="control-label">Establishment Type</label> <font
-						style="color: red;">*</font>
+				<div align="left"><label class="control-label">Establishment Type</label> <font style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-						<select name="estType" [(ngModel)]="est.estType" class="form-control">
+						<select name="estType" class="form-control" required>
 							<option value="" disabled selected>--Select--</option>
 							<option value="Central Government">Central Government</option>
 							<option value="Central Public Sector Undertaking">Central Public Sector Undertaking</option>
 							<option value="Private Sector">Private Sector</option>
 							<option value="State Government">State Government</option>
 							<option value="State Public Sector Undertaking">State Public Sector Undertaking</option>
-						</select>
+							</select>
 					</div>
 				</div>
-
+<!-- Establishment Domain -->
 				<div class="form-group col-md-6">
-					<label class="control-label">Establishment Domain</label> <font
-						style="color: red;">*</font>
+					<div align="left"><label class="control-label">Establishment Domain</label> <font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i
 							class="fa fa-graduation-cap" aria-hidden="true"></i></span> 
-							<select name="estDomain" [(ngModel)]="est.domain" class="form-control">
+							<select name="estDomain" class="form-control">
 								<option value="" disabled selected>--Select--</option>
 								<option value="Manufacturing">Manufacturing</option>
 								<option value="Services">Services</option>
@@ -111,8 +119,8 @@
 
 				<!-- Number of Employees -->
 				<div class="form-group col-md-6">
-					<label class="control-label">Number of Employees</label><font
-						style="color: red;">*</font>
+					<div align="left"><label class="control-label">Number of Employees</label><font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-users"
 							aria-hidden="true"></i></span> 
@@ -126,12 +134,12 @@
 			<!-- Number of Working Days -->
 			 <div class="form-row">
 				<div class="form-group col-md-6">
-					<label class="control-label">Working Days in a Week</label> <font
-						style="color: red;">*</font>
+					<div align="left"><label class="control-label">Working Days in a Week</label> <font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-calendar"
 							aria-hidden="true"></i></span> 
-							<select name="estWorkingDays" [(ngModel)]="est.estWorkingDays"class="form-control">
+							<select name="estWorkingDays" class="form-control">
 							<option value="" disabled selected>--Select--</option>
 							<option value="5">5 Days a week</option>
 							<option value="6">6 Days a week</option>
@@ -154,9 +162,10 @@
 			</div> -->
 
 			<!-- Contact Number -->
-			<div class="form-group">
-				<label class="control-label">Contact Number</label><font
-					style="color: red;">*</font>
+			<div class="form-row">
+			<div class="form-group col-md-6">
+				<div align="left"><label class="control-label">Contact Number</label><font
+					style="color: red;">*</font></div>
 				<div class="input-group">
 					<span class="input-group-addon"><i class="fa fa-phone"
 						aria-hidden="true"></i></span> 
@@ -167,21 +176,20 @@
 						title="Contact number should be at least 10 digits and starting with 7, 8 or 9.">
 				</div>
 			</div>
-<br>
+		</div>
 <hr>
-<br>
 	<!-- Establishment Registration Number:Pending -->
 	<div align="left"><b><h5>Bank Account Details:</h5></b></div>
-			
+	<hr style="margin: 10px 0px;">
 			<!--BANK Name -->
 			<div class="form-row">
 			<div class="form-group col-md-6">
-				<label class="control-label">Bank Name</label> <font
-					style="color: red;">*</font>
+				<div align="left"><label class="control-label">Bank Name</label> <font
+					style="color: red;">*</font></div>
 				<div class="input-group" style="z-index: 0;">
 					<span class="input-group-addon"><i class="fa fa-university"
 						aria-hidden="true"></i></span>
-						<select name="bankName" [(ngModel)]="est.estBankDetails"
+						<select name="bankName" 
 						class="form-control" required="required"
 						title="Enter the Bank name">
 						<option value="" disabled selected>--Select--</option>
@@ -196,8 +204,8 @@
 
 			<!-- Bank Branch -->
 			<div class="form-group col-md-6">
-					<label class="control-label"> Branch Name</label><font
-						style="color: red;">*</font>
+				<div align="left">	<label class="control-label"> Branch Name</label><font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-id-card-o"
 							aria-hidden="true"></i></span> <input name="accountNo"
@@ -211,8 +219,8 @@
 			 <!-- IFSC Details  -->
 			 <div class="form-row">
 				 <div class="form-group col-md-6">
-					<label class="control-label">IFSC Number</label>
-						<font style="color: red;">*</font>
+					<div align="left"><label class="control-label">IFSC Number</label>
+						<font style="color: red;">*</font></div>
 							<div class="input-group" style="z-index: 0;">
 								<span class="input-group-addon"><i class="fa fa-id-card-o"
 								aria-hidden="true"></i></span> <input name="IFSC"
@@ -226,8 +234,8 @@
 				<!-- Account No. -->
 				<div class="form-row">
 	<div class="form-group col-md-6">
-					<label class="control-label"> Account No.</label><font
-						style="color: red;">*</font>
+		<div align="left"><label class="control-label"> Account No.</label><font
+						style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i class="fa fa-id-card-o"
 							aria-hidden="true"></i></span> <input name="accountNo"
@@ -239,14 +247,13 @@
 	</div>
 
 	<hr>
-	<br>
 	<div align="left"><b><h5>Establishment Contact Details:</h5></b></div>
-	
+	<hr style="margin: 10px 0px;">
 	
 																		<!-- Address -->
 			<div class="form-group">
-				<label class="control-label">Address</label><font
-					style="color: red;">*</font>
+				<div align="left"><label class="control-label">Address</label><font
+					style="color: red;">*</font></div>
 				<div class="input-group" style="z-index: 0;">
 					<span class="input-group-addon"><i
 						class="fa fa-location-arrow" aria-hidden="true"></i></span>
@@ -263,13 +270,14 @@
 
 				<!-- State -->
 		 	<div class="form-group col-md-6">
-				<label class="control-label">State</label> <font
-				style="color: red;">*</font>
+			<div align="left"><label class="control-label">State</label> <font style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
-						<span class="input-group-addon"><i class="fa fa-map-marker"
-						aria-hidden="true"></i></span> 
+					<span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span> 
 						<select name="addr.state"	class="form-control" id="state-select" required>
-
+								<option value="" disabled selected>--Select--</option>
+								<option value="Maharashtra" >Maharashtra</option>
+								<option value="Karnataka">Karnataka</option>
+								<option value="Gujrat" >Gujrat</option>
 						</select>
 					</div>
 				</div> 
@@ -278,19 +286,26 @@
 	<div class="form-row"> 
 				<!-- City -->
 				<div class="form-group col-md-6">
-					<label class="control-label">City</label> <font style="color: red;">*</font>
+					<div align="left"><label class="control-label">City</label> <font style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
-						<span class="input-group-addon"><i class="fa fa-building"
-							aria-hidden="true"></i></span> <select name="addr.city"
-							class="form-control" id="city-select" required>
-
+						<span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span> 
+							<select name="addr.city" class="form-control" id="city-select" required>
+											<option value="" disabled selected>--Select--</option>
+											<option value="Mumbai">Mumbai</option>
+											<option value="Pune">Pune</option>
+											<option value="Nagpur">Nagpur</option>
+											<option value="Ahmedabad">Ahmedabad</option>
+											<option value="Vadodara">Vadodara</option>
+											<option value="Surat">Surat</option>
+											<option value="Bengaluru">Bengaluru</option>
+											<option value="Mysore">Mysore</option>
 						</select>
 					</div>
 				</div>
 
 				<!-- Zip -->
 				<div class="form-group col-md-6">
-					<label class="control-label">Pincode</label><font	style="color: red;">*</font>
+					<div align="left"><label class="control-label">Pincode</label><font	style="color: red;">*</font></div>
 					<div class="input-group" style="z-index: 0;">
 						<span class="input-group-addon"><i
 							class="fa fa-envelope-open-o" aria-hidden="true"></i></span> <input
@@ -302,17 +317,19 @@
 			</div> 
 
 
-			<!-- <hr style="margin: 50px 0px;"> -->
-
+		<hr style="margin:25px 0px;">
+		<div align="left"><h3>Document Upload</h3></div>
+		<hr style="margin:10px 0px;">
+	
 			
 		<!--Document Upload -->
-		<!-- <div class="form-group">
-          <label class="control-label">Upload Proof</label><font style= "color:red;">*</font>
+		<div class="form-group">
+				<div align="left"><label class="control-label">Upload Proof</label><font style= "color:red;">*</font></div>
           <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
             <input class="form-control" name="files" type="file" required="required" onchange="validate_fileupload(this.value);">
           </div>
-        </div> -->
+        </div>
 
 			<!-- Submit button -->
 
