@@ -26,7 +26,7 @@ export class CandidateLoginComponent {
         usercheck : string;
         candId : string;
         candName : string;
-        invalid : boolean;
+        message : String;
 
         candidateLoginForm: FormGroup;
         loading = false;
@@ -38,7 +38,6 @@ export class CandidateLoginComponent {
                   private authenticationService: AuthenticationService,
                   private router: Router
                   ) {
-                      this.invalid = false;
     }
 
     ngOnInit() {
@@ -79,10 +78,9 @@ export class CandidateLoginComponent {
                     this.candId = data['candidateId'] ;
                     this.candName = data['candidateName'];
                     this.router.navigate(['/candidate/dashboard']);
-                }
+                } 
 
-                this.router.navigate(['/candidate/dashboard']);
-                
+                this.message = "Worng Username or password";
             }
         );
     }
