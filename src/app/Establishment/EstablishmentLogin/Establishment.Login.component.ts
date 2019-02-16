@@ -29,8 +29,9 @@ export class EstablishmentLoginComponent{
                     this.password = "";
                 }
                 else {
-                    this.router.navigate(['/establishment/dashboard']);
-                
+
+              this.router.navigate(['/establishment/dashboard']);
+            
                 }
                 
             }

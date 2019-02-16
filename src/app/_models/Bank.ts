@@ -1,11 +1,12 @@
 
 export class Bank{
+    
     constructor(
-        bankId?:number,
-        bankName?:string,
-        bankBranch?:string,
-        bankIFSC?:number,
-        accountNumber?:number
+      
+       public bankName?:string,
+       public branchName?:string,
+       public IFSCCode?:number,
+       public accountNumber?:number
 
     ){
 

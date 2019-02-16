@@ -10,9 +10,9 @@ export class EstablishmentLoginService {
 constructor(private http:HttpClient){
 
 }
-sendToServer(username, password){
+sendToServer(username, password):observable<LoginStatus>{
         //our code to be communicated with the server will be here
         let url="http://localhost:8084/loginEstablishment" + "?username="+username + "&password=" + password;
-        return this.http.get(url);
+        return this.http.post<LoginStatus>(url);
 }
 }
