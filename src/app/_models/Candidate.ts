@@ -20,12 +20,9 @@ export class Candidate{
                  
                 public candidateRequestStatus?:string,
                 //  public candidateCourseStatus?:string
+           
 
-                address?:Address
-                // addressId?:number,
-                // localAddress?:string,
-                // city?:string,
-                // state?:string,
+
 
                 )
                {

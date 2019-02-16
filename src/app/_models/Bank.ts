@@ -4,7 +4,7 @@ export class Bank{
         bankId?:number,
         bankName?:string,
         bankBranch?:string,
-        bankIFSC?:number,
+        IFSCCode?:number,
         accountNumber?:number
 
     ){

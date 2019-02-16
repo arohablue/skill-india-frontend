@@ -14,8 +14,8 @@
         style="color: red;">*</font></label>
       <div class="input-group" style="z-index: 0;">
         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-        <input type="text" formControlName="candidateName" maxlength="30" placeholder="Full Name"
-        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
+        <input type="text"  maxlength="30" placeholder="Full Name"
+        class="form-control" formControlName="candidateName" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
         <div *ngIf="submitted && f.candidateName.errors" class="invalid-feedback">
           <div *ngIf="f.candidateName.errors.required">candidate Name is required</div>
       </div>
@@ -30,7 +30,7 @@
       <div class="input-group" style="z-index: 0;">
         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
           <select name="candidateGender" class="form-control" 
-          [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }">
+            [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }">
             <option value="" disabled selected>--Select--</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -118,8 +118,7 @@
           <input type="text" placeholder="Email Id" formControlName="candidateEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateEmail.errors }" />
             <div *ngIf="submitted && f.candidateEmail.errors" class="invalid-feedback">
             <div *ngIf="f.candidateEmail.errors.required">candidate Name is required</div>
-            <div *ngIf="f.candidateEmail.errors.pattern">
-            Email not valid
+            <div *ngIf="f.candidateEmail.errors.pattern">Email not valid
             </div>
             </div>
 
@@ -206,15 +205,19 @@
           <div align="left"><label class="control-label">Highest Qualification</label> <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-          <select name="qualification" class="form-control"  >
-              <option value="" disabled selected>--Select--</option>
-              <!-- Insert code for validation in --Select-- later -->
+          <select name="qualification" class="form-control" formControlName="qualification"
+          [ngClass]="{ 'is-invalid': submitted && f.candidateAadhaarNumber.errors }" >
+            <option value="" disabled selected>--Select--</option>
             <option value="High School Dropout" >High School Dropout</option>
             <option value="10th(SSC)" >10th(SSC)</option>
             <option value="12th(HSC)">12th(HSC)</option>
             <option value="Graduate">Graduate</option>
             <option value="Post Graduate">Post Graduate</option>
           </select>
+          <div *ngIf="submitted && f.candidateAadhaarNumber.errors" class="invalid-feedback">
+          <div *ngIf="f.candidateAdahaarNumber.errors.required">candidate Aadhaar number is required</div>
+          </div>
+          
         </div>
       </div>
 
@@ -263,14 +266,16 @@
           <div align="left"><label class="control-label">State</label> <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
-          <select name="addr.state" class="form-control" id="state-select" required>
+          <select name="state" class="form-control" id="state-select" formControlName="state"
+          [ngClass]="{ 'is-invalid': submitted && f.state.errors }"required>
               <option value="" disabled selected>--Select--</option>
               <option value="Maharashtra" >Maharashtra</option>
               <option value="Karnataka">Karnataka</option>
               <option value="Gujrat" >Gujrat</option>
-           
-
           </select>
+          <div *ngIf="submitted && f.state.errors" class="invalid-feedback">
+          <div *ngIf="f.state.errors.required">candidate Aadhaar number is required</div>
+          </div>
         </div>
       </div>
 
@@ -280,7 +285,8 @@
         <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
-          <select name="addr.city" class="form-control" id="city-select" required>
+          <select name="city" class="form-control" formControlName="city" id="city-select" 
+          [ngClass]="{ 'is-invalid': submitted && f.city.errors }"required>
             <option value="" disabled selected>--Select--</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -291,6 +297,9 @@
             <option value="Bengaluru">Bengaluru</option>
             <option value="Mysore">Mysore</option>
           </select>
+          <div *ngIf="submitted && f.city.errors" class="invalid-feedback">
+          <div *ngIf="f.city.errors.required">candidate Aadhaar number is required</div>
+          </div>
         </div>
       </div>
 
@@ -300,7 +309,12 @@
           <div align="left"><label class="control-label">Pincode</label> <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></span>
-          <input name="addr.pincode" maxlength="6" placeholder="Pincode" class="form-control" pattern="[1-9][0-9]{5}" type="tel" required="required" title="Pincode of 6 digits">
+          <input name="pincode" maxlength="6" placeholder="Pincode" class="form-control" 
+          pattern="[1-9][0-9]{5}" type="tel" required="required"  formControlName="pincode"
+          [ngClass]="{ 'is-invalid': submitted && f.pincode.errors }"title="Pincode of 6 digits">
+          <div *ngIf="submitted && f.pincode.errors" class="invalid-feedback">
+          <div *ngIf="f.pincode.errors.required">candidate Aadhaar number is required</div>
+          </div>
         </div>
       </div>
     </div>  
@@ -314,8 +328,10 @@
               <div align="left"><label class="control-label">Photo Upload</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file" onchange="validate_fileupload(this.value);" >
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)" >
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
 <!-- Upload Aadhaar -->
@@ -323,8 +339,10 @@
       <div align="left"><label class="control-label">Upload AadharCard</label><font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
       <!-- Education Certificate -->
@@ -332,9 +350,10 @@
     <div align="left"><label class="control-label">Education Certificate</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
-        <div id="fileList"></div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
                           <!-- Request Status -->
