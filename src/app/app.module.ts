@@ -27,6 +27,9 @@ import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
 import { CourseComponent } from './Course/Course.Component';
 import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
+import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
+import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
+
 
 
 
@@ -45,6 +48,7 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     EstablishmentDashboardComponent,
     SearchPageComponent,
     CourseComponent,
+    CandidateDashboardComponent
 
   ],
   imports: [
@@ -56,16 +60,21 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     ReactiveFormsModule
   ],
   providers: [
-    EstablishmentRegistrationService,
-    EstablishmentLoginService,
+    AppRoutingModule,
+    AuthenticationService,
+    AlertService,
     CandidateRegistrationService,
     CandidateLoginService,
     CourseService,
-    HttpClient,
-    AppRoutingModule,AuthenticationService,
-    AlertService,
-    ValidationService,
+    EstablishmentRegistrationService,
+    EstablishmentLoginService,
     EstablishmentDashboardService,
+    CandidateDashboardService,
+    
+    HttpClient,
+    
+    ValidationService,
+    
     SearchPageService
   ],
   bootstrap: [AppComponent]

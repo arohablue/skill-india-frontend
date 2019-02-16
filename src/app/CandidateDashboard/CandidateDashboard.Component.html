@@ -2,11 +2,9 @@
 	<!-- Form Heading -->
 	<div class="form-row">
 		<div class="col-md-12">
-			<center>
 				<h2>
 					<b><mark>Candidate Dashboard</mark></b>
 				</h2>
-			</center>
 		</div>
 		<br> <br>
 	</div>
@@ -17,7 +15,7 @@
 
 			<div id="logo" class="pull-left">
 				<a href="index.html"><img src="Bootstrap/img/National.png"
-					width="200" height="150" alt="" title="" /></img></a>
+					width="200" height="150" alt="" title="" /></a>
 
 			</div>
 			<nav id="nav-menu-container">
@@ -60,10 +58,6 @@
 			<div class="form-group">
 				 <label class="control-label"></label><br>				<!--${can.name} -->
 				 <label class="control-label">Profile Status:</label><br>  <!--${can.status} -->
-				<c:if test="${ can.canRegNo !=0}">
-					<label class="control-label">Registration Number:
-						 </label>                                          <!-- ${can.canRegNo } -->
-				</c:if>
 			</div>
 				
 			<button (click)="fetchCandidate()"> Show all Establishments </button>
