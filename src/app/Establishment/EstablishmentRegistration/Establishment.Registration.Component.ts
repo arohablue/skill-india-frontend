@@ -56,7 +56,7 @@ export class EstablishmentRegistrationComponent{
         accountNumber: [this.model2.accountNumber,[ Validators.required, Validators.max(18)]],
         branchName: [this.model2.branchName, Validators.required],
         IFSCCode:[this.model2.IFSCCode,[ Validators.required, Validators.max(11)]],
-        localAddress: [this.model3.localAddress, Validators.required],
+        streetName: [this.model3.streetName, Validators.required],
         city :[this.model3.city, Validators.required],
         state:[this.model3.state, Validators.required],
         

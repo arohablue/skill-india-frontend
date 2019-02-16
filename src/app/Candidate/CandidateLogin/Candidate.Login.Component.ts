@@ -20,7 +20,7 @@ import { Candidate } from 'src/app/_models/Candidate';
 export class CandidateLoginComponent {
         usermodel: User = new User();
         submittedModel:User =  new User();
-        fetchedModel: Candidate = new Candidate();
+        fetchedModel: Candidate = new Candidate(null);
         request: string;
         response : string;
         usercheck : string;

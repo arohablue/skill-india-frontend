@@ -2,7 +2,7 @@ import { Address } from './Address';
 
 export class Candidate{
    
-    constructor( 
+    constructor( public address : Address,
                  public candidateName?:string,
                  public candidateContactNumber?:number,
                  public candidateGender?:string,
@@ -11,9 +11,11 @@ export class Candidate{
                  public candidateEducationDetails?:string,
                  public candidateDoB?:number,
                  public candidateRequestStatus?:string,
-                 public candidateCourseStatus?:string,
                  public fathersName?:string,
                  public motherName?:string,
+                 public instituteName?:string,
+                 public percentage?:string,
+                 public qualification?:string,
                 )
                {
      }
