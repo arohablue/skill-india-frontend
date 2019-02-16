@@ -1,0 +1,60 @@
+
+
+
+	<div class="form-row">
+		<div class="col-md-12">
+			
+				<h2>
+					<b><mark>Search By Establishment</mark></b>
+				</h2>
+			
+		</div>
+	</div>
+
+	
+	<div class="bcg">
+		
+			<section class="container" style="padding-top: 1px;">
+				<form class="container">
+					<!-- Profile Picture -->
+					<br>
+					<div class="form-group">
+						<label class="control-label"></label><br> 
+						<label class="control-label">Profile Status: </label><br>
+						<label class="control-label">Registration Number:</label>
+					</div>
+				</form>
+			</section>
+	</div>
+
+		<!-- search by establishment name -->
+		<div align="center">
+		<form action="searchEst" method="GET">
+
+			
+				<div class="form-group col-md-4">
+					<label class="control-label">Search By Institute</label>
+					<div class="input-group" style="z-index: 0;">
+						<span class="input-group-addon"><i class="fa fa-university"
+						aria-hidden="true"></i></span> <input name="establishmentName"
+						placeholder="Est Name" class="form-control" type="text" title="">
+					</div>
+				
+			</div>
+
+<div align="center">
+				<!-- Submit button -->
+				<div class="form-group col-md-4" style="padding: 0;">
+					<label class="control-label"></label>
+					<div>
+						<button type="submit" (click)="fetchSearchResult()"
+						class="btn-primary form-control"
+						style="border-radius: 10px;">
+							Search <i class="fa fa-search" aria-hidden="true"></i>
+						</button>
+						
+					</div>
+				</div>
+</div>
+
+
