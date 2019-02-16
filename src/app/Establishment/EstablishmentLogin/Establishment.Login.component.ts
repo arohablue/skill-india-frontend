@@ -42,7 +42,6 @@ export class EstablishmentLoginComponent {
                   private router: Router
                   ) {
     }
-
     ngOnInit() {
 
       this.EstablishmentLoginForm = this.formBuilder.group({

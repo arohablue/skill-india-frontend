@@ -23,7 +23,6 @@ import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
 import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
-
 import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
 import { CourseComponent } from './Course/Course.Component';

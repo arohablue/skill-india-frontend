@@ -6,7 +6,9 @@ export class Course{
         public courseName?:string,
         public courseDescription?:string,
         public courseDuration?:number,
-        public traineeName?:string,
+        public trainerName?:string,
         public courseAmount?:number,
+        public  trainerContactNumber?:number,
+        
     ){}
 }
