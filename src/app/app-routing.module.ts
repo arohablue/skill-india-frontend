@@ -10,6 +10,7 @@ import { EstablishmentDashboardComponent } from './EstablishmentDashboard/Establ
 import { SearchPageComponent } from './Search/search.component';
 
 
+import { CourseComponent } from './Course/Course.Component';
 
 
 const routes: Routes = [
@@ -22,6 +23,8 @@ const routes: Routes = [
   { path: 'admin/login',component: AdminLoginComponent},
   { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
   { path: 'search/Establishment',component: SearchPageComponent},
+  { path: 'add/course',component: CourseComponent},
+
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

@@ -21,13 +21,13 @@ import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
-import { CourseComponent } from './Course/Course.Component';
 import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 import { EstablishmentDashboardService } from './EstablishmentDashboard/EstablishmentComponent.Service';
 import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
-
+import { CourseComponent } from './Course/Course.Component';
+import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
 
 
 
@@ -41,11 +41,11 @@ import { SearchPageService } from './Search/search.service';
     Homepage,
     HomepageBody,
     HomepageFooter,
-    CourseComponent,
     AlertComponent,
     AdminLoginComponent,
     EstablishmentDashboardComponent,
     SearchPageComponent
+    CourseComponent,
 
   ],
   imports: [

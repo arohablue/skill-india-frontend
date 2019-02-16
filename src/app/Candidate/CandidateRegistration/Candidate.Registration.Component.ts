@@ -46,8 +46,8 @@ export class CandidateRegistrationComponent {
         candidateFatherName:    [this.model.candidateFatherName, [ Validators.required, Validators.max(15)]],
         candidateRequestStatus:    [this.model.candidateRequestStatus, [ Validators.required, Validators.max(15)]],
         candidateGender:    [this.model.candidateGender, Validators.required],
-        candidateUserId:    [this.model.candidateUserId, [ Validators.required, Validators.max(15)]],
-        candidatePassword:    [this.model.candidatePassword, [ Validators.required, Validators.max(15)]],
+        candidateUserId:    [this.model.candidateUserId, Validators.required],
+        candidatePassword:    [this.model.candidatePassword, Validators.required]
 
       });
 
@@ -66,11 +66,13 @@ export class CandidateRegistrationComponent {
 
         this.submitted = true;
 
+        console.log("here")
         // stop here if form is invalid
         if (this.CandidateRegistrationForm.invalid) {
             return;
         }
 
+        console.log("222")
         this.loading = true;
 
 
