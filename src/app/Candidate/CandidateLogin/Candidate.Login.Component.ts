@@ -32,6 +32,7 @@ export class CandidateLoginComponent {
         loading = false;
         submitted = false;
         returnUrl: string;
+        
      constructor( public cls: CandidateLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,

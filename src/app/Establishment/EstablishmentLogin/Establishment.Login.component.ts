@@ -1,11 +1,13 @@
 
 import {OnInit, Component} from '@angular/core';
+import { CandidateLoginService } from '../../_services/Candidate.Login.Service';
 import { AuthenticationService, AlertService } from 'src/app/_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/_models/User';
-import { EstablishmentLoginService } from 'src/app/_services/Establishment.Login.service';
+import { Candidate } from 'src/app/_models/Candidate';
 import { Establishment } from 'src/app/_models/Establishment';
+import { EstablishmentLoginService } from 'src/app/_services/Establishment.Login.service';
 
 
 
@@ -24,12 +26,15 @@ export class EstablishmentLoginComponent {
         request: string;
         response : string;
         usercheck : string;
-
+        estId : string;
+        estName : string;
+        message : String;
 
         EstablishmentLoginForm: FormGroup;
         loading = false;
         submitted = false;
         returnUrl: string;
+        
      constructor( public cls: EstablishmentLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
@@ -72,9 +77,13 @@ export class EstablishmentLoginComponent {
 
         this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-                this.fetchedModel = data;
-                console.log("data" + data)
-                console.log("establishment" + this.fetchedModel)
+                if(data !==null){
+                    this.estId = data['estId'] ;
+                    this.estName = data['estName'];
+                    this.router.navigate(['/establishment/dashboard']);
+                } 
+
+                this.message = "Worng Username or password";
             }
         );
     }
