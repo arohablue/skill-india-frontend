@@ -24,7 +24,9 @@ export class CandidateLoginComponent {
         request: string;
         response : string;
         usercheck : string;
-
+        candId : string;
+        candName : string;
+        invalid : boolean;
 
         candidateLoginForm: FormGroup;
         loading = false;
@@ -36,6 +38,7 @@ export class CandidateLoginComponent {
                   private authenticationService: AuthenticationService,
                   private router: Router
                   ) {
+                      this.invalid = false;
     }
 
     ngOnInit() {
@@ -72,9 +75,14 @@ export class CandidateLoginComponent {
 
         this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-                this.fetchedModel = data;
-                console.log("data" + data)
-                console.log("candidate" + this.fetchedModel)
+                if(data !==null){
+                    this.candId = data['candidateId'] ;
+                    this.candName = data['candidateName'];
+                    this.router.navigate(['/candidate/dashboard']);
+                }
+
+                this.router.navigate(['/candidate/dashboard']);
+                
             }
         );
     }
