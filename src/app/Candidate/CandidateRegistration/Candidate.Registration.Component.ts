@@ -7,6 +7,8 @@ import { Candidate } from 'src/app/_models/Candidate';
 import { CandidateRegistrationService } from 'src/app/_services/Candidate.Registration.Service';
 import { User } from 'src/app/_models/User';
 import { Address } from 'src/app/_models/Address';
+import { AdminLoginService } from 'src/app/_services/Admin.Login.Service';
+import { MustMatch } from 'src/app/_models/must-match.validators';
 
 
 @Component({
@@ -17,11 +19,13 @@ import { Address } from 'src/app/_models/Address';
 })
 
 export class CandidateRegistrationComponent {
-    model1: User = new User
-        model: Candidate = new Candidate();
-        model2: Address = new Address();
-        submittedModel: Candidate;
+        userModel: User = new User
+        candModel: Candidate = new Candidate();
+        canAddressModel: Address = new Address();
         request: string;
+        usercheck : string;
+        confpassword : string;
+        message : string;
 
         CandidateRegistrationForm: FormGroup;
         loading = false;
@@ -29,31 +33,37 @@ export class CandidateRegistrationComponent {
         returnUrl: string;
 
      constructor( public crs: CandidateRegistrationService,
+                  public cls: AdminLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
                   private router: Router,
                   private authenticationService: AuthenticationService,
                   private alertService: AlertService) {
     }
-
+    
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
-        username:    [this.model1.username, Validators.required],
-        password:    [this.model1.password, Validators.required],
-        candidateName:     [this.model.candidateName, [ Validators.required, Validators.max(15)]],
-        candidateContactNumber:    [this.model.candidateContactNumber, [ Validators.required, Validators.max(10)]],
-        candidateGender:    [this.model.candidateGender, Validators.required],
-        candidateAdharNumber: [this.model.candidateAdharNumber,[ Validators.required, Validators.max(15)]],
-        candidateEmail:    [this.model.candidateEmail, [ Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
-     //   candidateEducationDetails:  [this.model.candidateEducationDetails, Validators.required],
-        candidateDoB:    [this.model.candidateDoB, Validators.required],
-        candidateRequestStatus:    [this.model.candidateRequestStatus, Validators.required],
-        candidateCourseStatus:    [this.model.candidateCourseStatus, [ Validators.required, Validators.max(15)]],
-        localAddress:    [this.model2.localAddress, Validators.required],
-        city :[this.model2.city,[ Validators.required,Validators.max(18)]],
-        state:[this.model2.state,[ Validators.required,Validators.max(18)]],
-        pincode:[this.model2.pincode, [Validators.required,Validators.max(6)]],
+        username:    [this.userModel.username, Validators.required],
+        password:    [this.userModel.password, Validators.required],
+        confpassword : [this.confpassword, Validators.required],
+        // confpassword : [this.confpassword, [Validators.required ,{
+        //     validator: MustMatch('password', 'confpassword')
+        // }]],
+        candidateName:     [this.candModel.candidateName, [ Validators.required, Validators.max(15)]],
+        candidateContactNumber:    [this.candModel.candidateContactNumber, Validators.required],
+        candidateGender:    [this.candModel.candidateGender, Validators.required],
+        candidateAadhaarNumber: [this.candModel.candidateAadhaarNumber,[ Validators.required, Validators.max(15)]],
+        candidateEmail:    [this.candModel.candidateEmail,  [Validators.required, Validators.email]],
+        candidateDoB:    [this.candModel.candidateDoB, Validators.required],
+        candidateFatherName:    [this.candModel.fathersName, Validators.required],
+        candidateMotherName:    [this.candModel.motherName, Validators.required],
+        candidateRequestStatus:    [this.candModel.candidateRequestStatus, Validators.required],
+        candidateCourseStatus:    [this.candModel.candidateCourseStatus, [ Validators.required, Validators.max(15)]],
+        address:    [this.canAddressModel.localAddress, Validators.required],
+        city :[this.canAddressModel.city,[ Validators.required,Validators.max(18)]],
+        state:[this.canAddressModel.state,[ Validators.required,Validators.max(18)]],
+        pincode:[this.canAddressModel.pincode, [Validators.required,Validators.max(6)]],
         
       });
 
@@ -74,30 +84,45 @@ export class CandidateRegistrationComponent {
 
          
         this.submitted = true;
-
-        console.log("here")
+        console.log("in onSubmit");
         // stop here if form is invalid
         if (this.CandidateRegistrationForm.invalid) {
+            console.log("you are invalid")
             return;
         }
 
-        console.log("222");
+        console.log("validated");
         this.loading = true;
 
-        this.submittedModel = value;
-        console.log(this.submittedModel);
+        console.log(value)
+       // console.log(this.submittedModel);
 
-        let username = this.model1.username
-        let password = this.model1.password
 
-        const json = {"username" : username , "password" : password , "accounts" : this.model,"address": this.model2}
-        console.log(json)
-        return json 
-        this.crs.sendToServer(this.model).subscribe(
+        //const json = {"username" : username , "password" : password , "accounts" : this.userModel,"address": this.canAddressModel}
+        //console.log(json)
+       // return json 
+        this.crs.sendToServer(this.userModel).subscribe(
             data =>{
 
             }
         );
+    }
+
+    check(value) {
+
+        this.cls.checkUser(value).subscribe(
+            data =>{
+                
+                this.usercheck = data['message'];
+                console.log(this.usercheck);
+                if(this.usercheck == "true") {
+                    this.message = "User name already present"
+                    console.log(this.message);
+                }
+                this.message = "";
+            }
+        );
+        
     }
 
 }

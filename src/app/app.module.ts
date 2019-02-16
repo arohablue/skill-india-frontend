@@ -29,6 +29,7 @@ import { CourseComponent } from './Course/Course.Component';
 import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
+import { AdminLoginService } from './_services/Admin.Login.Service';
 
 
 
@@ -70,11 +71,9 @@ import { CandidateDashboardService } from './_services/CandidateDashboard.Servic
     EstablishmentLoginService,
     EstablishmentDashboardService,
     CandidateDashboardService,
-    
+    AdminLoginService,
     HttpClient,
-    
     ValidationService,
-    
     SearchPageService
   ],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { AuthenticationService, AlertService } from 'src/app/_services';
 import { Bank } from 'src/app/_models/Bank';
 
 import { Address } from 'src/app/_models/Address';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
     selector : 'EstablishmentRegistration',
@@ -84,7 +85,6 @@ export class EstablishmentRegistrationComponent{
 
         }
 
-        console.log("222");
         this.loading = true;
 
         this.submittedModel = value;
@@ -93,10 +93,10 @@ export class EstablishmentRegistrationComponent{
         let username = this.model1.username
         let password = this.model1.password
 
-        const json = {"username" : username , "password" : password , "accounts" : this.model,"bankDetails": this.model2,"address": this.model3}
+        // const json = {"username" : username , "password" : password , "accounts" : this.model,"bankDetails": this.model2,"address": this.model3}
 
-        console.log(json);
-        return json;
+        // console.log(json);
+        // return json;
         
         this.ess.sendToServer(this.model).subscribe(
             data =>{
@@ -105,6 +105,9 @@ export class EstablishmentRegistrationComponent{
             }
             );
         }
+
+        
+   
     
     }
     

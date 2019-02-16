@@ -19,10 +19,10 @@ sendToServer(user){
   return this.http.post(url,user)
   }
 
-  checkUser(user){
+  checkUser(username){
     //our code to be communicated with the server will be here
-    let url="http://localhost:8084/user/check";
-    return this.http.post(url,user)
+    let url="http://localhost:8084/user/check?username="+username;
+    return this.http.get(url);
     }
 
 
