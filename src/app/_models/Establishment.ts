@@ -7,10 +7,9 @@ export class Establishment{
                 public estEmail?:string,
                 public  estType?:string,
                 public domain?:string,
-                public estRegNo?:string,
+                public estTotalEmp?:number,
                 public WorkingDays?:number,
                 public estContactNumber?:number,
-                
                 )
                {
      }
