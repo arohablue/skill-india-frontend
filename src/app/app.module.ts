@@ -21,15 +21,22 @@ import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
-import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
+
+import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.Component';
+import { EstablishmentVerificationComponent } from './Establishment Verification/EstablishmentVerification.Component';
+import { EstablishmentVerificationService } from './Establishment Verification/EstablishmentVerfication.Service';
+import { AddCourseComponent } from './AddCourse/AddCourse.Component';
+import { AddCourseService } from './_services/AddCourse.Service';
+
 import { CourseComponent } from './Course/Course.Component';
 import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
 import { AdminLoginService } from './_services/Admin.Login.Service';
+
 
 
 
@@ -48,6 +55,9 @@ import { AdminLoginService } from './_services/Admin.Login.Service';
     AdminLoginComponent,
     EstablishmentDashboardComponent,
     SearchPageComponent,
+    AddCourseComponent,
+    AdminDashboardComponent,
+    EstablishmentVerificationComponent
     CourseComponent,
     CandidateDashboardComponent
 
@@ -66,10 +76,11 @@ import { AdminLoginService } from './_services/Admin.Login.Service';
     AlertService,
     CandidateRegistrationService,
     CandidateLoginService,
-    CourseService,
+    AddCourseService,
     EstablishmentRegistrationService,
     EstablishmentLoginService,
     EstablishmentDashboardService,
+    EstablishmentVerificationService,
     CandidateDashboardService,
     AdminLoginService,
     HttpClient,

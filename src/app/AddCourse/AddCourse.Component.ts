@@ -1,18 +1,18 @@
 import {OnInit, Component} from '@angular/core';
-import { CourseService } from '../_services/Course.Service';
+import {  AddCourseService } from '../_services/AddCourse.Service';
 import { Course } from '../_models/Course';
 
 
 @Component({
     selector : 'Course-Form',
-    templateUrl: './Course.Component.html'
+    templateUrl: './AddCourse.Component.html'
 })
 
-export class CourseComponent{
+export class AddCourseComponent{
     course: Course = new Course();
     response:string;
 
-     constructor( public cs:CourseService){
+     constructor( public cs:AddCourseService){
 
     }
     addCourse(){
