@@ -10,7 +10,10 @@ import { EstablishmentDashboardComponent } from './EstablishmentDashboard/Establ
 import { SearchPageComponent } from './Search/search.component';
 
 
-import { CourseComponent } from './Course/Course.Component';
+import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.Component';
+import { EstablishmentVerificationComponent } from './Establishment Verification/EstablishmentVerification.Component';
+import { AddCourseComponent } from './AddCourse/AddCourse.Component';
+
 
 
 const routes: Routes = [
@@ -23,8 +26,9 @@ const routes: Routes = [
   { path: 'admin/login',component: AdminLoginComponent},
   { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
   { path: 'search/Establishment',component: SearchPageComponent},
-  { path: 'add/course',component: CourseComponent},
-
+  { path: 'add/course',component:AddCourseComponent},
+  { path: 'admin/dashboard',component: AdminDashboardComponent},
+  { path: 'admin/establishment/verification',component: EstablishmentVerificationComponent},
 
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

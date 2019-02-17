@@ -1,0 +1,92 @@
+
+<meta charset="utf-8">
+<title>Establishment Display</title>
+
+
+<!-- Favicon -->
+<link href="Bootstrap/img/favicon.ico" rel="icon">
+
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Raleway:400,500,700|Roboto:400,900"
+	rel="stylesheet">
+
+<!-- Bootstrap CSS File -->
+<link href="Bootstrap/lib/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Libraries CSS Files -->
+<link href="Bootstrap/lib/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet">
+
+<link href="Bootstrap/lib/jquery-ui/jquery-ui.css" rel="stylesheet">
+<link href="Bootstrap/lib/jquery-ui/jquery-ui.structure.css"
+	rel="stylesheet">
+<link href="Bootstrap/lib/jquery-ui/jquery-ui.theme.css"
+	rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="Bootstrap/css/style.css" rel="stylesheet">
+
+<link href="Bootstrap/css/prettyrc.css" rel="stylesheet">
+</head>
+
+<body>
+
+	
+	<!-- Form Heading -->
+	
+		<h1>
+			<b><mark> Establishment Courses</mark></b>
+		</h1>
+	
+	<br>
+
+	<!-- #header -->
+	<div class="bcg">
+		<c:if test="${can!=null }">
+			<section class="container" style="padding-top: 1px;">
+				<form class="container">
+					<!-- Profile Picture -->
+					<br>
+					<div class="form-group">
+						<label class="control-label">${can.name}</label><br> <label
+							class="control-label">Profile Status: ${can.status }</label><br>
+					
+					</div>
+				</form>
+			</section>
+	
+		<center>
+			<!-- Listing courses for selected establishment information in table -->
+			<h2>All Courses provided by various Establishments </h2>
+			<table border="2" width="70%" cellpadding="2">
+				<tr>
+					<th>Reg_no</th>
+					<th>Est Name</th>
+					<th>Domain Name</th>
+					<th>Course Id</th>
+					<th>Course Display</th>
+					<th>Trainer Name</th>
+					<th>Link</th>
+				</tr>
+				
+
+				
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+
+						<td><a href="apply/${temp.courseId}">Apply</a></td>
+					</tr>
+				
+			</table>
+		</center>
+	</div>
+
+</body>
+</html>

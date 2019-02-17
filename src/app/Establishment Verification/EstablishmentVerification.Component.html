@@ -1,0 +1,100 @@
+
+<title>Establishment Verification</title>
+
+
+
+   <!-- Header -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <a href="index.html"><img src="Bootstrap/img/National.png" width="200" height="150" alt="" title="" /></a>
+        
+      </div>
+
+      <nav id="nav-menu-container">
+          <ul class="nav-menu">
+  
+             <li class="menu-has-children"><a href=#>Establishment Verification</a>
+         
+          </li>
+        </ul>
+        <ul class="nav-menu">
+         <li><a href="ContractVerification.html">Contract Verification</a></li>
+        </ul>
+      </nav>
+     <!-- #nav-menu-container -->
+
+      <nav class="nav social-nav pull-right d-none d-lg-inline">
+       
+      </nav>
+    </div>
+      <nav class="nav social-nav pull-right d-none d-lg-inline"> 
+			<ul class="nav navbar-nav navbar-right">
+		
+				<li><a href="logout">Logout</a></li>
+			</ul>
+		</nav>
+  </header>
+  <!-- #header -->
+
+  
+<div class="bcg">
+<section>
+<!-- Form Heading -->
+<div align="center"><h1><b><mark>Establishment Verification</mark></b></h1></div>
+
+
+				<!-- Displaying selected establishment information in table -->
+				<h3>Establishment Application:</h3>
+			
+				<table border="2" width="70%" cellpadding="2">
+					<tr>
+						
+						<th>Establishment Name</th>
+						<th>Email</th>
+            <th>Industry Type</th>
+            <th>Domain</th>
+						<th>No of Employees</th>
+						<th>Workdays</th>
+						<th>Contact No</th>
+            <th>Street Name</th>
+            <th>State</th>
+            <th>City</th>
+						<th>Bank Name</th>
+						<th>IFSC code</th>
+            <th>Account No</th>
+            <th colspan="3">Documents Uploaded: </th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+
+          <tr *ngFor="let est of establishment">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+              <td></td>
+              <td></td>
+							<td></td>
+							<td></td>
+							
+						 <td><a href="dispfile/${e.canRegNo}/${1}">Photo</a></td>
+							<td><a href="dispfile/${e.canRegNo}/${2}">Aadhar Card</a></td>
+							<td><a href="dispfile/${e.canRegNo}/${3}">Marksheet</a></td>
+							<td></td>
+							<td><a href="everify/${e.estRegNo}/${accept}">Accept</a><br>
+								<a href="everify/${e.estRegNo}/${reject}">Reject</a></td>
+						</tr>
+				
+				</table>
+			</section>
+		</div>
+   
+
+ 

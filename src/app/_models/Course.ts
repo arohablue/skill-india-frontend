@@ -7,6 +7,6 @@ export class Course{
         public courseDescription?:string,
         public courseDuration?:number,
         public traineeName?:string,
-        public courseAmount?:number,
+        public courseAmount?:number, 
     ){}
 }

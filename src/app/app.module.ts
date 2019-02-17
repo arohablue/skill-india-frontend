@@ -21,13 +21,16 @@ import { ValidationService } from './_services/ValidationService';
 import { AdminLoginComponent } from './Admin/Login/Admin.Login.Component';
 import { AuthenticationService, AlertService } from './_services';
 import { HomepageFooter } from './HomepageFooter/HoempageFooter.Component';
-import { CourseService } from './_services/Course.Service';
 import { EstablishmentDashboardComponent } from './EstablishmentDashboard/EstablishmentDashboard.Component';
 
 import { SearchPageComponent } from './Search/search.component';
 import { SearchPageService } from './Search/search.service';
-import { CourseComponent } from './Course/Course.Component';
-import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
+import { EstablishmentDashboardService } from './_services/EstablishmentDashboard.Service';
+import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.Component';
+import { EstablishmentVerificationComponent } from './Establishment Verification/EstablishmentVerification.Component';
+import { EstablishmentVerificationService } from './Establishment Verification/EstablishmentVerfication.Service';
+import { AddCourseComponent } from './AddCourse/AddCourse.Component';
+import { AddCourseService } from './_services/AddCourse.Service';
 
 
 
@@ -46,7 +49,9 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     AdminLoginComponent,
     EstablishmentDashboardComponent,
     SearchPageComponent,
-    CourseComponent
+    AddCourseComponent,
+    AdminDashboardComponent,
+    EstablishmentVerificationComponent
 
   ],
   imports: [
@@ -63,10 +68,11 @@ import { EstablishmentDashboardService } from './_services/EstablishmentComponen
     AlertService,
     CandidateRegistrationService,
     CandidateLoginService,
-    CourseService,
+    AddCourseService,
     EstablishmentRegistrationService,
     EstablishmentLoginService,
     EstablishmentDashboardService,
+    EstablishmentVerificationService,
     
     HttpClient,
     
