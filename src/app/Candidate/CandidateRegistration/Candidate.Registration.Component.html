@@ -14,8 +14,8 @@
         style="color: red;">*</font></label>
       <div class="input-group" style="z-index: 0;">
         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-        <input type="text" formControlName="candidateName" maxlength="30" placeholder="Full Name"
-        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
+        <input type="text"  maxlength="30" placeholder="Full Name"
+        class="form-control" formControlName="candidateName" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
         <div *ngIf="submitted && f.candidateName.errors" class="invalid-feedback">
           <div *ngIf="f.candidateName.errors.required">candidate Name is required</div>
       </div>
@@ -109,9 +109,9 @@
             <input class="form-control" (ngModelChange)="check($event)" type="text" placeholder="User Name" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
               <div *ngIf="f.username.errors.required">candidate Name is required</div>
-              <div *ngIf="f.username.errors.pattern">
+              <!-- <div *ngIf="f.username.errors.pattern">
               Username not valid
-              </div>
+              </div> -->
               </div>
   
              </div>
@@ -123,34 +123,41 @@
     <!-- Password & Confirm Password (on the same row) -->
 
     <div class="form-row">
-      <div class="form-group col-md-6 ">
-          <div align="left"><label class="control-label" >Password</label><font style= "color:red;">*</font></div>
+      <div class="col-md-6 form-group">
+        <div align="left"><label class="control-label">Password</label><font
+          style="color: red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
-          <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-          <input type="password" placeholder="Password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">candidate Password is required</div>
-          </div>
-      <!-- <font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font> -->
+          <span class="input-group-addon"><i class="fa fa-unlock-alt"
+            aria-hidden="true"></i></span>
+            <input id="password" name="password"
+            formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+            placeholder="Password" class="form-control" required="required"
+            type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.">
+            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Password is required</div>
+              </div>
         </div>
         <div align="left"><font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font></div>
       </div>
       
      
-      <div class="form-group col-md-6 ">
-              <div align="left"><label class="control-label" >Confirm Password</label><font style= "color:red;">*</font></div>
-            <div class="input-group" style="z-index: 0;">
-              <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-              <input type="password" placeholder="Confirm Password" formControlName="confpassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confpassword.errors }" />
-            <div *ngIf="submitted && f.confpassword.errors" class="invalid-feedback">
-              <div *ngIf="f.confpassword.errors.MustMatch">Passwords must match</div>
-          </div>
-          
+      <div class="col-md-6 form-group">
+        <div align="left"><label class="control-label" >Confirm Password</label><font style= "color:red;">*</font></div>
+        <div class="input-group" style="z-index: 0;">
+          <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+          <input id="confirmPassword" name="confPassword" placeholder="Confirm Password" 
+          formControlName="confpassword" [ngClass]="{ 'is-invalid': submitted && f.confpassword.errors }"
+          class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()" 
+          title="Password Should be at least 8 characters long and must contain at least one character 
+          in Upper Case, Lower Case, Numerical Form, and a Special Character.">
+          <div *ngIf="submitted && f.confpassword.errors" class="invalid-feedback">
+            <div *ngIf="f.confpassword.errors.required">Password is required</div>
             </div>
-          </div>
-          
-
         </div>
+          
+        </div>
+      </div>
 
       <!-- Contact number -->
       <div class="form-row">
@@ -289,7 +296,7 @@
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
           <select   formControlName="candidateCity" [ngClass]="{ 'is-invalid': submitted && f.candidateCity.errors }"
-          name="addr.city" class="form-control" id="city-select" required>
+          name="addr.city" class="form-control" id="city-select" required>p
             <option value="" disabled selected>--Select--</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -330,8 +337,10 @@
               <div align="left"><label class="control-label">Photo Upload</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file" onchange="validate_fileupload(this.value);" >
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)" >
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
 <!-- Upload Aadhaar -->
@@ -339,8 +348,10 @@
       <div align="left"><label class="control-label">Upload AadharCard</label><font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
       <!-- Education Certificate -->
@@ -348,9 +359,10 @@
     <div align="left"><label class="control-label">Education Certificate</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
-        <div id="fileList"></div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
                           <!-- Request Status -->
@@ -371,3 +383,5 @@
         </div>
       </div>
     </div>
+    </form>
+</section>

@@ -47,6 +47,7 @@ export class CandidateRegistrationComponent {
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
+
         username:    [this.candiateJsondata.username, Validators.required],
         password:    [this.candiateJsondata.password, Validators.required],
         confpassword : [this.confpassword, Validators.required],
@@ -107,7 +108,7 @@ export class CandidateRegistrationComponent {
        "candidateContactNumber":  this.CandidateRegistrationForm.get('candidateContactNumber').value,
        "candidateGender": this.CandidateRegistrationForm.get('candidateGender').value,
        "candidateAadhaarNumber": this.CandidateRegistrationForm.get('candidateAadhaarNumber').value,
-       "candidateEmaiI": this.CandidateRegistrationForm.get('candidateEmail').value,
+       "candidateEmail": this.CandidateRegistrationForm.get('candidateEmail').value,
        "candidateDoB":  this.CandidateRegistrationForm.get('candidateDoB').value,
        "fathersName" : this.CandidateRegistrationForm.get('candidateFatherName').value,
        "motherName" : this.CandidateRegistrationForm.get('candidateMotherName').value,

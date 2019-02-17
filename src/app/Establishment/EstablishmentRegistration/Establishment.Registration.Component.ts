@@ -10,6 +10,7 @@ import { Address } from 'src/app/_models/Address';
 import { AdminLoginService } from 'src/app/_services/Admin.Login.Service';
 import { MustMatch } from 'src/app/_models/must-match.validators';
 import { Bank } from 'src/app/_models/Bank';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 
 
 @Component({
@@ -28,7 +29,9 @@ export class EstablishmentRegistrationComponent {
         usercheck : string;
         confpassword : string;
         message : string;
-        response : string
+        response : string;
+        selectedFile: File = null;
+
 
         EstablishmentRegistrationForm: FormGroup;
         loading = false;
@@ -41,7 +44,8 @@ export class EstablishmentRegistrationComponent {
                   private route: ActivatedRoute,
                   private router: Router,
                   private authenticationService: AuthenticationService,
-                  private alertService: AlertService) {
+                  private alertService: AlertService,
+                  private http : HttpClient) {
     }
     
     ngOnInit() {
@@ -69,8 +73,9 @@ export class EstablishmentRegistrationComponent {
 
         // address details
         streetName: [this.estAddressModel.streetName, Validators.required],
-        city :[this.estAddressModel.city, Validators.required],
-        state:[this.estAddressModel.state, Validators.required],
+        EstablishmentState :[this.estAddressModel.state, Validators.required],
+        EstablishmentCity:[this.estAddressModel.city, Validators.required],
+        pincode:[this.estAddressModel.pincode, Validators.required],
         
         
       });
@@ -103,21 +108,25 @@ export class EstablishmentRegistrationComponent {
        // console.log(this.submittedModel);
 
       var json =  {
-        "username" :  this.EstablishmentRegistrationForm.get('username').value,
+       "username" :  this.EstablishmentRegistrationForm.get('username').value,
        "password" : this.EstablishmentRegistrationForm.get('password').value,
 
        "establishment" : {
        "estName":  this.EstablishmentRegistrationForm.get('estName').value,
        "estContactNumber":  this.EstablishmentRegistrationForm.get('estContactNumber').value,
-       "estEmaiI": this.EstablishmentRegistrationForm.get('estEmaiI').value,
+       "estType":  this.EstablishmentRegistrationForm.get('estType').value,
+       "estEmail": this.EstablishmentRegistrationForm.get('estEmail').value,
        "workingDays" :this.EstablishmentRegistrationForm.get('estWorkingDays').value,
        "domain" :this.EstablishmentRegistrationForm.get('domain').value,
-       "estType" : "training center",
+       "estTotalEmp" :this.EstablishmentRegistrationForm.get('estTotalEmp').value,
+       
+       
 
             "address" : {
                     "streetName" :  this.EstablishmentRegistrationForm.get('streetName').value,
                     "state" :  this.EstablishmentRegistrationForm.get('EstablishmentState').value,
-                     "city"  : this.EstablishmentRegistrationForm.get('EstablishmentCity').value,
+                    "city"  : this.EstablishmentRegistrationForm.get('EstablishmentCity').value,
+                    "pincode"  : this.EstablishmentRegistrationForm.get('pincode').value
                 },
                 "bankDetails" : {
                     "bankName" : "icci",
@@ -158,5 +167,27 @@ export class EstablishmentRegistrationComponent {
         );
         
     }
+
+
+    onFileSelected(event) {
+        this.selectedFile = <File>event.target.files[0];
+      }
+
+    onUpload() {
+        const formData = new FormData();
+        formData.append('image',this.selectedFile, this.selectedFile.name);
+        this.http.post('http://localhost:8085/upload', formData, { reportProgress: true, observe: 'events' }).subscribe(event => {
+          if (event.type === HttpEventType.UploadProgress) {
+            console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
+            console.log('status');
+    
+          }
+          else if (event.type === HttpEventType.Response) {
+            console.log(event);
+          }
+        });
+      }
+
+   
 
 }
