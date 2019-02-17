@@ -33,7 +33,7 @@
 			<br>
 			<div class="form-group">
 				 <label class="control-label"></label><br>  <!-- ${est.name} -->
- <label class="control-label">Profile Status: </label><br>				<!--${est.status} -->
+ <label class="control-label">Profile Status: </label>{{username}}<br>				<!--${est.status} -->
 					
 				
 				 <label class="control-label">Registration Number:  </label>  	<!--${est.estRegNo} -->
@@ -55,52 +55,31 @@
 						<thead>
 							<tr>
 
-								<th>estId</th>
-								<th>estUserId</th>
-								<th>estUserPassword</th>
-								<th> estName</th>
-								<th>estContactNumber</th>
-								<th>estType</th>
-								<th>estRegNo</th>
-								<th>estEmail</th>
-								<th>estWorkingDays</th>
-								<th>domain</th>
-								<th>estAddress</th>
 								
-								<!-- <th>Contract Number</th>
-								<th>Candidate Registration Number</th>
 								<th>Candidate Name</th>
-								<th>Candidate Gender</th>
+						
 								<th>Candidate DOB</th>
 								<th>Candidate Contact Number</th>
 								<th>Candidate Qualification</th>
 								<th>Candidate Marks</th>
-								<th>Course Id</th>
-								<th>Course Name</th>
-								<th>Stipend</th>
-								<th>Start Date</th>
-								<th>End Date</th>
-								<th>Status</th>
-								<th>Send Offer</th>
-								<th>Reject Application</th> -->
 							</tr>
 						</thead>
 						<tbody>
 
 								<tr *ngFor="let est of establishment">
-									<td>{{establishment.estId}}</td>
-									<td>{{establishment.estUserId}}</td>
-									<td>{{establishment.estUserPassword}}</td>
-									<td>{{establishment.estName}}</td>
-									<td>{{establishment.estContactNumber}}</td>
-									<td>{{establishment.estType}}</td>
-									<td>{{establishment.estRegNo}}</td>
-									<td>{{establishment.estEmail}}</td>
-									<td>{{establishment.estWorkingDays}}</td>
-									<td>{{establishment.domain}}</td>
-									<td>{{establishment.estAppStatus}}</td>
-									<td>{{establishment.estBankDetails}}</td>
-									<td>{{establishment.estAddress}}</td>
+									<td>{{est.estId}}</td>
+									<td>{{est.estUserId}}</td>
+									<td>{{est.estUserPassword}}</td>
+									<td>{{est.estName}}</td>
+									<td>{{est.estContactNumber}}</td>
+									<td>{{est.estType}}</td>
+									<td>{{est.estRegNo}}</td>
+									<td>{{est.estEmail}}</td>
+									<td>{{est.estWorkingDays}}</td>
+									<td>{{est.domain}}</td>
+									<td>{{est.estAppStatus}}</td>
+									<td>{{est.estBankDetails}}</td>
+									<td>{{est.estAddress}}</td>
 					
 								</tr>
 

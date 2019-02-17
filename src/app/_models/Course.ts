@@ -8,5 +8,6 @@ export class Course{
         public courseDuration?:number,
         public traineeName?:string,
         public courseAmount?:number, 
+
     ){}
 }
