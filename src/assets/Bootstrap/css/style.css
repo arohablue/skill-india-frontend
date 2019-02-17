@@ -298,8 +298,7 @@ background-image: linear-gradient(#CAEBF2,White);
 /* Nav Meu Container */
 #nav-menu-container {
   margin: 0;
-  
-  
+   
 }
 
 @media (max-width: 768px) {
@@ -322,7 +321,7 @@ background-image: linear-gradient(#CAEBF2,White);
 }
 
 .nav-menu a:hover, .nav-menu li:hover > a, .nav-menu .menu-active > a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(251, 229, 229, 0.75);
 }
 
 .nav-menu ul {
@@ -779,7 +778,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /* ==================================================
-  Contact Section
+  Contact 
+  
   ================================================== */
 #contact {
   background: #f7f7f7;
