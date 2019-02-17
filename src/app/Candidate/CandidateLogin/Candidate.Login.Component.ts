@@ -5,6 +5,7 @@ import { AuthenticationService, AlertService } from 'src/app/_services';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/_models/User';
+import { Candidate } from 'src/app/_models/Candidate';
 
 
 
@@ -19,15 +20,19 @@ import { User } from 'src/app/_models/User';
 export class CandidateLoginComponent {
         usermodel: User = new User();
         submittedModel:User =  new User();
+        fetchedModel: Candidate = new Candidate(null);
         request: string;
         response : string;
         usercheck : string;
-
+        candId : string;
+        candName : string;
+        message : String;
 
         candidateLoginForm: FormGroup;
         loading = false;
         submitted = false;
         returnUrl: string;
+        
      constructor( public cls: CandidateLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
@@ -70,7 +75,13 @@ export class CandidateLoginComponent {
 
         this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
-                console.log(data);
+                if(data !==null){
+                    this.candId = data['candidateId'] ;
+                    this.candName = data['candidateName'];
+                    this.router.navigate(['/candidate/dashboard']);
+                } 
+
+                this.message = "Worng Username or password";
             }
         );
     }

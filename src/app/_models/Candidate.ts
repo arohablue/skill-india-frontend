@@ -1,29 +1,21 @@
 import { Address } from './Address';
 
 export class Candidate{
-    constructor( public candidateUserId?:string,
+   
+    constructor( public address : Address,
                  public candidateName?:string,
-                 public candidateDoB?:number,
-                 public candidateGender?:string,
-                 public candidateFatherName?:string,
-                 public candidateMotherName?:string,
-                 public candidateAadhaarNumber?:number,
-                 public candidateCategory?:string,
-
                  public candidateContactNumber?:number,
+                 public candidateGender?:string,
+                 public candidateAadhaarNumber?:number,
                  public candidateEmail?:string,
-                 public candidatePassword?:string,
-                 
-                public qualification?:string,
-                public instituteName?:string,
-                public percentage?:number,
-                 
-                public candidateRequestStatus?:string,
-                //  public candidateCourseStatus?:string
-           
-
-
-
+                 public candidateEducationDetails?:string,
+                 public candidateDoB?:number,
+                 public candidateRequestStatus?:string,
+                 public fathersName?:string,
+                 public motherName?:string,
+                 public instituteName?:string,
+                 public percentage?:string,
+                 public qualification?:string,
                 )
                {
      }

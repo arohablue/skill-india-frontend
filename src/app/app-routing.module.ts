@@ -11,6 +11,7 @@ import { SearchPageComponent } from './Search/search.component';
 
 
 import { CourseComponent } from './Course/Course.Component';
+import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'establishment/dashboard',component: EstablishmentDashboardComponent},
   { path: 'search/Establishment',component: SearchPageComponent},
   { path: 'add/course',component: CourseComponent},
+  { path: 'candidate/dashboard',component: CandidateDashboardComponent },
 
 
     // otherwise redirect to home

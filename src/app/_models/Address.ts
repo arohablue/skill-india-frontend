@@ -1,10 +1,9 @@
 export class Address{
     constructor(
-        localAddress?:string,
-        city?:string,
-        state?:string,
-        pincode?:number
-        
+       public streetName?:string,
+        public city?:string,
+        public state?:string,
+        public pincode?:number,
     ){
 
     }
