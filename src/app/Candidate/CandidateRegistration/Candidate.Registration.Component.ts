@@ -56,7 +56,7 @@ export class CandidateRegistrationComponent {
         candidateName:     [this.candiateJsondata.candidate.candidateName, [ Validators.required, Validators.max(15)]],
         candidateContactNumber:    [this.candiateJsondata.candidate.candidateContactNumber, Validators.required],
         candidateGender:    [this.candiateJsondata.candidate.candidateGender, Validators.required],
-        candidateAadhaarNumber: [this.candiateJsondata.candidate.candidateAadhaarNumber,[ Validators.required, Validators.max(15)]],
+        candidateAadhaarNumber: [this.candiateJsondata.candidate.candidateAadhaarNumber,[ Validators.required, Validators.pattern("^\d{4}\s\d{4}\s\d{4}$")]],
         candidateEmail:    [this.candiateJsondata.candidate.candidateEmail,  [Validators.required, Validators.email]],
         candidateDoB:    [this.candiateJsondata.candidate.candidateDoB, Validators.required],
         candidateFatherName:    [this.candiateJsondata.candidate.fathersName, Validators.required],
@@ -107,26 +107,28 @@ export class CandidateRegistrationComponent {
        "candidateContactNumber":  this.CandidateRegistrationForm.get('candidateContactNumber').value,
        "candidateGender": this.CandidateRegistrationForm.get('candidateGender').value,
        "candidateAadhaarNumber": this.CandidateRegistrationForm.get('candidateAadhaarNumber').value,
-       "candidateEmail": this.CandidateRegistrationForm.get('candidateEmail').value,
+       "candidateEmaiI": this.CandidateRegistrationForm.get('candidateEmail').value,
        "candidateDoB":  this.CandidateRegistrationForm.get('candidateDoB').value,
-       "candidateFatherName" : this.CandidateRegistrationForm.get('candidateFatherName').value,
-       "candidateMotherName" : this.CandidateRegistrationForm.get('candidateMotherName').value,
+       "fathersName" : this.CandidateRegistrationForm.get('candidateFatherName').value,
+       "motherName" : this.CandidateRegistrationForm.get('candidateMotherName').value,
        "instituteName" :  this.CandidateRegistrationForm.get('instituteName').value,
        "percentage" : this.CandidateRegistrationForm.get('percentage').value,
        "qualification" : this.CandidateRegistrationForm.get('qualification').value,
             "address" : {
-                    "state" :  this.CandidateRegistrationForm.get('streetName').value,
+                    "streetName" :  this.CandidateRegistrationForm.get('streetName').value,
+                    "state" :  this.CandidateRegistrationForm.get('candidateState').value,
                      "city"  : this.CandidateRegistrationForm.get('candidateCity').value,
                 }
             }
         }
-        console.log(json);
 
         this.crs.sendToServer(json).subscribe(
             data =>{
                 this.response = data['message'];
-                console.log(this.response);
-                
+               if(this.response == "added") {
+                this.router.navigate(['/candidate/dashboard']);
+               }
+               this.router.navigate(['/candidate/registration']);
             }
         );
 
