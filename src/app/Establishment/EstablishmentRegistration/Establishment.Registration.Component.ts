@@ -3,6 +3,7 @@ import {OnInit, Component} from '@angular/core';
 import { EstablishmentRegistrationService } from '../../_services/Establishment.Registration.Service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Establishment } from '../../_models/Establishment';
+
 import { User } from 'src/app/_models/User';
 import { AuthenticationService, AlertService } from 'src/app/_services';
 import { Bank } from 'src/app/_models/Bank';
@@ -13,7 +14,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
     selector : 'EstablishmentRegistration',
     templateUrl: './Establishment.Registration.Component.html',
-   // styleUrls:['./flights-list.component.css'],
    
 })
 
@@ -110,6 +110,26 @@ export class EstablishmentRegistrationComponent{
    
     
     }
+
+
+    onFileSelected(event) {
+        this.selectedFile = <File>event.target.files[0];
+      }
+
+    onUpload() {
+        const formData = new FormData();
+        formData.append('image',this.selectedFile, this.selectedFile.name);
+        this.http.post('http://localhost:8085/upload', formData, { reportProgress: true, observe: 'events' }).subscribe(event => {
+          if (event.type === HttpEventType.UploadProgress) {
+            console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
+            console.log('status');
     
+          }
+          else if (event.type === HttpEventType.Response) {
+            console.log(event);
+          }
+        });
+      }
+
    
 

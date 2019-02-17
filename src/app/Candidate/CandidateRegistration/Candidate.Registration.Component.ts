@@ -47,6 +47,7 @@ export class CandidateRegistrationComponent {
     ngOnInit() {
 
       this.CandidateRegistrationForm = this.formBuilder.group({
+
         username:    [this.candiateJsondata.username, Validators.required],
         password:    [this.candiateJsondata.password, Validators.required],
         confpassword : [this.confpassword, Validators.required],

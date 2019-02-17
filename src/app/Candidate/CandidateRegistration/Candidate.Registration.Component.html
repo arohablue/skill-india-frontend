@@ -14,8 +14,8 @@
         style="color: red;">*</font></label>
       <div class="input-group" style="z-index: 0;">
         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-        <input type="text" formControlName="candidateName" maxlength="30" placeholder="Full Name"
-        class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
+        <input type="text"  maxlength="30" placeholder="Full Name"
+        class="form-control" formControlName="candidateName" [ngClass]="{ 'is-invalid': submitted && f.candidateName.errors }" />
         <div *ngIf="submitted && f.candidateName.errors" class="invalid-feedback">
           <div *ngIf="f.candidateName.errors.required">candidate Name is required</div>
       </div>
@@ -289,7 +289,7 @@
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
           <select   formControlName="candidateCity" [ngClass]="{ 'is-invalid': submitted && f.candidateCity.errors }"
-          name="addr.city" class="form-control" id="city-select" required>
+          name="addr.city" class="form-control" id="city-select" required>p
             <option value="" disabled selected>--Select--</option>
             <option value="Mumbai">Mumbai</option>
             <option value="Pune">Pune</option>
@@ -330,8 +330,10 @@
               <div align="left"><label class="control-label">Photo Upload</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file" onchange="validate_fileupload(this.value);" >
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)" >
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
 <!-- Upload Aadhaar -->
@@ -339,8 +341,10 @@
       <div align="left"><label class="control-label">Upload AadharCard</label><font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
       <!-- Education Certificate -->
@@ -348,9 +352,10 @@
     <div align="left"><label class="control-label">Education Certificate</label> <font style= "color:red;">*</font></div>
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-files-o" aria-hidden="true"></i></span>
-          <input class="form-control" name="files" type="file" required="required" id="file"  onchange="validate_fileupload(this.value);">
+          <input class="form-control" name="files" type="file" required="required" accept="image/*" (change)="onFileSelected($event)">
         </div>
-        <div id="fileList"></div>
+        <br>
+        <div align="left"><button type="button" class="btn-primary mb-2" (click)="onUpload()">Upload</button></div>
       </div>
 
                           <!-- Request Status -->
