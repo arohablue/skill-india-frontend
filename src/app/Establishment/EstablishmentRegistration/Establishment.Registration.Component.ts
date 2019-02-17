@@ -142,9 +142,10 @@ export class EstablishmentRegistrationComponent {
             data =>{
                 this.response = data['message'];
                if(this.response == "added") {
-                this.router.navigate(['/Establishment/dashboard']);
+                console.log("added");
+                this.router.navigate(['/establishment/login']);
                }
-               this.router.navigate(['/Establishment/registration']);
+               this.router.navigate(['/establishment/registration']);
             }
         );
 
@@ -176,7 +177,7 @@ export class EstablishmentRegistrationComponent {
     onUpload() {
         const formData = new FormData();
         formData.append('image',this.selectedFile, this.selectedFile.name);
-        this.http.post('http://localhost:8085/upload', formData, { reportProgress: true, observe: 'events' }).subscribe(event => {
+        this.http.post('http://localhost:8084/upload', formData, { reportProgress: true, observe: 'events' }).subscribe(event => {
           if (event.type === HttpEventType.UploadProgress) {
             console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
             console.log('status');

@@ -10,6 +10,7 @@ import { Address } from 'src/app/_models/Address';
 import { AdminLoginService } from 'src/app/_services/Admin.Login.Service';
 import { MustMatch } from 'src/app/_models/must-match.validators';
 import { candidateJson } from 'src/app/_models/candidateJson';
+import { HttpEventType, HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -29,6 +30,7 @@ export class CandidateRegistrationComponent {
         confpassword : string;
         message : string;
         response : string
+        selectedFile: File = null;
 
         CandidateRegistrationForm: FormGroup;
         loading = false;
@@ -41,7 +43,8 @@ export class CandidateRegistrationComponent {
                   private route: ActivatedRoute,
                   private router: Router,
                   private authenticationService: AuthenticationService,
-                  private alertService: AlertService) {
+                  private alertService: AlertService,
+                  private http: HttpClient) {
     }
     
     ngOnInit() {
@@ -95,6 +98,7 @@ export class CandidateRegistrationComponent {
         
         //this.candiateJsondata = value;
 
+
         console.log(this.candiateJsondata);
         console.log("validated");
         this.loading = true;
@@ -125,10 +129,9 @@ export class CandidateRegistrationComponent {
 
         this.crs.sendToServer(json).subscribe(
             data =>{
-                this.response = data['message'];
-               if(this.response == "added") {
-                this.router.navigate(['/candidate/dashboard']);
-               }
+                if(data !==null){
+                    this.router.navigate(['/candidate/login']);
+                }
                this.router.navigate(['/candidate/registration']);
             }
         );
@@ -152,5 +155,25 @@ export class CandidateRegistrationComponent {
         );
         
     }
+
+    
+    onFileSelected(event) {
+        this.selectedFile = <File>event.target.files[0];
+      }
+
+    onUpload() {
+        const formData = new FormData();
+        formData.append('image',this.selectedFile, this.selectedFile.name);
+        this.http.post('http://localhost:8084/upload', formData, { reportProgress: true, observe: 'events' }).subscribe(event => {
+          if (event.type === HttpEventType.UploadProgress) {
+            console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
+            console.log('status');
+    
+          }
+          else if (event.type === HttpEventType.Response) {
+            console.log(event);
+          }
+        });
+      }
 
 }

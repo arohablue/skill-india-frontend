@@ -11,15 +11,20 @@ import { EstablishmentDashboardService } from '../_services/EstablishmentCompone
 })
 
 export class EstablishmentDashboardComponent{
-    establishment:Establishment[];
+    establishments: Establishment[];
+    establishment : Establishment = new Establishment();
+    username : string ;
 
      constructor( public ess:EstablishmentDashboardService){
+        this.establishment = JSON.parse(localStorage.getItem('user'));
+        this.username = this.establishment.estName
+        console.log("this.username")
 
     }
     fetchEstablishment(){
         this.ess.getFromServer().subscribe(
             data =>{
-                this.establishment=data;
+                this.establishments=data;
             }
         );
     }

@@ -57,7 +57,7 @@
 			<br>
 			<div class="form-group">
 				 <label class="control-label"></label><br>				<!--${can.name} -->
-				 <label class="control-label">Profile Status:</label><br>  <!--${can.status} -->
+				 <label class="control-label">Profile Status:</label>{{username}}<br>  <!--${can.status} -->
 			</div>
 				
 			<button (click)="fetchCandidate()"> Show all Establishments </button>
@@ -73,44 +73,28 @@
 					<table class="table table-striped table-bordered table-hover">
 						<thead>
 							<tr>
-									<th>candidateUserId</th>
-									<th> candidateName</th>
-									<th>  candidatePassword</th>
-									<th>candidateFatherName</th>
-									<th>candidateGender</th>
-									<th>candidateEmailId</th>
-									<th>candidateContactNumber</th>
-									<th>candidateAadharNumber</th>
-									<!-- <th>candidateEducationDetails</th> -->
-									<th>candidateDoB</th>
-									<!-- <th>candidateRequestStatus</th> -->
-									<th>candidateCourseStatus</th>
-									
-								<!-- <th>Contract Number</th>
-								<th>Establishment Registration Number</th>
+
+
 								<th>Establishment Name</th>
-								<th>Course Id</th>
-								<th>Course Name</th>
-								<th>Stipend</th>
-								<th>Start Date</th>
-								<th>End Date</th>
-								<th>Status</th>
+								<th>Establishment Type</th>
+								<th>Establishment Domain</th>
+								<th>Establishment Working Days</th>
+								<th>Establishment Contact Number</th>
+								<th>Establishment Email</th>
 								<th style="text-align:justify" colspan="2">Action</th> -->
 							</tr>
 						</thead>
 
 						<tbody>
-								<tr *ngFor="let cnd of candidate">
-										<td>{{candidate.candidateUserId}}</td>
-										<td>{{candidate.candidateName}}</td>
-										<td>{{candidate.candidatePassword}}</td>
-										<td>{{candidate.candidateFatherName}}</td>
-										<td>{{candidate.candidateGender}}</td>
-										<td>{{candidate.candidateEmailId}}</td>
-										<td>{{candidate.candidateContactNumber}}</td>
-										<td>{{candidate.candidateAadharNumber}}</td>
-										<td>{{candidate.candidateDoB}}</td>
-										<td>{{candidate.candidateCourseStatus}}</td>
+								<tr *ngFor="let est of establishmnets">
+										<td>{{est.estName}}</td>
+										<td>{{est.estType}}</td>
+										<td>{{est.domain}}</td>
+										<td>{{est.WorkingDays}}</td>
+
+										<td>{{est.estContactNumber}}</td>
+										<td>{{est.estEmail}}</td>
+
 									
 									<!-- <c:if test="${drm.contract.status eq 'Offered' }"> -->
 										<!-- <td><a href="accept/${drm.contract.letterNo}">Accept</a></td> -->

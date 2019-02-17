@@ -91,8 +91,8 @@ export class EstablishmentLoginComponent {
 
         this.cls.checkUser(value).subscribe(
             data =>{
-                this.usercheck = data['message'];
-                console.log(this.usercheck)
+                localStorage.setItem('user', JSON.stringify(data));
+                this.router.navigate(['/establishment/dashboard']);
             }
         );
         

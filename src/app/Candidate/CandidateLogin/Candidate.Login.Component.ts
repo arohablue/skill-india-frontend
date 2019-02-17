@@ -76,8 +76,7 @@ export class CandidateLoginComponent {
         this.cls.sendToServer(this.submittedModel).subscribe(
             data =>{
                 if(data !==null){
-                    this.candId = data['candidateId'] ;
-                    this.candName = data['candidateName'];
+                    localStorage.setItem('user', JSON.stringify(data));
                     this.router.navigate(['/candidate/dashboard']);
                 } 
 
