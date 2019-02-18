@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing }  from './app-routing.module';
 import { AlertComponent } from './_directives';
-import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -56,8 +55,7 @@ import { EstablishmentDashboardService } from './_services/EstablishmentDashboar
     AddCourseComponent,
     AdminDashboardComponent,
     EstablishmentVerificationComponent,
-    CandidateDashboardComponent,
-    MatDatepickerModule
+    CandidateDashboardComponent
 
   ],
   imports: [
