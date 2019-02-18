@@ -29,6 +29,10 @@ import { EstablishmentVerificationComponent } from './Establishment Verification
 import { EstablishmentVerificationService } from './Establishment Verification/EstablishmentVerfication.Service';
 import { AddCourseComponent } from './AddCourse/AddCourse.Component';
 import { AddCourseService } from './_services/AddCourse.Service';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 683f69a9cec0ba5217f5236e60eea815501dfd68
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
 import { AdminLoginService } from './_services/Admin.Login.Service';
@@ -55,6 +59,7 @@ import { EstablishmentDashboardService } from './_services/EstablishmentDashboar
     AddCourseComponent,
     AdminDashboardComponent,
     EstablishmentVerificationComponent,
+    AddCourseComponent,
     CandidateDashboardComponent
 
   ],

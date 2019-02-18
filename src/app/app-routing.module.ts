@@ -31,6 +31,8 @@ const routes: Routes = [
   { path: 'add/course',component:AddCourseComponent},
   { path: 'admin/dashboard',component: AdminDashboardComponent},
   { path: 'admin/establishment/verification',component: EstablishmentVerificationComponent},
+
+  { path: 'add/course',component: AddCourseComponent},
   { path: 'candidate/dashboard',component: CandidateDashboardComponent },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
