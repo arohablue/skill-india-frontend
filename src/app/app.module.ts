@@ -31,11 +31,10 @@ import { EstablishmentVerificationService } from './Establishment Verification/E
 import { AddCourseComponent } from './AddCourse/AddCourse.Component';
 import { AddCourseService } from './_services/AddCourse.Service';
 
-import { CourseComponent } from './Course/Course.Component';
-import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
 import { AdminLoginService } from './_services/Admin.Login.Service';
+import { EstablishmentDashboardService } from './_services/EstablishmentDashboard.Service';
 
 
 
@@ -57,8 +56,8 @@ import { AdminLoginService } from './_services/Admin.Login.Service';
     SearchPageComponent,
     AddCourseComponent,
     AdminDashboardComponent,
-    EstablishmentVerificationComponent
-    CourseComponent,
+    EstablishmentVerificationComponent,
+    AddCourseComponent,
     CandidateDashboardComponent
 
   ],
