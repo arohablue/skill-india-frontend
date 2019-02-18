@@ -15,9 +15,22 @@ constructor(private http:HttpClient){
 getFromServer() :  Observable<Establishment[]>{
 
     let url= 'http://localhost:8084/establishmentList';
-      
+
      return this.http.get<Establishment[]>(url);
 
 
     }
+
+    apply(can){
+
+      let url= 'http://localhost:8084/candidate/application/apply';
+      console.log(can);
+       return this.http.post(url, can);
+      }
+
+      checkAppstatus(can){
+        let url= 'http://localhost:8084/candidate/application/status';
+        console.log(can);
+         return this.http.post(url, can);
+        }
 }

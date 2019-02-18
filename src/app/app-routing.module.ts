@@ -14,7 +14,6 @@ import { AdminDashboardComponent } from './AdminDashboard/AdminDashboard.Compone
 import { EstablishmentVerificationComponent } from './Establishment Verification/EstablishmentVerification.Component';
 import { AddCourseComponent } from './AddCourse/AddCourse.Component';
 
-import { CourseComponent } from './Course/Course.Component';
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 
 
@@ -32,10 +31,7 @@ const routes: Routes = [
   { path: 'add/course',component:AddCourseComponent},
   { path: 'admin/dashboard',component: AdminDashboardComponent},
   { path: 'admin/establishment/verification',component: EstablishmentVerificationComponent},
-
-  { path: 'add/course',component: CourseComponent},
   { path: 'candidate/dashboard',component: CandidateDashboardComponent },
-
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];

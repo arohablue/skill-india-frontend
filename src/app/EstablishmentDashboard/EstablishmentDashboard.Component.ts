@@ -1,17 +1,18 @@
 import {OnInit, Component} from '@angular/core';
 import { Establishment } from '../_models/Establishment';
 import { EstablishmentDashboardService } from '../_services/EstablishmentDashboard.Service';
+import { Candidate } from '../_models/Candidate';
 
 
 @Component({
     selector : 'EstablishmentDashboard',
     templateUrl: './EstablishmentDashboard.Component.html',
    // styleUrls:['./flights-list.component.css'],
-   
+
 })
 
 export class EstablishmentDashboardComponent{
-    establishments: Establishment[];
+    candidates: Candidate[];
     establishment : Establishment = new Establishment();
     username : string ;
 
@@ -21,12 +22,19 @@ export class EstablishmentDashboardComponent{
         console.log("this.username")
 
     }
+
+    ngOnInit() {
+      this.fetchEstablishment();
+
+  }
+
+
     fetchEstablishment(){
         this.ess.getFromServer().subscribe(
             data =>{
-                this.establishments=data;
+                this.candidates=data;
             }
         );
     }
-   
+
 }

@@ -32,7 +32,7 @@ export class CandidateLoginComponent {
         loading = false;
         submitted = false;
         returnUrl: string;
-        
+
      constructor( public cls: CandidateLoginService,
                   private formBuilder: FormBuilder,
                   private route: ActivatedRoute,
@@ -77,8 +77,9 @@ export class CandidateLoginComponent {
             data =>{
                 if(data !==null){
                     localStorage.setItem('user', JSON.stringify(data));
+                    localStorage.setItem('userId', JSON.stringify(data['candidateId']));
                     this.router.navigate(['/candidate/dashboard']);
-                } 
+                }
 
                 this.message = "Worng Username or password";
             }
@@ -93,7 +94,7 @@ export class CandidateLoginComponent {
                 console.log(this.usercheck)
             }
         );
-        
+
     }
 
 }

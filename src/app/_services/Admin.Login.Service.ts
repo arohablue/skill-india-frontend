@@ -8,14 +8,14 @@ import { Observable } from 'rxjs';
 //no need of new keyword to create obj
 
 export class AdminLoginService {
-   
+
     //injecting Angular's Httpclient API
 constructor(private http:HttpClient){
 
 }
 sendToServer(user){
   //our code to be communicated with the server will be here
-  let url="http://localhost:8084/account/login";
+  let url="http://localhost:8084/admin/login";
   return this.http.post(url,user)
   }
 
@@ -27,4 +27,3 @@ sendToServer(user){
 
 
 }
-    

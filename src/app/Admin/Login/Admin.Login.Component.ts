@@ -24,6 +24,7 @@ export class AdminLoginComponent {
         request: string;
         response : string;
         usercheck : string;
+        message : String;
 
 
         AdminLoginForm: FormGroup;
@@ -48,8 +49,6 @@ export class AdminLoginComponent {
       // reset login status
       //this.authenticationService.logout();
 
-      // get return url from route parameters or default to '/'
-      //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
           // convenience getter for easy access to form fields
@@ -71,23 +70,16 @@ export class AdminLoginComponent {
         console.log(this.submittedModel)
 
         this.cls.sendToServer(this.submittedModel).subscribe(
-            data =>{
-                this.fetchedModel = data;
-                console.log("data" + data)
-                console.log("admin" + this.fetchedModel)
-            }
-        );
-    }
+          data =>{
+              if(data !==null){
+                  localStorage.setItem('user', JSON.stringify(data));
+                  localStorage.setItem('userId', JSON.stringify(data['adminId']));
+                  this.router.navigate(['/admin/dashboard']);
+              }
 
-    check(value) {
-
-        this.cls.checkUser(value).subscribe(
-            data =>{
-                this.usercheck = data['message'];
-                console.log(this.usercheck)
-            }
-        );
-        
+              this.message = "Worng Username or password";
+          }
+      );
     }
 
 }

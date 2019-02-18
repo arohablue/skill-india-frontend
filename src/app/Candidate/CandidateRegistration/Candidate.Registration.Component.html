@@ -23,13 +23,13 @@
     </div>
 
     <!-- Gender -->
-    
+
     <div class="form-row">
     <div class="form-group col-md-6">
       <div align="left"><label class="control-label">Gender</label><font style= "color:red;">*</font></div>
       <div class="input-group" style="z-index: 0;">
         <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
-          <select formControlName="candidateGender" class="form-control" 
+          <select formControlName="candidateGender" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f.candidateGender.errors }">
             <option value="" disabled selected>--Select--</option>
             <option value="Male">Male</option>
@@ -49,8 +49,8 @@
           <div align="left"><label class="control-label">Date of birth</label><font style= "color:red;">*</font> </div>
           <div class="input-group" style="z-index: 0;">
             <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-            <input id="dob" formControlName="candidateDoB" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateDoB.errors }"
-            type="date" name="dob" title="The Age Limit Range is from 21 Years to 35 Years." required>
+             <input [matDatepicker]="myDatepicker">
+              <mat-datepicker formControlName="candidateDoB" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.candidateDoB.errors }" #myDatepicker></mat-datepicker>
             <div *ngIf="submitted && f.candidateDoB.errors" class="invalid-feedback">
           <div *ngIf="f.candidateDoB.errors.required">The Age Limit Range is from 21 Years to 35 Years.</div>
         </div>
@@ -113,10 +113,10 @@
               Username not valid
               </div> -->
               </div>
-  
+
              </div>
-             <div *ngIf="!usercheck" align="left"><font size="0.2px" color="grey">username already present</font></div>
-  
+             <div *ngIf="usercheck" align="left"><font size="0.2px" color="grey">username already present</font></div>
+
       </div>
 </div>
 
@@ -140,22 +140,22 @@
         </div>
         <div align="left"><font size="0.2px" color="grey">(Password Should be at least 8 characters long and must contain at least one character in Upper Case, Lower Case, Numerical Form, and a Special Character.)</font></div>
       </div>
-      
-     
+
+
       <div class="col-md-6 form-group">
         <div align="left"><label class="control-label" >Confirm Password</label><font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
-          <input id="confirmPassword" name="confPassword" placeholder="Confirm Password" 
+          <input id="confirmPassword" name="confPassword" placeholder="Confirm Password"
           formControlName="confpassword" [ngClass]="{ 'is-invalid': submitted && f.confpassword.errors }"
-          class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()" 
-          title="Password Should be at least 8 characters long and must contain at least one character 
+          class="form-control" required="required" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" onkeyup="validate()"
+          title="Password Should be at least 8 characters long and must contain at least one character
           in Upper Case, Lower Case, Numerical Form, and a Special Character.">
           <div *ngIf="submitted && f.confpassword.errors" class="invalid-feedback">
             <div *ngIf="f.confpassword.errors.required">Password is required</div>
             </div>
         </div>
-          
+
         </div>
       </div>
 
@@ -179,7 +179,7 @@
           <div align="left"><label class="control-label">Aadhaar Number</label> <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-id-card-o" aria-hidden="true"></i></span>
-          <input type="text" formControlName="candidateAadhaarNumber" class="form-control" 
+          <input type="text" formControlName="candidateAadhaarNumber" class="form-control"
           placeholder="Aadhaar Number"
           [ngClass]="{ 'is-invalid': submitted && f.candidateAadhaarNumber.errors }" />
         <div *ngIf="submitted && f.candidateAadhaarNumber.errors" class="invalid-feedback">
@@ -188,10 +188,10 @@
         </div>
       </div>
       </div>
-      
-      <hr style="margin: 25px 0px;"> 
-      
-    
+
+      <hr style="margin: 25px 0px;">
+
+
       <div align="left">
           <h3>Qualification details:</h3>
         </div>
@@ -203,7 +203,7 @@
           <div align="left"><label class="control-label">Highest Qualification</label> <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
-          <select name="qualification"  formControlName="qualification" class="form-control" 
+          <select name="qualification"  formControlName="qualification" class="form-control"
           [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" >
               <option value="" disabled selected>--Select--</option>
               <!-- Insert code for validation in --Select-- later -->
@@ -246,10 +246,10 @@
           </div>
         </div>
     </div>
-     
 
-  
-  <hr style="margin: 25px 0px;"> 
+
+
+  <hr style="margin: 25px 0px;">
 
   <div align="left">
       <h3>Contact details:</h3>
@@ -291,7 +291,7 @@
 
       <!-- City -->
       <div class="form-group col-md-4">
-        <div align="left"> <label class="control-label">City</label> 
+        <div align="left"> <label class="control-label">City</label>
         <font style= "color:red;">*</font></div>
         <div class="input-group" style="z-index: 0;">
           <span class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
@@ -326,10 +326,10 @@
         </div>
         </div>
       </div>
-    </div>  
+    </div>
 
     <!--Document Upload -->
-    <hr style="margin: 25px 0px;"> 
+    <hr style="margin: 25px 0px;">
     <div align="left"><h3>Document Upload:</h3></div>
     <hr>
   <!-- photo upload -->

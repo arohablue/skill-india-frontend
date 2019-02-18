@@ -16,7 +16,7 @@ constructor(private http:HttpClient){
 sendToServer(crs){
         console.log("in registration service"+crs)
         //our code to be communicated with the server will be here
-        let url="http://localhost:8084/candidate/add";
+        let url="http://localhost:8084/candidate/register";
         return this.http.post(url,crs)
       }
 

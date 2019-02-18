@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { routing }  from './app-routing.module';
 import { AlertComponent } from './_directives';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -30,12 +30,10 @@ import { EstablishmentVerificationComponent } from './Establishment Verification
 import { EstablishmentVerificationService } from './Establishment Verification/EstablishmentVerfication.Service';
 import { AddCourseComponent } from './AddCourse/AddCourse.Component';
 import { AddCourseService } from './_services/AddCourse.Service';
-
-import { CourseComponent } from './Course/Course.Component';
-import { EstablishmentDashboardService } from './_services/EstablishmentComponent.Service';
 import { CandidateDashboardComponent } from './CandidateDashboard/CandidateDashboard.Component';
 import { CandidateDashboardService } from './_services/CandidateDashboard.Service';
 import { AdminLoginService } from './_services/Admin.Login.Service';
+import { EstablishmentDashboardService } from './_services/EstablishmentDashboard.Service';
 
 
 
@@ -57,9 +55,9 @@ import { AdminLoginService } from './_services/Admin.Login.Service';
     SearchPageComponent,
     AddCourseComponent,
     AdminDashboardComponent,
-    EstablishmentVerificationComponent
-    CourseComponent,
-    CandidateDashboardComponent
+    EstablishmentVerificationComponent,
+    CandidateDashboardComponent,
+    MatDatepickerModule
 
   ],
   imports: [
@@ -79,10 +77,10 @@ import { AdminLoginService } from './_services/Admin.Login.Service';
     AddCourseService,
     EstablishmentRegistrationService,
     EstablishmentLoginService,
-    EstablishmentDashboardService,
     EstablishmentVerificationService,
     CandidateDashboardService,
     AdminLoginService,
+    EstablishmentDashboardService,
     HttpClient,
     ValidationService,
     SearchPageService

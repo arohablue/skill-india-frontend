@@ -2,6 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Establishment } from '../_models/Establishment';
+import { Candidate } from '../_models/Candidate';
 
 @Injectable()
 
@@ -11,13 +12,12 @@ export class EstablishmentDashboardService {
 constructor(private http:HttpClient){
 
 }
-getFromServer() :  Observable<Establishment[]>{
+getFromServer() :  Observable<Candidate[]>{
 
-    let url= 'http://localhost:8084/establishmentList';
-      
-     return this.http.get<Establishment[]>(url);
+    let url= 'http://localhost:8084/candidateList';
+
+     return this.http.get<Candidate[]>(url);
 
 
     }
 }
-    

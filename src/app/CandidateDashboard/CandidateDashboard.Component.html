@@ -57,10 +57,9 @@
 			<br>
 			<div class="form-group">
 				 <label class="control-label"></label><br>				<!--${can.name} -->
-				 <label class="control-label">Profile Status:</label>{{username}}<br>  <!--${can.status} -->
+				 <label class="control-label">Profile Name:</label>{{username}}<br>  <!--${can.status} -->
 			</div>
-				
-			<button (click)="fetchCandidate()"> Show all Establishments </button>
+
 
 			<br />
 			<p>Application Status:</p>
@@ -79,23 +78,25 @@
 								<th>Establishment Type</th>
 								<th>Establishment Domain</th>
 								<th>Establishment Working Days</th>
+                <th>City</th>
 								<th>Establishment Contact Number</th>
 								<th>Establishment Email</th>
-								<th style="text-align:justify" colspan="2">Action</th> -->
+								<th>Apply</th>
+                <th>status</th>
 							</tr>
 						</thead>
 
 						<tbody>
-								<tr *ngFor="let est of establishmnets">
+								<tr *ngFor="let est of establishmnets ; let i index">
 										<td>{{est.estName}}</td>
 										<td>{{est.estType}}</td>
 										<td>{{est.domain}}</td>
 										<td>{{est.WorkingDays}}</td>
-
+                    <td>{{est.address.city}}</td>
 										<td>{{est.estContactNumber}}</td>
 										<td>{{est.estEmail}}</td>
-
-									
+                    <td><button (click)="applyEstablishmnet(est.estId)">Apply</button></td>
+                    <td>{{status[i]}}</td>
 									<!-- <c:if test="${drm.contract.status eq 'Offered' }"> -->
 										<!-- <td><a href="accept/${drm.contract.letterNo}">Accept</a></td> -->
 										<!-- <td><a href="reject/${drm.contract.letterNo}">Reject</a></td> -->

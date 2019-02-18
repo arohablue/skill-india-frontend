@@ -47,7 +47,7 @@ export class EstablishmentRegistrationComponent {
                   private alertService: AlertService,
                   private http : HttpClient) {
     }
-    
+
     ngOnInit() {
 
       this.EstablishmentRegistrationForm = this.formBuilder.group({
@@ -76,8 +76,8 @@ export class EstablishmentRegistrationComponent {
         EstablishmentState :[this.estAddressModel.state, Validators.required],
         EstablishmentCity:[this.estAddressModel.city, Validators.required],
         pincode:[this.estAddressModel.pincode, Validators.required],
-        
-        
+
+
       });
 
 
@@ -95,12 +95,12 @@ export class EstablishmentRegistrationComponent {
 
     onSubmit({ value, valid }: { value: FormGroup, valid: boolean }) {
 
-         
+
         this.submitted = true;
         console.log("in onSubmit");
         console.log(value);
         // stop here if form is invalid
-        
+
         //this.candiateJsondata = value;
 
         console.log("validated");
@@ -119,8 +119,6 @@ export class EstablishmentRegistrationComponent {
        "workingDays" :this.EstablishmentRegistrationForm.get('estWorkingDays').value,
        "domain" :this.EstablishmentRegistrationForm.get('domain').value,
        "estTotalEmp" :this.EstablishmentRegistrationForm.get('estTotalEmp').value,
-       
-       
 
             "address" : {
                     "streetName" :  this.EstablishmentRegistrationForm.get('streetName').value,
@@ -129,10 +127,10 @@ export class EstablishmentRegistrationComponent {
                     "pincode"  : this.EstablishmentRegistrationForm.get('pincode').value
                 },
                 "bankDetails" : {
-                    "bankName" : "icci",
-                    "bankBranch" : "dehuraod",
-                    "bankIFSC" : "21342SADS",
-                    "accountNumber" :"123214324"
+                    "bankName" : this.EstablishmentRegistrationForm.get('bankName').value,
+                    "bankBranch" :this.EstablishmentRegistrationForm.get('bankBranch').value,
+                    "bankIFSC" : this.EstablishmentRegistrationForm.get('bankIFSC').value,
+                    "accountNumber" :this.EstablishmentRegistrationForm.get('accountNumber').value,
                 }
 
             }
@@ -156,7 +154,7 @@ export class EstablishmentRegistrationComponent {
 
         this.cls.checkUser(value).subscribe(
             data =>{
-                
+
                 this.usercheck = data['message'];
                 console.log(this.usercheck);
                 if(this.usercheck == "true") {
@@ -166,7 +164,7 @@ export class EstablishmentRegistrationComponent {
                 this.message = "";
             }
         );
-        
+
     }
 
 
@@ -181,7 +179,7 @@ export class EstablishmentRegistrationComponent {
           if (event.type === HttpEventType.UploadProgress) {
             console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
             console.log('status');
-    
+
           }
           else if (event.type === HttpEventType.Response) {
             console.log(event);
@@ -189,6 +187,6 @@ export class EstablishmentRegistrationComponent {
         });
       }
 
-   
+
 
 }

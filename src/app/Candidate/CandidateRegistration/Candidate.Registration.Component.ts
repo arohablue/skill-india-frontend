@@ -31,6 +31,7 @@ export class CandidateRegistrationComponent {
         message : string;
         response : string
         selectedFile: File = null;
+        minAge : Date ;
 
         CandidateRegistrationForm: FormGroup;
         loading = false;
@@ -46,17 +47,18 @@ export class CandidateRegistrationComponent {
                   private alertService: AlertService,
                   private http: HttpClient) {
     }
-    
+
     ngOnInit() {
+
+      var today = new Date();
+      var minAge = 18;
+      this.minAge = new Date(today.getFullYear() - minAge, today.getMonth(), today.getDate());
 
       this.CandidateRegistrationForm = this.formBuilder.group({
 
         username:    [this.candiateJsondata.username, Validators.required],
         password:    [this.candiateJsondata.password, Validators.required],
         confpassword : [this.confpassword, Validators.required],
-        // confpassword : [this.confpassword, [Validators.required ,{
-        //     validator: MustMatch('password', 'confpassword')
-        // }]],
         candidateName:     [this.candiateJsondata.candidate.candidateName, [ Validators.required, Validators.max(15)]],
         candidateContactNumber:    [this.candiateJsondata.candidate.candidateContactNumber, Validators.required],
         candidateGender:    [this.candiateJsondata.candidate.candidateGender, Validators.required],
@@ -72,7 +74,7 @@ export class CandidateRegistrationComponent {
         candidateCity :[this.candiateJsondata.candidate.address.city,[ Validators.required,Validators.max(18)]],
         candidateState:[this.candiateJsondata.candidate.address.state,[ Validators.required,Validators.max(18)]],
         candidatePincode:[this.candiateJsondata.candidate.address.pincode, [Validators.required,Validators.max(6)]],
-        
+
       });
 
 
@@ -90,16 +92,14 @@ export class CandidateRegistrationComponent {
 
     onSubmit({ value, valid }: { value: FormGroup, valid: boolean }) {
 
-         
+
         this.submitted = true;
         console.log("in onSubmit");
         console.log(value);
         // stop here if form is invalid
-        
+
         //this.candiateJsondata = value;
 
-
-        console.log(this.candiateJsondata);
         console.log("validated");
         this.loading = true;
        // console.log(this.submittedModel);
@@ -126,7 +126,7 @@ export class CandidateRegistrationComponent {
                 }
             }
         }
-
+        console.log(json)
         this.crs.sendToServer(json).subscribe(
             data =>{
                 if(data !==null){
@@ -143,7 +143,7 @@ export class CandidateRegistrationComponent {
 
         this.cls.checkUser(value).subscribe(
             data =>{
-                
+
                 this.usercheck = data['message'];
                 console.log(this.usercheck);
                 if(this.usercheck == "true") {
@@ -153,10 +153,10 @@ export class CandidateRegistrationComponent {
                 this.message = "";
             }
         );
-        
+
     }
 
-    
+
     onFileSelected(event) {
         this.selectedFile = <File>event.target.files[0];
       }
@@ -168,7 +168,7 @@ export class CandidateRegistrationComponent {
           if (event.type === HttpEventType.UploadProgress) {
             console.log('Upload Progress: ' + Math.round(event.loaded / event.total * 100) + '%')
             console.log('status');
-    
+
           }
           else if (event.type === HttpEventType.Response) {
             console.log(event);
